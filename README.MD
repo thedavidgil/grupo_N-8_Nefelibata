@@ -11,3 +11,10 @@ https://www.theteastory.co/
 https://www.skullcandy.com/
 https://www.theletterjsupply.com/
 </p>
+
+<h2>Sabrina Basoa</h2>
+
+<p>Vivo en la ciudad de Buenos Aires, Palermo, Argentina.
+Actualmente, soy empleada administrativa del Departamento de R.R.H.H de un hospital público de la ciudad de Buenos Aires.
+Realicé el curso de Análisis de datos que ofrece un programa de la Gobierno de la ciudad, "Mujeres en carrera Tic", un programa que implementaron por primera vez en agosto 2021 con una duración de seis meses y similar a "Codo a Codo". A partir de este curso que finalicé el 25/01/2022 decidí continuar con el mundo de la programación.
+El objetivo es aprender precisamanete programación y poco a poco poder introducirme en este mundo que desconocía y al descubrirlo me gustó mucho para dedicarme a esta profesión.</p>
