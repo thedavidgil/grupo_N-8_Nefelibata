@@ -18,3 +18,9 @@ https://www.theletterjsupply.com/
 Actualmente, soy empleada administrativa del Departamento de R.R.H.H de un hospital público de la ciudad de Buenos Aires.
 Realicé el curso de Análisis de datos que ofrece un programa de la Gobierno de la ciudad, "Mujeres en carrera Tic", un programa que implementaron por primera vez en agosto 2021 con una duración de seis meses y similar a "Codo a Codo". A partir de este curso que finalicé el 25/01/2022 decidí continuar con el mundo de la programación.
 El objetivo es aprender precisamanete programación y poco a poco poder introducirme en este mundo que desconocía y al descubrirlo me gustó mucho para dedicarme a esta profesión.</p>
+
+<h2>David Gil</h2>
+
+<p style="text-align: justify">Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
+Me titule como ingeniero electrónico, en programación tengo experiencia en lenguajes de bajo nivel como C y Ladder, estos son mis primeros pasos en lenguajes de alto nivel y programación web, me apasiona la tecnología y espero que al finalizar la cursada poder hacer cambio de carrea y entrar de lleno al mundo del desarrollo.
+</p>
