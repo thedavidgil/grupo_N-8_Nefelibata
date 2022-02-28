@@ -24,3 +24,6 @@ El objetivo es aprender precisamanete programación y poco a poco poder introduc
 <p style="text-align: justify">Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
 Me titule como ingeniero electrónico, en programación tengo experiencia en lenguajes de bajo nivel como C y Ladder, estos son mis primeros pasos en lenguajes de alto nivel y programación web, me apasiona la tecnología y espero que al finalizar la cursada poder hacer cambio de carrea y entrar de lleno al mundo del desarrollo.
 </p>
+
+<h2>Gabriel Alvarez Bestoff</h2>
+<p style="text-align: justify">Vivo en la Ciudad de México. Actualmente trabajo en una empresa de Telecomunicaciones en el área de atención a clientes corporativos. No tengo experiencia previa en desarrollo de software, sin embargo es una actividad que me parece muy divertida e interesante. Al terminar la cursada me gustaría colaborar con algún equipo de desarrollo de software para adquirir experiencia y posteriormente desarrollar mis propios proyectos.</p>
