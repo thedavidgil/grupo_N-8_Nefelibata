@@ -21,6 +21,6 @@ El objetivo es aprender precisamanete programación y poco a poco poder introduc
 
 <h2>David Gil</h2>
 
-<p style="text-align: justify">Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
+<p>Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
 Me titule como ingeniero electrónico, en programación tengo experiencia en lenguajes de bajo nivel como C y Ladder, estos son mis primeros pasos en lenguajes de alto nivel y programación web, me apasiona la tecnología y espero que al finalizar la cursada poder hacer cambio de carrea y entrar de lleno al mundo del desarrollo.
 </p>
