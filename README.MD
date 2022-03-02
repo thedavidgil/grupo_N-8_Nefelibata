@@ -35,3 +35,8 @@ Me titule como ingeniero electrónico, en programación tengo experiencia en len
 
 <h2>Gabriel Alvarez Bestoff</h2>
 <p style="text-align: justify">Vivo en la Ciudad de México. Actualmente trabajo en una empresa de Telecomunicaciones en el área de atención a clientes corporativos. No tengo experiencia previa en desarrollo de software, sin embargo es una actividad que me parece muy divertida e interesante. Al terminar la cursada me gustaría colaborar con algún equipo de desarrollo de software para adquirir experiencia y posteriormente desarrollar mis propios proyectos.</p>
+
+<h2>Mariano Uceda</h2>
+<p style="text-align: justify"> Estoy radicado en la Ciudad de Carlos Casares, dentro de la Provincia de Buenos Aires.
+Trabajo como Auxiliar Integral en el Banco Credicoop y adhisionalmente refacciono como hobby instrumentos de viento-madera. 
+Me quiero involucrar en el mundo de la programación porque tengo intensión de tener las bases para luego seguir adentrandome en el mundo de las blockchain que es, sin dudas, el futuro de mi actividad principal.</p>
