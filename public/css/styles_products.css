@@ -1,4 +1,4 @@
-:root {
+root {
   --negro: #42464a;
   --blanco: #ffffff;
   --azul: #92a0a3;
@@ -15,6 +15,52 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--gris);
   margin: 0;
+}
+
+/*HEADER*/
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: beige;
+  border-bottom: solid 1px gray;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.elementos_header {
+  display: flex;
+  justify-content: center;
+}
+.elementos_header a {
+  font-size: 20px;
+  padding: 10px;
+  align-self: center;
+  color: var(--negro);
+}
+
+/*Main*/
+main {
+  display: flex;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #ebebeb;
+  padding: 15px;
+  background-color: white;
+}
+
+.productos img {
+  width: 100px;
 }
 
 /*-----------------ICONOS--------------------
