@@ -1,18 +1,43 @@
 :root {
-    --negro: #42464A;
-    --blanco: #FFFFFF;
-    --azul: #92A0A3;
-    --beige: #E2D0BD;
-    --gris: #E7E7E7;
+  --negro: #42464a;
+  --blanco: #ffffff;
+  --azul: #92a0a3;
+  --beige: #e2d0bd;
+  --gris: #e7e7e7;
 }
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--gris);
-    margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--gris);
+  margin: 0;
 }
+
+/*HEADER*/
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: beige;
+  border-bottom: solid 1px gray;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.elementos_header {
+  display: flex;
+  justify-content: center;
+}
+.elementos_header a {
+  font-size: 20px;
+  padding: 10px;
+  align-self: center;
+  color: var(--negro);
+}
+
+/*Main*/
