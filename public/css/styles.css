@@ -1,0 +1,18 @@
+:root {
+    --negro: #42464A;
+    --blanco: #FFFFFF;
+    --azul: #92A0A3;
+    --beige: #E2D0BD;
+    --gris: #E7E7E7;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--gris);
+    margin: 0;
+}
