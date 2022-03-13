@@ -1,11 +1,19 @@
+<h1>Nefelibata</h1>
+<p style="text-align: justify">Es un emprendimiento personal que surge en el año 2020 durante la pandemia COVID-19 en respuesta a la necesidad de realizar una actividad emprendedora que generara ingresos complementarios, como así también que fuera una compañía en los tiempos de aislamiento estricto.
+Tiene por finalidad la creación de agendas totalmente personalizadas y confeccionadas íntegramente a mano, en donde el cliente puede intervenir en el armado de cada parte que componen las mismas, ya sea el tamaño, tipo de encuadernación, de tapas, tipo de hoja y contenidos, etc. No obstante en sus inicios comenzó con una actividad más cercana al bordado de telas que poco a poco fue transformándose en lo que es hoy día.
+Asimismo, ofrece dentro de sus productos álbumes, planners, anotadores imantados y siempre estamos dispuestos a ampliar nuestros horizontes y responder a las necesidades de nuestros clientes.
+Este emprendimiento esta apuntado a aquellas personas que desean contar con una agenda que se ajuste perfectamente a sus necesidades y gustos, y a futuro esperamos poder seguir ampliando nuestro ofrecimiento para poder llegar a más personas y que todos puedan disfrutar de su Nefelibata.</p>
+
 <h3>Links de Inspiracion</h3>
 <p>
+https://www.clipscuadernos.com.ar/
+https://www.calubyrox.com.ar/
+https://www.zibba.com.ar/
+https://www.fineart.com.ar/cuadernos-personalizados/
 https://www.spectacles.com/uk/
 https://www.dafiti.com.ar/
-https://www.fineart.com.ar/cuadernos-personalizados/
 https://fexpress.mitiendanube.com/
 https://guolis.com.ar/home
-https://www.clipscuadernos.com.ar/
 https://ratiocoffee.com/
 https://www.theteastory.co/
 https://www.skullcandy.com/
@@ -27,3 +35,8 @@ Me titule como ingeniero electrónico, en programación tengo experiencia en len
 
 <h2>Gabriel Alvarez Bestoff</h2>
 <p style="text-align: justify">Vivo en la Ciudad de México. Actualmente trabajo en una empresa de Telecomunicaciones en el área de atención a clientes corporativos. No tengo experiencia previa en desarrollo de software, sin embargo es una actividad que me parece muy divertida e interesante. Al terminar la cursada me gustaría colaborar con algún equipo de desarrollo de software para adquirir experiencia y posteriormente desarrollar mis propios proyectos.</p>
+
+<h2>Mariano Uceda</h2>
+<p style="text-align: justify"> Estoy radicado en la Ciudad de Carlos Casares, dentro de la Provincia de Buenos Aires.
+Trabajo como Auxiliar Integral en el Banco Credicoop y adhisionalmente refacciono como hobby instrumentos de viento-madera. 
+Me quiero involucrar en el mundo de la programación porque tengo intensión de tener las bases para luego seguir adentrandome en el mundo de las blockchain que es, sin dudas, el futuro de mi actividad principal.</p>
