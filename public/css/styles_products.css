@@ -45,22 +45,69 @@ main {
   display: flex;
 }
 
-section {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .productos {
-  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  border-top: 1px solid #ebebeb;
-  padding: 15px;
-  background-color: white;
+  flex-direction: column;
+  flex-grow: 2;
 }
 
 .productos img {
-  width: 100px;
+  width: 100%;
+}
+
+.detalle {
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  align-self: center;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin: 25px;
+  background-color: var(--gris);
+}
+
+.titulo {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--negro);
+}
+.precio {
+  font-size: 20px;
+  color: #92a0a3;
+  padding-bottom: 15px;
+}
+.botones_productos {
+  display: flex;
+  justify-content: space-evenly;
+}
+.botones_productos div {
+  padding: 10px;
+  background-color: beige;
+  border-radius: 12px;
+  border: solid 1px var(--blanco);
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  font-weight: bolder;
+  color: #42464a;
+}
+
+.botones_productos div a {
+  color: inherit;
+}
+
+/*Media Queries*/
+
+/*Telefono*/
+@media (max-width: 450px) {
+  .categorias {
+    display: none;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 451px) and (max-width: 750px) {
+}
+
+/*Desktop*/
+@media (min-width: 751px) {
 }
 
 /*-----------------ICONOS--------------------
