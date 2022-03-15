@@ -9,9 +9,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_register.css">
 </head>
 <body>
-    <h1>Register Nefelibata</h1>
+    <header>
+        
+        <p class="special_offer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet commodi</p>
+        <div class="top-header">
+           <div class="icons-header"><a href=""><i class="fa-solid fa-bars"></i></a></div>
+           <div class="logo"><img class="logo" src="image\logo-fondo_claro (sin_fondo).png" alt="logo"></div>
+           <div class="icons-header"><a href=""><i class="fa-solid fa-cart-shopping" class="carrito"></i></a></div> 
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+            <li><a href="#">Menu 5</a></li>
+            <li><a href="#">Menu 6</a></li>
+            </ul>
+        </nav>   
+
+        <div class="path">
+            <p>Inicio></p>
+            <p>Mi cuenta></p>
+            <p>Crear Cuenta</p>
+        </div>
+        
+        <p class="creating-account">CREA TU CUENTA</p>
+
+        <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    </header>
+    <main>
+        <form action="/registro" method="post" class="form1">
+            <label for="Nombre">Nombre y Apellido</label>
+            <input type="text" name="Nombre" id="Nombre">
+            <label for="email">Email</label>
+            <input type="text" name="Email" id="email">
+            <label for="telefono">Teléfono (opcional)</label>
+            <input type="text" name="telefono" id="telefono">
+            <label for="contraseña">Contraseña</label>
+            <input type="text" name="contraseña" id="contraseña">
+            <label for="contraseña1">Confirmar Contraseña</label>
+            <input type="text" name="contraseña1" id="contraseña1">
+            <label for="socialnetwork">Iniciar sesión con Facebook</label>
+            <input type="text" name="socialnetwork" id="socialnetwork">
+        </form>
+    
+
+        <div class="captcha">
+            <input type="checkbox" name="captcha">
+            <label for="captcha">No soy un robot.</label>
+        </div>
+
+        <div class="button1"><button>Crear Cuenta</button></div>
+
+        <p class="tenescuenta">¿Ya tenés cuenta?<a href="">Inicia sesión</a></p>
+
+    </main>
+    <footer>
+        <h2>FOOTER</h2>
+    </footer>
 </body>
 </html>
