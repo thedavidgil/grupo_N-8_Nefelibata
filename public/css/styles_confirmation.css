@@ -1,0 +1,92 @@
+:root {
+    --negro: #42464a;
+    --blanco: #ffffff;
+    --azul: #92a0a3;
+    --beige: #e2d0bd;
+    --gris: #e7e7e7;
+  }
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color:var(--gris);
+    margin: 0;
+  }
+
+  header
+  {background-color:var(--beige);}
+
+  .special_offer{background-color: var(--azul);
+color:#ffffff;
+text-align: center;
+padding:10px;
+margin-bottom: 10px;}
+
+.top-header{display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.icons-header a {color:var(--negro);
+font-size: 30px;
+}
+
+.logo{width: 200px}
+
+
+.nav-bar ul{list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--azul);
+text-align:center
+}
+
+.nav-bar li{display:inline;
+text-align: center;
+margin:0 10px 0 0;}
+
+.nav-bar a {color:var(--negro);
+    text-decoration: none;}
+
+.path{display:flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 20px;
+    color: var(--negro);
+}
+
+.path p {padding:0 5px 0 0;}
+
+.creating-account{font-size: 25px;
+  font-weight: bold;
+    text-align: center;
+    padding-top:30px;
+}
+
+.text-benefit{text-align: center;
+padding-top:10px;
+padding-bottom: 40px;}
+
+  .confirmation{
+    background-color: var(--gris);
+    margin:10%;
+text-align: center;
+font-size: 18px;}
+
+.confirmation p{padding:10px 0px}
+
+.confirmation p i{font-size: 40px;}
+
+.confirmationp1 {font-size: 22px;
+    font-weight: bold;}
+
+.resending{text-align: center;}
+
+.resending a{font-weight: bold;}
+
+  footer{border:solid 1px green};

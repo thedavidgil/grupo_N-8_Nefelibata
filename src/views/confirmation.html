@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión - Nefelitaba</title>
+    <title>Crear cuenta - Nefelibata</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles_login.css">
+    <link rel="stylesheet" href="../css/styles_confirmation.css">
 </head>
 <body>
     <header>
@@ -35,43 +35,28 @@
         <div class="path">
             <p>Inicio></p>
             <p>Mi cuenta></p>
-            <p>Login</p>
+            <p>Validación de cuenta</p>
         </div>
         
-        <p class="creating-account">INICIÁ SESIÓN</p>
+        <p class="creating-account">CREA TU CUENTA</p>
+
+        <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
     </header>
     <main>
-
-    
-         <div class="socialnetwork">
-         <button type="submit">Iniciá sesión con <i class="fa-brands fa-facebook-square"></i>
-            FACEBOOK</button>
-        </div>
-
-
-        <form action="../views/confirmation.html" method="post" class="form1">
-            <div class="control-formulario"> 
-                <label for="email">Email</label>
-                <input type="email" name="Email" id="email" placeholder="Minombre@mail.com" required class="control">
-            </div>
-            <div class="control-formulario">    
-                <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Máximo 10 carácteres" required class="control">
-                <p class="tenescuenta"><a href="">¿Olvidaste tu contraseña</a></p>
-            </div>
-            <div class="button1">
-              <button type="submit">Iniciar sesión</button>
-            </div>
-        </form>
-
-        <p class="tenescuenta">¿No tenés cuenta aún?<a href="http://localhost:5000/register">Crear cuenta</a></p>
+        <div class="confirmation">
+            <p><i class="fa-solid fa-envelope"></i></p>
+            <p class="confirmationp1">¡Estás a un paso de crear tu cuenta!</p>
+            <p>Te enviamos un link a:</p>
+            <p><a href="">Tunombre@email.com</a></p>
+            <p>Para que valides tu información</p>
+        </div>  
+     
+        <p class="resending">¿Todavía no los recibes?<a href="">Enviar link de nuevo</a></p>
 
     </main>
     <footer>
         <h2>FOOTER</h2>
     </footer>
-</body>
-</html>
 </body>
 </html>
