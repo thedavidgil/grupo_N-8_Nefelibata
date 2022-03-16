@@ -68,10 +68,6 @@ margin:0 10px 0 0;}
     padding-top:30px;
 }
 
-.text-benefit{text-align: center;
-padding-top:10px;
-padding-bottom: 40px;}
-
   main{}
 
   .form1{ padding: 20px 15px;
@@ -80,9 +76,6 @@ padding-bottom: 40px;}
   .control-formulario {
 margin-bottom: 15px}
 
-
-.control-formulario2 {
-  margin-bottom: 15px}
 
 .control{width: 90%;
 padding: 8px 8px;
@@ -107,6 +100,7 @@ border-radius: 10px;}
 padding: 10px;}
 
 .button1{padding-top: 10px;
+    padding-bottom: 5px;
 text-align:center;
 margin: auto;}
 
@@ -116,7 +110,8 @@ border-radius: 10px;
 font-weight: bolder;
 color: var(--blanco);
 }
-.tenescuenta{text-align: center;}
+.tenescuenta{text-align: center;
+padding: 5px;}
 
 .tenescuenta a{font-weight: bold;}
 

@@ -15,3 +15,5 @@ app.get('/register', (req, res) => res.sendFile(path.resolve(__dirname, './views
 app.get('/login', (req, res) => res.sendFile(path.resolve(__dirname, './views/login.html')));
 app.get('/products', (req, res) => res.sendFile(path.resolve(__dirname, './views/products.html')));
 app.get('/cart', (req, res) => res.sendFile(path.resolve(__dirname, './views/cart.html')));
+app.get('/confirmation', (req, res) => res.sendFile(path.resolve(__dirname, './views/confirmation.html')));
+app.get('/recovery', (req, res) => res.sendFile(path.resolve(__dirname, './views/password_recovery.html')));
