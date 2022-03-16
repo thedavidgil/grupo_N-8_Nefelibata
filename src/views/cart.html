@@ -1,30 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras - Nefelibata</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <h1>Cart Nefelibata</h1>
-    <header>
-        <div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito de compras - Nefelibata</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style_cart.css">
+    </head>
+    <body>
+        <div class="main-header">
             <h2>Carrito de compras</h2>
-            <i class="fa-solid fa-circle-xmark"></i>
+            <button id="close"><i class="fa-solid fa-circle-xmark"></i></button>
         </div>
-    </header>
-    <main>
-        <p>
-            <i class="fa-solid fa-circle-info"></i>
-            El carrito esta vacío
-        </p>
-        
-    </main>
-</body>
+        <div class="container">
+            <div class="row">
+                <main></main>
+                    <div class="empty">
+                        <p><i class="fa-solid fa-circle-info"></i> El carrito está vacío</p>
+                    </div>
+                    <div class="products-cart">
+                        <article>
+                            <div class="container-product">
+                                <img src="/image/producto_2.png">
+                                <div class="name-product">
+                                    <h4>Título del producto</h4>
+                                    <p>Descripción</p>
+                                    <form action="#" method="post">
+                                        <div class="delete">
+                                            <label for="delete"></label>
+                                            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                        <div class="amount">
+                                            <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
+                                            <p>0</p>
+                                            <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+                                        </div>
+                                    </form>
+                                    <div class="price-per-unit">
+                                        <p>$X.XXX,XX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="container-product">
+                                <img src="/image/producto_1.png">
+                                <div class="name-product">
+                                    <h4>Título del producto</h4>
+                                    <p>Descripción</p>
+                                    <form action="#" method="post">
+                                        <div class="delete">
+                                            <label for="delete"></label>
+                                            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                        <div class="amount">
+                                            <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
+                                            <p>0</p>
+                                            <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+                                        </div>
+                                    </form>
+                                    <div class="price-per-unit">
+                                        <p>$X.XXX,XX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="container-product">
+                                <img src="/image/producto_3.png">
+                                <div class="name-product">
+                                    <h4>Título del producto</h4>
+                                    <p>Descripción</p>
+                                    <form action="#" method="post">
+                                        <div class="delete">
+                                            <label for="delete"></label>
+                                            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                        <div class="amount">
+                                            <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
+                                            <p>0</p>
+                                            <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+                                        </div>
+                                    </form>
+                                    <div class="price-per-unit">
+                                        <p>$X.XXX,XX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <section class="subtotal">
+                        <div>
+                            <p>Subtotal (sin envío):
+                        </div>
+                        <div>
+                            <span></span>$X.XXX,XX</p>
+                        </div>
+                    </section>
+                    <div class="shipping">
+                        <form action="cp" action="#" method="post">
+                            <div class="shipping-header">
+                                <p><strong>Envío gratis</strong> superando los $X.XXX,XX</p>
+                            </div>
+                            <div class="cp">
+                                <p>Entregas para el C.P.: <span>C.P.</span></p>
+                                <button type="">cambiar cp</button>
+                            </div>
+                            <div>
+                                <label for="cp"></label>
+                                <input type="text" name="cp" placeholder="Ingrese su C.P.">
+                                <button type="submit">Calcular</button><br>
+                                <a href="#">No sé mi código postal</a>
+                            </div>
+                            <div class="">
+                                <p><i class="fa-solid fa-truck"></i> Envío a domicilio</p>
+                                <input type="radio" name="ship" value="" id=""> <a href="#">Correo - Envío a domicilio - Info</a> <span></span>$xxx,xx
+                                <p><i class="fa-solid fa-location-dot"></i> Retirar por</p>
+                                <input type="radio" name="ship" value="" id=""> <a href="#">Punto de retiro - Info</a> <span></span>$xxx,xx
+                                <p><i class="fa-solid fa-store"></i> Nuestro local</p>
+                                <input type="radio" name="ship" value="" id=""> <a href="">Local - Info</a> <span></span>Gratis
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <p>Total: <span></span>$x.xxx,xx</p>
+                        <button class="send-button" type="submit">INICIAR COMPRA</button>
+                        <br>
+                        <a href="#">Ver más productos</a>
+                    </div>
+            </div>
+        </div>
+    </body>
 </html>

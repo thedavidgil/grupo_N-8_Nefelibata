@@ -1,0 +1,153 @@
+:root {
+    --negro: #42464a;
+    --blanco: #ffffff;
+    --azul: #92a0a3;
+    --beige: #e2d0bd;
+    --gris: #e7e7e7;
+  }
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--negro);
+    background-color: var(--gris);
+    margin: 0;
+    max-width: 768px;
+    font-size: 12px;
+  }
+
+  img {
+      width: 25%;
+      border-radius: 10px;
+  }
+
+  button {
+      background: none;
+      border-style: none;
+      margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container{
+      width: 90%;
+      margin: auto;
+  }
+
+  .main-header{
+      display: flex;
+      width: 100%;
+      background-color: var(--beige);
+      padding: 10px 20px;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+.main-header button{
+    font-size: 22px;
+}
+
+.empty {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    text-align: center;
+    border: solid 1px var(--azul);
+    border-radius: 8px;
+    color: var(--azul);
+    padding: 5px;
+}
+
+.products-cart{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+}
+
+.container-product{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px;
+    position: relative;
+}
+
+.name-product {
+    width: 70%;
+    position: relative;
+    justify-content: right;
+}
+
+.amount {
+    display: flex;
+    border: solid 1px var(--negro);
+    border-radius: 8px;
+    padding: 5px;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.amount i {
+    color: var(--beige);
+}
+
+.delete i {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    color: var(--beige);
+}
+
+.price-per-unit p{
+   position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.subtotal{
+    display: flex;
+
+    margin: auto;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px 0;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--negro);
+}
+
+.shipping-header {
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+.shipping-header strong{
+    color: var(--beige);
+}
+
+.cp {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.cp button {
+    border: solid 1px var(--beige);
+    border-radius: 50px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    color: var(--beige);
+}
