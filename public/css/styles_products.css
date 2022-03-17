@@ -1,4 +1,4 @@
-root {
+:root {
   --negro: #42464a;
   --blanco: #ffffff;
   --azul: #92a0a3;
@@ -21,7 +21,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: beige;
+  background-color: var(--beige);
   border-bottom: solid 1px gray;
 }
 
@@ -53,6 +53,7 @@ main {
 
 .productos img {
   width: 100%;
+  border-radius: 10%;
 }
 
 .detalle {
@@ -126,7 +127,7 @@ main {
     justify-content: center;
   }
   .detalle {
-    width: 200px;
+    width: 500px;
   }
   main {
     margin-left: 20%;
