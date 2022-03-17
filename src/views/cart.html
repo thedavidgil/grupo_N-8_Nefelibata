@@ -41,7 +41,7 @@
                                         </div>
                                     </form>
                                     <div class="price-per-unit">
-                                        <p>$X.XXX,XX</p>
+                                        <p>$0.000,00</p>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                         </div>
                                     </form>
                                     <div class="price-per-unit">
-                                        <p>$X.XXX,XX</p>
+                                        <p>$0.000,00</p>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                         </div>
                                     </form>
                                     <div class="price-per-unit">
-                                        <p>$X.XXX,XX</p>
+                                        <p>$0.000,00</p>
                                     </div>
                                 </div>
                             </div>
@@ -98,36 +98,93 @@
                             <p>Subtotal (sin envío):
                         </div>
                         <div>
-                            <span></span>$X.XXX,XX</p>
+                            <span></span>$0.000,00</p>
                         </div>
                     </section>
-                    <div class="shipping">
+                    <div class="shipp">
                         <form action="cp" action="#" method="post">
-                            <div class="shipping-header">
-                                <p><strong>Envío gratis</strong> superando los $X.XXX,XX</p>
+                            <div class="shipp-header">
+                                <p><strong>Envío gratis</strong> superando los $0.000,00</p>
                             </div>
                             <div class="cp">
-                                <p>Entregas para el C.P.: <span>C.P.</span></p>
+                                <p>Entregas para el C.P.: <span>0000</span></p>
                                 <button type="">cambiar cp</button>
                             </div>
-                            <div>
+                            <div class="cp-button">
                                 <label for="cp"></label>
-                                <input type="text" name="cp" placeholder="Ingrese su C.P.">
-                                <button type="submit">Calcular</button><br>
+                                <input type="text" name="cp" placeholder="Tu código postal">
+                                <button type="submit">Calcular</button>
+                            </div>
+                            <div class="unknow">
                                 <a href="#">No sé mi código postal</a>
                             </div>
-                            <div class="">
+                            <div class="unknow-message">
+                                <p><i class="fa-solid fa-circle-info"></i> No encontramos este código postal</p>
+                            </div>
+                            <div class="options-shipp-container">
                                 <p><i class="fa-solid fa-truck"></i> Envío a domicilio</p>
-                                <input type="radio" name="ship" value="" id=""> <a href="#">Correo - Envío a domicilio - Info</a> <span></span>$xxx,xx
+                                <div class="option-shipp">
+                                    <div class="radio-container">
+                                        <div>
+                                            <input type="radio" name="ship" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="description-container">
+                                        <p>Correo - Envío a domicilio</p>
+                                        <a href="#">Info</a>
+                                    </div>                                    
+                                    <div class="price-continer">
+                                        <div>
+                                            <span>$000,00</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p><i class="fa-solid fa-location-dot"></i> Retirar por</p>
-                                <input type="radio" name="ship" value="" id=""> <a href="#">Punto de retiro - Info</a> <span></span>$xxx,xx
+                                <div class="option-shipp">
+                                    <div class="radio-container">
+                                        <div>
+                                            <input type="radio" name="ship" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="description-container">
+                                        <p>Punto de retiro</p>
+                                        <a href="#">Info</a>
+                                    </div>                                    
+                                    <div class="price-continer">
+                                        <div>
+                                            <span>$000,00</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p><i class="fa-solid fa-store"></i> Nuestro local</p>
-                                <input type="radio" name="ship" value="" id=""> <a href="">Local - Info</a> <span></span>Gratis
+                                <div class="option-shipp">
+                                    <div class="radio-container">
+                                        <div>
+                                            <input type="radio" name="ship" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="description-container">
+                                        <p>Local</p>
+                                        <a href="#">Info</a>
+                                    </div>                                    
+                                    <div class="price-continer">
+                                        <div>
+                                            <span>Gratis</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
-                    <div>
-                        <p>Total: <span></span>$x.xxx,xx</p>
+                    <div class="total">
+                        <div>
+                            <p>Total:</p>
+                        </div>
+                        <div>
+                            <span>$00.000,00</span>
+                        </div>
+                    </div>
+                    <div class="finish-order">
                         <button class="send-button" type="submit">INICIAR COMPRA</button>
                         <br>
                         <a href="#">Ver más productos</a>

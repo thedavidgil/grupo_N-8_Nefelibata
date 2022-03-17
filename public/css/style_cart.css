@@ -55,7 +55,7 @@
 
 .empty {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 15px auto;
     text-align: center;
     border: solid 1px var(--azul);
@@ -126,20 +126,20 @@
     border-bottom: solid 1px var(--negro);
 }
 
-.shipping-header {
+.shipp-header {
     text-align: center;
     padding: 15px 0;
     font-weight: 600;
     font-size: 14px;
 }
-.shipping-header strong{
+.shipp-header strong{
     color: var(--beige);
 }
 
 .cp {
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
 }
 .cp button {
     border: solid 1px var(--beige);
@@ -149,5 +149,140 @@
     font-weight: 800;
     text-transform: uppercase;
     display: flex;
+    background-color: var(--beige);
+}
+
+.cp p span {
+    font-weight: 800;
+}
+
+.cp-button {
+    width: 100%;
+    display: flex;
+    margin: 15px 0 5px 0;
+}
+
+.cp-button input, .cp-button button {
+    padding: 5px;
+    border-style: none;
+    width: 50%;
+}
+
+.cp-button input {
+    border-radius: 8px 0 0 8px;
+    padding-left: 5px;
+}
+
+.cp-button button {
+    border-radius: 0 8px 8px 0;
+    border: solid 1px var(--beige);
+    background-color: var(--beige);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cp-button div a {
+    display: block;
+}
+
+.unknow {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.unknow a {
     color: var(--beige);
+}
+
+
+.unknow-message {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+    text-align: center;
+    border: solid 1px rgb(151, 5, 5);
+    border-radius: 8px;
+    color: rgb(151, 5, 5);
+    padding: 5px;
+}
+
+.options-shipp-container i {
+    color: var(--beige);
+}
+.option-shipp{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--blanco);
+    box-shadow: 0px 0px 5px rgb(184, 184, 184);
+    margin: 5px 0 15px 0;
+    border-radius: 8px;
+}
+
+.radio-container, .description-container, .price-continer {
+    border-style: none;
+    margin: 0;
+}
+
+.radio-container div, .price-continer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+.radio-container {
+    width: 15%;
+}
+
+.description-container {
+    width: 55%;
+}
+.description-container p{
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.description-container a{
+    padding-left: 30px;
+}
+
+.price-continer {
+    width: 30%;
+}
+
+.price-continer span{
+    font-weight: 800;
+    color: var(--beige);
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--beige);
+    padding: 15px 0;
+    font-weight: 800;
+}
+
+.finish-order {
+    text-align: center;
+    width: 100%;
+}
+
+.finish-order button {
+    padding: 10px;
+    border-style: none;
+    border-radius: 50px;
+    background-color: var(--beige);
+    font-weight: 800;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.finish-order a {
+    color: var(--beige);
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+    padding-bottom: 15px;
 }
