@@ -1,0 +1,97 @@
+:root {
+  --negro: #42464a;
+  --blanco: #ffffff;
+  --azul: #92a0a3;
+  --beige: #e2d0bd;
+  --gris: #e7e7e7;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+  background-color: beige;
+  height: 20vh;
+  border: solid 1px blue;
+}
+
+footer {
+  background-color: var(--gris);
+  height: 20vh;
+  border: solid 1px blue;
+}
+
+.detalle_producto {
+  display: flex;
+}
+
+.imagenes {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 20vw;
+}
+
+.imagenes img {
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.imagen_principal {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+}
+
+.imagen_principal img {
+  width: 100%;
+  padding: 20px;
+  align-self: center;
+  border-radius: 20%;
+}
+
+.detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  padding: 20px;
+}
+.detalle h2 {
+  align-self: center;
+  color: var(--negro);
+  font-size: 40px;
+}
+.detalle p {
+  align-self: center;
+  color: var(--azul);
+  font-size: 20px;
+}
+
+button {
+}
+
+@media (max-width: 450px) {
+  .imagenes {
+    display: none;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 750px) {
+  .imagenes {
+    display: none;
+  }
+}
+
+@media (min-width: 751px) {
+  .imagen_principal {
+    width: 40vw;
+  }
+  .detalle {
+    width: 40vw;
+  }
+}
