@@ -15,10 +15,13 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--gris);
   margin: 0;
+  position:absolute;
 }
 
 header{
   background-color: var(--beige);
+  width:100%;
+  padding:10px;
 }
 
 .fa-instagram{
@@ -27,7 +30,7 @@ header{
   width: 50px;
   height:50px;
   font-size:2em;
-  display: block;
+  display: flex;
 }
 
 .fa-facebook-square{
@@ -36,7 +39,7 @@ header{
   width: 50px;
   height:50px;
   font-size:2em;
-  display: block;
+  display: flex;
 }
 
 .fa-bars{
@@ -55,9 +58,16 @@ header{
   align-self: center;
 }
 
+.red{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-self: center;
+}
+
 .redes{
   display: flex;
-  flex-direction: nowrap;
+  flex-direction:row;
   justify-content: space-between;
   align-self: center;
 }
@@ -101,6 +111,7 @@ header{
   font-size:1.5em;
   display: flex;
   flex-direction:column;
+
 }
 
 .fa-cart-shopping{
@@ -123,16 +134,20 @@ header{
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 20px;
+  padding: 10px;
+}
+
+.buscar{
+  display: flex;
 
 }
 
 .search-bar button{
   border-style: none;
-  line-height: 40px;
+  line-height: 30px;
   background-color: white;
   color:var(--gris);
-  width:30%;
+  width: 10%;
   text-align:center;
   border-radius:0 5px 5px 0;
 }
@@ -156,7 +171,7 @@ header{
 .search-bar input{
   width:100%;
   border-style: none;
-  line-height: 40px;
+  line-height: 35px;
   background-color: white;
   outline:none;
   color:var(--gris);
@@ -185,7 +200,8 @@ ul{
   justify-content: space-between;
   align-items: center;
   align-self: center;
-  padding: 10px;
+  margin:auto;
+  width:100%;
 }
 
 .usuario{
@@ -233,6 +249,7 @@ main
   align-items: center;
   align-self: center;
   padding: 10px;
+  width:100%;
 }
 
 .fa-circle-chevron-left{
@@ -262,13 +279,20 @@ main
   box-shadow: 10px 5px 5px var(--azul)
 }
 
+
 .pieCarrusel{
   display: flex;
   flex-direction:row;
   justify-content:space-between;
-  align-content: space-around;
+  align-content: space-between;
   align-items: center;
+  width: 100%;
+  padding:5px;
 }
+
+.envio{
+  display:flex;
+  }
 
 .fa-dolly{
   width:40px;
@@ -277,11 +301,19 @@ main
   font-size:1.5em;
 }
 
+.porcentaje{
+  display:flex;
+}
+
 .fa-percent{
   width:40px;
   padding: 5px;
   margin:5px;
   font-size:1.5em;
+}
+
+.datos{
+  display:flex;
 }
 
 .fa-user-shield{
@@ -322,7 +354,7 @@ p{
 
 .producto1{
   display: flex;
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 10px 5px 5px var(--negro);
@@ -330,7 +362,7 @@ p{
 
 .producto2{
   display: flex;
-  width: 90%;
+  width: 100%;
   padding:10px;
   border-radius: 15px;
   box-shadow: 10px 5px 5px var(--negro);
@@ -338,7 +370,7 @@ p{
 
 .producto3{
   display: flex;
-  width: 90%;
+  width: 100%;
   padding:10px;
   border-radius: 15px;
   box-shadow: 10px 5px 5px var(--negro);
@@ -346,7 +378,7 @@ p{
 
 .producto5{
   display: flex;
-  width: 90%;
+  width: 100%;
   padding:10px;
   border-radius: 15px;
   box-shadow: 10px 5px 5px var(--negro);
@@ -354,7 +386,7 @@ p{
 
 .color{
   display: flex;
-  width:90%;
+  width:100%;
   border-radius: 15px;
   flex-direction: column;
   box-shadow: 10px 5px 5px var(--negro);
@@ -385,9 +417,7 @@ footer
 
 .columna{
   flex-direction: column;
-  padding: 5px;
-  margin-top: 20px;
-  padding: 5px;
+  padding:5px;
 }
 
 .ayuda{
@@ -424,17 +454,25 @@ footer
   flex-direction: column;
   align-content: space-between;
   align-items: space-between;
-  padding: 5px;
+
   text-align: justify;
 }
 .fa-phone{
   padding:5px;
-  text-align:left;
+  margin:5px;
+  width: 30px;
+  height:30px;
+  font-size:1.5em;
+  display: flex;
 }
 
 .fa-envelope{
-  padding: 10px;
-  text-align:left;
+  padding: 5px;
+  margin:5px;
+  width: 30px;
+  height:30px;
+  font-size:1.5em;
+  display: flex;
 }
 
 .sociales{
@@ -447,7 +485,7 @@ footer
   padding:5px;
 }
 
-.fa-instagram{
+.fa-instagram {
   margin:5px;
   padding:5px;
   width: 50px;
@@ -456,7 +494,7 @@ footer
   display: flex;
 }
 
-.fa-facebook-square{
+.fa-facebook-square {
   margin: 5px;
   padding:5px;
   width: 50px;
@@ -499,7 +537,7 @@ footer
 .pago{
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 5px;
 }
 
 .wh{
@@ -520,7 +558,178 @@ footer
 
 .fondo{
   background-color: var(--azul);
+  width:100%;
 }
+
+@media(min-width:480px){
+  .menu{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+  }
+
+
+  .red{
+  display:none;
+  }
+
+  .redes{
+  display: none;
+  }
+
+  .miCuenta{
+  display:none;
+  }
+
+  .fa-bars{
+    padding:10px;
+    width: 20px;
+    height:20px;
+    margin: 5px;
+    display: block;
+    font-size:  1.5em;
+  }
+
+  .buscar{
+    display:none;
+  }
+
+  .usuario{
+    display: none;
+  }
+
+
+
+.carrusel{
+  width: 50%;
+  display: flex;
+  padding: 5px;
+}
+.carrusel4{
+display: flex;
+  width: 80%;
+  margin:auto;
+  padding:5px;
+}
+
+.datos{
+  display:none;
+}
+
+.fa-user-shield{
+  display:none;
+}
+
+
+.seccion{
+  display: block;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-content: baseline;
+  align-items: baseline;
+}
+
+
+.enLinea{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  align-items: stretch;
+  padding: 5px;
+}
+
+
+}
+
+@media(min-width: 1280px){
+  .red{
+  display:flex;
+  }
+  .redes{
+  display: flex;
+}
+
+.buscar{
+  display: flex;
+}
+
+.miCuenta{
+  display:flex;
+}
+.menu{
+  display:none;
+}
+
+.usuario{
+  display: flex;
+}
+
+.usuario li a{
+  display:flex;
+}
+
+.flecha1{
+  display:flex;
+
+}
+
+.flecha2{
+  display:flex;
+}
+
+
+.flecha3{
+  display:flex;
+}
+.datos{
+  display:flex;
+  position: relative;
+  bottom:20px;
+}
+
+.fa-user-shield{
+  width:40px;
+  padding: 5px;
+  margin:5px;
+  font-size:1.5em;
+  display: flex;
+  position:relative;
+  right: 50px;
+  top:30px;
+
+}
+
+.pieCarrusel p{
+  font-size: 18px;
+  text-align:justify;
+  margin:5px;
+  padding:5px;
+}
+
+.seccion{
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content:space-around;
+  align-content: space-around;
+  align-items: center;
+}
+
+.enLinea{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+}
+
+
+
+
 
 /*-----------------ICONOS--------------------
 
