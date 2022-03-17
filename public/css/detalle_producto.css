@@ -12,16 +12,27 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-header {
-  background-color: beige;
-  height: 20vh;
-  border: solid 1px blue;
+body {
+  max-width: none;
+  background-color: var(--gris);
 }
 
-footer {
-  background-color: var(--gris);
-  height: 20vh;
-  border: solid 1px blue;
+header {
+  background-color: var(--beige);
+  width: 100%;
+}
+
+.amount {
+  position: relative;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-per-unit p {
+  position: relative;
 }
 
 .detalle_producto {
@@ -37,7 +48,7 @@ footer {
 
 .imagenes img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 20%;
   padding: 10px;
 }
 
@@ -72,7 +83,15 @@ footer {
   font-size: 20px;
 }
 
-button {
+.comprar {
+  padding: 1px;
+  font-size: 10px;
+  border-radius: 20px;
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-weight: bolder;
+  height: 50px;
+  padding: 5px;
 }
 
 @media (max-width: 450px) {
