@@ -4,32 +4,15 @@ Tiene por finalidad la creación de agendas totalmente personalizadas y confecci
 Asimismo, ofrece dentro de sus productos álbumes, planners, anotadores imantados y siempre estamos dispuestos a ampliar nuestros horizontes y responder a las necesidades de nuestros clientes.
 Este emprendimiento esta apuntado a aquellas personas que desean contar con una agenda que se ajuste perfectamente a sus necesidades y gustos, y a futuro esperamos poder seguir ampliando nuestro ofrecimiento para poder llegar a más personas y que todos puedan disfrutar de su Nefelibata.</p>
 
-<h3>Links de Inspiracion</h3>
-<p>
-https://www.clipscuadernos.com.ar/
-https://www.calubyrox.com.ar/
-https://www.zibba.com.ar/
-https://www.fineart.com.ar/cuadernos-personalizados/
-https://www.spectacles.com/uk/
-https://www.dafiti.com.ar/
-https://fexpress.mitiendanube.com/
-https://guolis.com.ar/home
-https://ratiocoffee.com/
-https://www.theteastory.co/
-https://www.skullcandy.com/
-https://www.theletterjsupply.com/
-</p>
 
 <h2>Sabrina Basoa</h2>
-
-<p>Vivo en la ciudad de Buenos Aires, Palermo, Argentina.
+<p style="text-align: justify">Vivo en la ciudad de Buenos Aires, Palermo, Argentina.
 Actualmente, soy empleada administrativa del Departamento de R.R.H.H de un hospital público de la ciudad de Buenos Aires.
 Realicé el curso de Análisis de datos que ofrece un programa de la Gobierno de la ciudad, "Mujeres en carrera Tic", un programa que implementaron por primera vez en agosto 2021 con una duración de seis meses y similar a "Codo a Codo". A partir de este curso que finalicé el 25/01/2022 decidí continuar con el mundo de la programación.
 El objetivo es aprender precisamanete programación y poco a poco poder introducirme en este mundo que desconocía y al descubrirlo me gustó mucho para dedicarme a esta profesión.</p>
 
 <h2>David Gil</h2>
-
-<p>Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
+<p style="text-align: justify">Soy de Barquisimeto Venezuela, viviendo actualmente en Santiago de Chile.
 Me titule como ingeniero electrónico, en programación tengo experiencia en lenguajes de bajo nivel como C y Ladder, estos son mis primeros pasos en lenguajes de alto nivel y programación web, me apasiona la tecnología y espero que al finalizar la cursada poder hacer cambio de carrea y entrar de lleno al mundo del desarrollo.
 </p>
 
@@ -39,4 +22,14 @@ Me titule como ingeniero electrónico, en programación tengo experiencia en len
 <h2>Mariano Uceda</h2>
 <p style="text-align: justify"> Estoy radicado en la Ciudad de Carlos Casares, dentro de la Provincia de Buenos Aires.
 Trabajo como Auxiliar Integral en el Banco Credicoop y adhisionalmente refacciono como hobby instrumentos de viento-madera. 
-Me quiero involucrar en el mundo de la programación porque tengo intensión de tener las bases para luego seguir adentrandome en el mundo de las blockchain que es, sin dudas, el futuro de mi actividad principal.</p>
+Me estoy involucrando en el mundo de la programación con la intensión de adquirir los conocimientos de base para posteriormente adentrandome en el mundo de las blockchain y la programación de los smart contract que es mi norte como objetivo personal.</p>
+
+<h3>Links de Inspiracion</h3>
+<ul>
+<li><p>https://www.clipscuadernos.com.ar/</p></li>
+<li><p>https://www.calubyrox.com.ar/</p></li>
+<li><p>https://www.zibba.com.ar/</p></li>
+</ul>
+
+<h3>Tablero de trabajo</h3>
+<p>https://trello.com/b/vonUxdBw/proyecto-integrador-grupo-8</p>
