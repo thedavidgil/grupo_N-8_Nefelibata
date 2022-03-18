@@ -15,17 +15,36 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--gris);
   margin: 0;
+  max-width: none;
+}
+
+header {
+  background-color: var(--beige);
+  width: 100%;
+}
+
+.detalle_filtros {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalle_filtros h3 {
+  font-size: 20px;
+  padding: 5px;
 }
 
 /*Main*/
 main {
   display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .productos {
   display: flex;
   flex-direction: column;
   flex-grow: 2;
+  margin-top: 50px;
 }
 
 .productos img {
@@ -38,10 +57,10 @@ main {
   padding: 25px;
   flex-direction: column;
   align-self: center;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  margin: 25px;
-  background-color: var(--gris);
-  transition: 1s;
+  margin: 20px;
+  transition: 0.5s;
+  border: solid 1px var(--blanco);
+  border-radius: 12px;
 }
 
 .titulo {
@@ -58,12 +77,12 @@ main {
   display: flex;
   justify-content: space-evenly;
 }
-.botones_productos div {
-  padding: 10px;
-  background-color: beige;
+.botones_productos button {
+  width: 100px;
+  height: 60px;
+  margin: 5px;
+  background-color: var(--beige);
   border-radius: 12px;
-  border: solid 1px var(--blanco);
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
   font-weight: bolder;
   color: #42464a;
 }
@@ -73,16 +92,17 @@ main {
 }
 
 .filtros {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
   padding: 10px;
-  background-color: beige;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  width: 500px;
 }
 
 /*Media Queries*/
 
 /*Telefono*/
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .filtros {
     display: none;
   }
@@ -101,10 +121,9 @@ main {
   .productos {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .detalle {
-    width: 500px;
+    width: 200px;
   }
   main {
     margin-left: 20%;
@@ -114,7 +133,7 @@ main {
   .botones_productos div {
     font-size: 10px;
     display: unset;
-    transition: 1s;
+    transition: 0.5s;
   }
 
   .detalle {
