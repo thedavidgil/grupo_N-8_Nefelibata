@@ -326,9 +326,8 @@ p {
 
 .producto1 {
   display: flex;
-  width: 80%;
-  height: 70%;
-  padding: 5px;
+  width: 90%;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: 10px 5px 5px var(--negro);
 }
@@ -588,6 +587,16 @@ footer .categorias {
     justify-content: flex-start;
     align-content: baseline;
     align-items: baseline;
+  }
+
+  .agenda {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
   }
 
   .enLinea {
