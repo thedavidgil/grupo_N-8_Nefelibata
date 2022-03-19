@@ -36,8 +36,6 @@ header {
 /*Main*/
 main {
   display: flex;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 
 .productos {
