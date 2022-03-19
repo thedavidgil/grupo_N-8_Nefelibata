@@ -524,7 +524,7 @@ footer .categorias {
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   .menu {
     display: flex;
     justify-content: center;
