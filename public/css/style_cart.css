@@ -21,7 +21,7 @@
   }
 
   img {
-      width: 25%;
+      width: 100%;
       border-radius: 10px;
   }
 
@@ -29,10 +29,12 @@
       background: none;
       border-style: none;
       margin: 0;
+      cursor: pointer;
   }
 
   a {
     text-decoration: none;
+    color: var(--negro);
   }
 
   .container{
@@ -51,6 +53,11 @@
 
 .main-header button{
     font-size: 22px;
+    transition: all 0.5s;
+    color: var(--negro);
+}
+.main-header button:hover{
+    color: #676d73;
 }
 
 .empty {
@@ -83,6 +90,19 @@
     position: relative;
     justify-content: right;
 }
+.name-product a{
+    color: var(--negro);
+    transition: all 0.5s;
+}
+.name-product a:hover{
+    color: #676d73;
+}
+
+.img-product {
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
 
 .amount {
     display: flex;
@@ -93,8 +113,13 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    bottom: 0;
+    bottom: 4.5px;
     left: 0;
+    font-weight: 800;
+    transition: all 0.5s;
+}
+.amount:hover{
+    border: solid 1px var(--beige);
 }
 
 .amount i {
@@ -107,6 +132,10 @@
     top: 0;
     right: 0;
     color: var(--beige);
+    transition: all 0.5s;
+}
+.delete i:hover{
+    color: #e7d9ca;
 }
 
 .price-per-unit p{
@@ -142,7 +171,6 @@
     align-items: center;
 }
 .cp button {
-    border: solid 1px var(--beige);
     border-radius: 50px;
     padding: 5px;
     font-size: 10px;
@@ -150,6 +178,10 @@
     text-transform: uppercase;
     display: flex;
     background-color: var(--beige);
+    transition: all 0.5s;
+}
+.cp button:hover{
+    background-color: #e7d9ca;
 }
 
 .cp p span {
@@ -171,14 +203,23 @@
 .cp-button input {
     border-radius: 8px 0 0 8px;
     padding-left: 5px;
+    border: solid 1px transparent;
+    transition: all 0.5s;
+}
+.cp-button input:hover{
+    border: solid 1px var(--beige);
 }
 
 .cp-button button {
     border-radius: 0 8px 8px 0;
-    border: solid 1px var(--beige);
+
     background-color: var(--beige);
     font-weight: 800;
     text-transform: uppercase;
+    transition: all 0.5s;
+}
+.cp-button button:hover{
+    background-color: #e7d9ca;
 }
 
 .cp-button div a {
@@ -187,10 +228,14 @@
 
 .unknow {
     margin-bottom: 15px;
-    font-weight: 600;
+
 }
 .unknow a {
     color: var(--beige);
+    transition: all 0.5s;
+}
+.unknow a:hover{
+    color: var(--negro);
 }
 
 
@@ -199,40 +244,46 @@
     width: 100%;
     margin: 15px auto;
     text-align: center;
-    border: solid 1px rgb(151, 5, 5);
+    border: solid 1px #d29b9a;
     border-radius: 8px;
-    color: rgb(151, 5, 5);
+    color: #d29b9a;
     padding: 5px;
 }
 
 .options-shipp-container i {
     color: var(--beige);
 }
-.option-shipp{
+
+.option-shipp label{
     width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--blanco);
-    box-shadow: 0px 0px 5px rgb(184, 184, 184);
+    box-shadow: 0px 0px 5px #adb2b6;
     margin: 5px 0 15px 0;
     border-radius: 8px;
-    transition: all 0.2s;
+    transition: all 0.5s infinity;
+    border: solid 2px transparent;
 }
-.option-shipp:active {
+/*.option-shipp label:active {
+    border: solid 2px var(--beige);
+}*/
+
+.option-shipp label input[type="radio"]:checked{
     border: solid 2px var(--beige);
 }
 
 .radio-container, .description-container, .price-continer {
     border-style: none;
     margin: 0;
-    
+    cursor: pointer;
 }
 
-.radio-container div, .price-continer div {
+.radio-container div, .description-container, .price-continer div {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90px;
+    height: 70px;
 }
 
 .radio-container {
@@ -241,14 +292,18 @@
 
 .description-container {
     width: 55%;
+    flex-wrap: wrap;
 }
 .description-container p{
-    padding-left: 10px;
-    margin-bottom: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-left: 15px;
 }
-
-.description-container a{
-    padding-left: 20px;
+.description-container span{
+    width: 100%;
+    padding-left: 15px;
+    font-size: 11px;
 }
 
 .price-continer {
@@ -258,6 +313,7 @@
 .price-continer span{
     font-weight: 800;
     color: var(--beige);
+    cursor: pointer;
 }
 
 .total {
@@ -282,12 +338,20 @@
     font-weight: 800;
     margin: 10px 0;
     width: 100%;
+    transition: all 0.5s;
+}
+.finish-order button:hover{
+    background-color: #e7d9ca;
 }
 
 .finish-order a {
-    color: var(--beige);
+    color: var(--negro);
     font-size: 14px;
     font-weight: 600;
     justify-content: center;
     padding-bottom: 15px;
+    transition: all 0.5s;
+}
+.finish-order a:hover{
+    color: var(--beige);
 }

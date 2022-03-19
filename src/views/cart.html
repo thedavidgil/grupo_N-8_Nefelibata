@@ -25,9 +25,9 @@
                     <div class="products-cart">
                         <article>
                             <div class="container-product">
-                                <img src="/image/producto_2.png">
+                                <a href="./products" class="img-product"><img src="/image/producto_2.png"></a>
                                 <div class="name-product">
-                                    <h4>Título del producto</h4>
+                                    <a href="./products"><h4>Título del producto</h4></a>
                                     <p>Descripción</p>
                                     <form action="#" method="post">
                                         <div class="delete">
@@ -48,9 +48,9 @@
                         </article>
                         <article>
                             <div class="container-product">
-                                <img src="/image/producto_1.png">
+                                <a href="./products" class="img-product"><img src="/image/producto_1.png"></a>
                                 <div class="name-product">
-                                    <h4>Título del producto</h4>
+                                    <a href="./products"><h4>Título del producto</h4></a>
                                     <p>Descripción</p>
                                     <form action="#" method="post">
                                         <div class="delete">
@@ -71,9 +71,9 @@
                         </article>
                         <article>
                             <div class="container-product">
-                                <img src="/image/producto_3.png">
+                                <a href="./products" class="img-product"><img src="/image/producto_3.png"></a>
                                 <div class="name-product">
-                                    <h4>Título del producto</h4>
+                                    <a href="./products"><h4>Título del producto</h4></a>
                                     <p>Descripción</p>
                                     <form action="#" method="post">
                                         <div class="delete">
@@ -124,54 +124,60 @@
                             <div class="options-shipp-container">
                                 <p><i class="fa-solid fa-truck"></i> Envío a domicilio</p>
                                 <div class="option-shipp">
+                                    <label for="shipp-home">
                                     <div class="radio-container">
                                         <div>
-                                            <input type="radio" name="ship" value="" id="">
+                                            <input type="radio" name="ship" value="" id="shipp-home">
                                         </div>
                                     </div>
                                     <div class="description-container">
-                                        <p>Correo - Envío a domicilio</p>
-                                        <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Info</a>
+                                        <p>Correo - Envío a domicilio</p><br>
+                                        <span><i class="fa-solid fa-clock-rotate-left"></i> Info</span>
                                     </div>                                    
                                     <div class="price-continer">
                                         <div>
                                             <span>$000,00</span>
                                         </div>
                                     </div>
+                                    </label>
                                 </div>
                                 <p><i class="fa-solid fa-location-dot"></i> Retirar por</p>
                                 <div class="option-shipp">
+                                    <label for="shipp-office">
                                     <div class="radio-container">
                                         <div>
-                                            <input type="radio" name="ship" value="" id="">
+                                            <input type="radio" name="ship" value="" id="shipp-office">
                                         </div>
                                     </div>
                                     <div class="description-container">
                                         <p>Punto de retiro</p>
-                                        <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Info</a>
-                                    </div>                                    
+                                        <span><i class="fa-solid fa-clock-rotate-left"></i> Info</span>
+                                    </div>   
                                     <div class="price-continer">
                                         <div>
                                             <span>$000,00</span>
                                         </div>
                                     </div>
+                                    </label>
                                 </div>
                                 <p><i class="fa-solid fa-store"></i> Nuestro local</p>
                                 <div class="option-shipp">
+                                    <label for="our-store">
                                     <div class="radio-container">
                                         <div>
-                                            <input class="radio-button" type="radio" name="ship" value="" id="">
+                                            <input type="radio" name="ship" value="" id="our-store">
                                         </div>
                                     </div>
                                     <div class="description-container">
                                         <p>Local</p>
-                                        <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Info</a>
+                                        <span></i> Schapira Nº 378 - Carlos Casares - Pcia. de Buenos Aires - Lunes a Viernes de 15:00 a 20:30 Hs.</span>
                                     </div>                                    
                                     <div class="price-continer">
                                         <div>
                                             <span>Gratis</span>
                                         </div>
                                     </div>
+                                    </label>
                                 </div>
                             </div>
                         </form>
