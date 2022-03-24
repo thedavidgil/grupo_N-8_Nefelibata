@@ -11,6 +11,7 @@ app.use(express.static(publicPath));
 app.listen(port, () => console.log(`Servidor en línea en puerto ${port}`));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/home.html')));
+app.get('/desarrollo', (req, res) => res.sendFile(path.join(__dirname, './views/hoja_de_desarrollo.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, './views/login.html')));
 app.get('/products', (req, res) => res.sendFile(path.join(__dirname, './views/products.html')));
