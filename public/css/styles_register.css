@@ -48,13 +48,11 @@
   font-size: 2em;
 }
 
-.menu {
-git  display: flex;
+.menu {display: flex;
   flex-direction: nowrap;
   justify-content: space-between;
   align-self: center;
 }
-
 .redes {
   display: flex;
   flex-direction: nowrap;
