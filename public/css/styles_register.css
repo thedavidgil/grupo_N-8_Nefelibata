@@ -49,7 +49,7 @@
 }
 
 .menu {
-  display: flex;
+git  display: flex;
   flex-direction: nowrap;
   justify-content: space-between;
   align-self: center;
