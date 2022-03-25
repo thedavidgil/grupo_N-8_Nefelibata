@@ -19,3 +19,4 @@ app.get('/cart', (req, res) => res.sendFile(path.join(__dirname, './views/cart.h
 app.get('/confirmation', (req, res) => res.sendFile(path.join(__dirname, './views/confirmation.html')));
 app.get('/recovery', (req, res) => res.sendFile(path.join(__dirname, './views/password_recovery.html')));
 app.get('/detalle_producto', (req, res) => res.sendFile(path.join(__dirname, './views/detalle_producto.html')));
+app.get('/crear_editar', (req, res) => res.sendFile(path.join(__dirname, './views/crear_editar.html')));
