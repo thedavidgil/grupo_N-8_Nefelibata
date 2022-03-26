@@ -22,7 +22,7 @@ body {
   background-color: var(--gris);
   color: var(--negro);
   margin: 0;
-  font-size:12px;
+  font-size: 12px;
   position: relative;
 }
 
@@ -39,7 +39,7 @@ header {
   color: var(--blanco);
 }
 
-#modal{
+#modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -49,11 +49,11 @@ header {
   font-size: 16px;
   transition: all 0.5s;
 }
-#modal .modal-container{
+#modal .modal-container {
   width: 80%;
   background-color: var(--beige);
 }
-#modal input{
+#modal input {
   display: none;
 }
 #modal .modal-header {
@@ -62,11 +62,11 @@ header {
   display: flex;
   position: relative;
 }
-#modal .modal-header label{
+#modal .modal-header label {
   position: absolute;
   right: 10px;
 }
-#modal .modal-header a{
+#modal .modal-header a {
   align-items: center;
   margin: 0;
   align-items: center;
@@ -76,7 +76,7 @@ header {
   font-size: 14px;
   color: var(--azul);
 }
-#modal .modal-footer{
+#modal .modal-footer {
   background-color: #d2b79a;
   display: flex;
   align-items: center;
@@ -85,9 +85,9 @@ header {
   box-shadow: 0px -1px 4px 0px var(--shadow);
 }
 .modal-footer a {
-  color: var(--negro)
+  color: var(--negro);
 }
-#product:target{
+#product:target {
   display: block;
 }
 .acordeon {
@@ -101,14 +101,14 @@ header {
   color: var(--negro);
   border-top: solid 1px var(--beige-hover);
 }
-.acordeon ul{
+.acordeon ul {
   display: none;
   background-color: #cbbbaa;
 }
-.acordeon ul li{
+.acordeon ul li {
   margin-left: 0px;
 }
-#modal-open{
+#modal-open {
   display: none;
 }
 #modal-open:checked ~ #modal {
@@ -129,102 +129,10 @@ header {
   color: var(--azul);
   transition: all 0.5s;
 }
-.row i:hover{
+.row i:hover {
   color: var(--azul-hover);
 }
 
-.login {
-  display: none;
-}
-
-/*.redes {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: center;
-}*/
-
-.burguer-menu, .login-cart {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-}
-.burguer-menu i, .cart, .login, .instagram, .facebook {
-  text-align: center;
-  font-size: 24px;
-}
-.cart p, .login p{
-  font-size: 14px;
-  display: none;
-}
-
-.principal-logo {
-  display: flex;
-}
-
-.principal-logo a {
-  text-align: center;
-  width: 100%;
-}
-.logo{
-  width: 80%;
-  max-width: 250px;
-  padding: 15px;
-}
-/*
-.fa-user {
-  height: 1em;
-  font-size: 1.5em;
-  display: flex;
-  flex-direction: column;
-}
-
-.fa-cart-shopping {
-   margin: 5px;
-  padding:5px;
-  width: 1em;
-  height: 1em;
-  font-size: 1.5em;
-  display: flex;
-  flex-direction: column;
-}*/
-
-.logo {
-  display: flex;
-  width: 50%;
-  margin: auto;
-  display: none;
-  border-top: solid 1px var(--beige-hover);
-}
-#navbar-dropdown {
-  padding: 10px 0;
-  margin: auto;
-  display: none;
-  font-size: 14px;
-  transition: all 0.5s;
-}
-#navbar-dropdown:target{
-  display: block;
-}
-
-.navbar ul, #navbar-dropdown ul {
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-}
-.navbar ul{
-  padding: 0 25%;
-}
-.navbar li{
-  width: 33%;
-  text-align: center;
-  justify-content: center;
-}
-.navbar li a {
-  font-size: 18px;
-  color: var(--negro);
-}
 /*---------->> FIN HEADER <<----------*/
 
 /*---------->> INICIO FOOTER <<----------*/
@@ -247,14 +155,14 @@ footer h2 {
   border-bottom: solid 1px var(--azul);
 }
 
-.main-footer, .payment {
+.main-footer,
+.payment {
   padding: 0 20px 20px 20px;
 }
 
 .payment img {
   width: 50px;
 }
-
 
 main .carrusel {
   display: flex;
@@ -426,123 +334,119 @@ footer h2 {
   border-bottom: solid 1px var(--azul);
 }
 
-.main-footer, .payment {
-  padding: 0 20px 20px 20px; 
+.main-footer,
+.payment {
+  padding: 0 20px 20px 20px;
 }
 
 .payment img {
   width: 50px;
 }
 
-contact
-.contact{
+contact .contact {
   display: flex;
-  font-size:18px;
+  font-size: 18px;
   margin-top: 0;
-  text-align:center;
-  padding:12px;
+  text-align: center;
+  padding: 12px;
 }
 
-.icono{
-  color:var(--negro);
-  font-size:14px;
-  }
-
-  .icono li a{
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    color: var(--negro);
+.icono {
+  color: var(--negro);
+  font-size: 14px;
 }
 
+.icono li a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: var(--negro);
+}
 
+.ci {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  text-align: center;
+  color: var(--warning);
+  font-size: 18px;
+  padding: 12px;
+  margin: 12px;
+}
 
-  .ci{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    align-self: flex-start;
-    text-align: center;
-    color: var(--warning);
-    font-size: 18px;
-    padding: 12px;
-    margin:12px;
-  }
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: space-around;
+  padding: 5px;
+  border-top: 5px;
+}
 
-  .box{
-    display: flex;
-    flex-direction:row;
-    justify-content:space-around;
-    align-content: space-around;
-    align-items: space-around;
-    padding: 5px;
-    border-top: 5px;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+}
 
-  .form{
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
-    align-self: flex-end;
-  }
+.formulario {
+  display: flex;
+  font-size: 16px;
+  color: var(--negro);
+  padding: 12px;
+  margin: 5px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
 
-  .formulario{
-    display:flex;
-    font-size: 16px;
-    color: var(--negro);
-    padding:12px;
-    margin: 5px;
-    width:100%;
-    flex-direction:column;
-    justify-content:center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-  }
+.formulario label {
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+}
 
-  .formulario label{
-    margin-bottom: 5px;
-    padding:5px;
-    font-size:16px;
-    width:100%;
-    font-weight: bold;
-    text-align:left;
-  }
+.formulario input {
+  color: var(--negro);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  background-color: var(--gris);
+}
 
-  .formulario input{
-    color: var(--negro);
-    border-radius: 5px;
-    font-size:16px;
-    width:100%;
-    background-color: var(--gris);
-  }
+.formulario textarea {
+  color: var(--negro);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  background-color: var(--gris);
+}
 
-  .formulario textarea{
-    color: var(--negro);
-    border-radius: 5px;
-    font-size:16px;
-    width:100%;
-    background-color: var(--gris);
-  }
-
-  .boton{
-    display:flex;
-    justify-content: center;
-    margin:5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width:97%;
-    font-size:18px;
-    color: var(--negro);
-    background-color: var(--beige);
-  }
-
-
+.boton {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 97%;
+  font-size: 18px;
+  color: var(--negro);
+  background-color: var(--beige);
+}
 
 @media (min-width: 480px) {
   .menu {
@@ -563,7 +467,7 @@ contact
   .miCuenta {
     display: none;
   }
-
+  /*
   .fa-bars {
     padding: 10px;
     width: 20px;
@@ -571,7 +475,7 @@ contact
     margin: 5px;
     display: block;
     font-size: 1.5em;
-  }
+  }*/
 
   .buscar {
     display: none;
@@ -633,18 +537,14 @@ contact
     flex-direction: column;
   }
 
-  contact
-  .icono li a{
+  contact .icono li a {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: auto;
   }
 }
-
-
-
 
 @media (min-width: 1280px) {
   .red {
@@ -725,17 +625,12 @@ contact
     padding: 5px;
   }
 
-  contact
-
-  .burguer-menu{
+  contact .burguer-menu {
     display: none;
   }
 }
 
-
-
-
-/*-----------------ICONOS--------------------
+/*-----------------CEMENTERIO DE ESTILOS--------------------
 
 Lupa
 <i class="fa-solid fa-magnifying-glass"></i>
@@ -824,4 +719,103 @@ Info
 
 Gift
 <i class="fa-solid fa-gift"></i>
-*/
+/*
+.login {
+  display: none;
+}*/
+
+/*.redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+}*/
+
+/*
+.login-cart {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.burguer-menu i,
+.cart,
+.logi,
+.instagram,
+.facebook {
+  text-align: center;
+  font-size: 24px;
+}
+.cart p,
+.login p {
+  font-size: 14px;
+  display: none;
+}
+
+.principal-logo {
+  display: flex;
+}
+
+.principal-logo a {
+  text-align: center;
+  width: 100%;
+}
+.logo {
+  width: 80%;
+  max-width: 250px;
+  padding: 15px;
+}
+
+.fa-user {
+  height: 1em;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-cart-shopping {
+  margin: 5px;
+  padding: 5px;
+  width: 1em;
+  height: 1em;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  display: none;
+  border-top: solid 1px var(--beige-hover);
+}
+#navbar-dropdown {
+  padding: 10px 0;
+  margin: auto;
+  display: none;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+#navbar-dropdown:target {
+  display: block;
+}
+
+.navbar ul,
+#navbar-dropdown ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul {
+  padding: 0 25%;
+}
+.navbar li {
+  width: 33%;
+  text-align: center;
+  justify-content: center;
+}
+.navbar li a {
+  font-size: 18px;
+  color: var(--negro);
+}*/
