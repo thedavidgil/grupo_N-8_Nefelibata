@@ -21,11 +21,11 @@ body {
   margin: 0;
   /*position: absolute;*/
 }
-
-header {
+/*
+ header {
   background-color: var(--beige);
   width: 100%;
-  /*padding: 10px;*/
+  padding: 10px;
 }
 
 .fa-instagram {
@@ -44,7 +44,7 @@ header {
   height: 50px;
   font-size: 2em;
   display: block;
-}
+}*/
 
 .fa-bars {
   padding: 10px;
@@ -62,12 +62,12 @@ header {
   align-self: center;
 }
 
-.redes {
+/*.redes {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-self: center;
-}
+}*/
 
 .descuento {
   display: flex;
@@ -102,7 +102,7 @@ header {
   flex-direction: column;
   padding: 5px;
 }
-
+/*
 .fa-user {
   height: 1em;
   font-size: 1.5em;
@@ -111,14 +111,14 @@ header {
 }
 
 .fa-cart-shopping {
-  /* margin: 5px;
-  padding:5px;*/
-  /*width: 1em;*/
+   margin: 5px;
+  padding:5px;
+  width: 1em;
   height: 1em;
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
-}
+}*/
 
 .logo {
   display: flex;
@@ -377,11 +377,11 @@ h4 {
   margin: 10px;
   color: var(--negro) bolder;
 }
-
+/*
 footer .categorias {
   display: flex;
   flex-direction: column;
-}
+}*/
 
 .categorias li a {
   color: black;
@@ -438,10 +438,11 @@ footer .categorias {
   text-align: left;
 }
 
+/*
 .fa-envelope {
   padding: 10px;
   text-align: left;
-}
+}*/
 
 .sociales {
   display: flex;
@@ -452,7 +453,7 @@ footer .categorias {
 .social {
   padding: 5px;
 }
-
+/*
 .fa-instagram {
   margin: 5px;
   padding: 5px;
@@ -469,7 +470,7 @@ footer .categorias {
   height: 50px;
   font-size: 2em;
   display: flex;
-}
+}*/
 
 .medios {
   padding: 5px;
@@ -515,6 +516,7 @@ footer .categorias {
   color: green;
 }
 
+/*
 .fa-whatsapp {
   margin: 5px;
   padding: 5px;
@@ -522,7 +524,7 @@ footer .categorias {
   height: 50px;
   font-size: 2em;
   display: flex;
-}
+}*/
 
 .fondo {
   background-color: var(--azul);
