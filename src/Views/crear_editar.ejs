@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="../css/crear_editar.css">
+    <title>Crear cuenta - Nefelibata</title>
+</head>
+<body>
+    
+    <%- include("./partials/header") %>
+
+    <main>
+
+        <div class="path">
+            <p>Inicio></p>
+            <p>Mi cuenta></p>
+            <p>Crear/Editar Producto</p>
+        </div>
+        
+        <p class="creating-account">CREAR/EDITAR PRODUCTO</p>
+
+        <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+ 
+
+        <form action="../views/confirmation.html" method="post" class="form1">
+            <div class="control-formulario">
+                <label for="Nombre_producto">Nombre de Prducto</label>
+                <input type="text" name="Nombre" id="Nombre_producto" placeholder="Ej. Agenda" required class="control">
+            </div>
+            <div class="control-formulario"> 
+                <label for="categoria">Categoria</label>
+                <select name="categoria" required>
+                  <option value="">Categoria 1</option>
+                  <option value="">Categoria 2</option>
+                  <option value="">Categoria 3</option>
+                  <option value="">Categoria 4</option>
+                </select>
+            </div>
+            <div class="control-formulario">     
+                    <label for="color">Color</label>
+                    <select name="color">
+                      <option value="#ff0000">Rojo</option>
+                      <option value="#00ff00">Verde</option>
+                      <option value="#0000ff">Azul</option>
+                      <option value="#770077">Morado</option>
+                    </select>
+                </div>
+                
+            <div class="control-formulario">    
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" required class="control">Detalle de Producto</textarea>
+            </div>
+
+            <div class="control-formulario">    
+                <label for="precio">Precio</label>
+                <input type="texto" name="precio" id="precio" required placeholder="$ 00.000" class="control">
+            </div>
+
+            <div class="control-formulario">
+                <label>Principales</label>
+                <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
+            </div>
+
+            <div class="control-formulario">
+                <label>Adicionales</label>
+                <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
+            </div>
+
+            <div class="button1">
+              <button type="submit">Crear/Editar</button>
+            </div>
+
+            <div class="button1">
+                <button type="reset">Reset</button>
+              </div>
+
+        </form>
+
+    </main>
+
+    <%- include("./partials/footer") %>
+  
+</body>
+</html>
