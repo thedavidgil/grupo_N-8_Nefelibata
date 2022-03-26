@@ -12,71 +12,95 @@
 </head>
 <body>
     <header>
-        <p class="descuento">10% Descuento en efectivo</p>
-
-        <div class="top">
-            <div class="redes">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="facebook-square"></i>
-            </div>
-
-            <img src="/image/logo-fondo_claro (sin_fondo).png" class="logo">
-
-            <nav>
-
-                <ul>
-                    <div class="cuenta">
-                        <div class="miCuenta">
-                            <i class="fa-solid fa-user"></i>
-                            <li><a href="#">Mi cuenta</a></li>
+        <div class="text-promotion">
+            <p><i class="fa-solid fa-heart"></i> 10% de descuento en efectivo <i class="fa-solid fa-heart"></i></p>
+        </div>
+        <section class="main-header">
+            <div class="row">
+                <div class="burguer-menu">
+                    <input type="radio" name="modal" id="modal-open">
+                    <label for="modal-open" class="burger-menu"><i class="fas fa-bars"></i></label>
+                    <div id="modal">
+                        <div class="modal-container">
+                            <div class="modal-header">
+                                <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
+                                <input type="radio" name="modal" id="modal-close">
+                                <label for="modal-close"><i class="fa-solid fa-circle-xmark"></i></label>
+                            </div>
+                            <div class="acordeon">
+                                <a href="/">Inicio</a></li>
+                                <a href="#product">Productos</a>
+                                    <ul id="product">
+                                        <li><a href="#"><strong>Todos los productos</strong></a></li>
+                                        <li><a href="#">Agendas</a></li>
+                                        <li><a href="#">Cuadernillos</a></li>
+                                        <li><a href="#">Cuadernos</a></li>
+                                        <li><a href="#">Anotadores</a></li>
+                                        <li><a href="#">Álbumes</a></li>
+                                        <li><a href="#">Planner</a></li>
+                                        <li><a href="#">Imantados</a></li>
+                                        <li><a href="#">Libretas</a></li>
+                                        <li><a href="#">Otros</a></li>
+                                    </ul>
+                                <a href="/contacto.html">Contacto</a>
+                            </div>
+                            <div class="modal-footer">
+                                <i class="fa-solid fa-user"></i>
+                                <a href="/register">Crear cuenta</a>
+                                <a href="/login">Iniciar sesión</a>
+                            </div>
                         </div>
-
-                        <label for="search-bar"></label>
-                        <div>
-                            <input type="text" name="search" placeholder="¿Qué estás buscando?">
-                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-
-                        <div class="carrito">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <li><a href="">Mi carrito</a></li>
-                        </div>
-
                     </div>
-                </ul>
-
-
-
-        </div>
-        <div class="menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-
-
-        <ul>
-            <div class="usuario">
-                <div class="flecha1">
-                    <li><a href="">Inicio</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
-
-                <div class="flecha2">
-                    <li><a href="">Productos</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
+                <div class="redes">
+                    <div class="instagram">
+                        <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <br>
+                    </div>
+                    <div class="facebook">
+                        <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
+                        <br>
+                    </div>
                 </div>
-
-                <div class="flecha3">
-                    <li><a href="">Contacto</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
+                <div class="principal-logo">
+                    <a href="#"><img src="/image/logo_sin_fondo.png" class="logo"></a>
+                </div>
+                <div class="login-cart">
+                    <div class="login">
+                        <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <p>Mi Cuenta</p>
+                    </div>
+                    <div class="cart">
+                        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <p>Mi Carrito</p>
+                        <span class="cart-widget"></span>
+                    </div>
                 </div>
             </div>
-        </ul>
-
-        </nav>
-
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#navbar-dropdown">Productos <i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav id="navbar-dropdown">
+                <ul>
+                    <li><a href="#">Agendas</a></li>
+                    <li><a href="#">Cuadernillos</a></li>
+                    <li><a href="#">Cuadernos</a></li>
+                    <li><a href="#">Anotadores</a></li>
+                    <li><a href="#">Álbumes</a></li>
+                    <li><a href="#">Planner</a></li>
+                    <li><a href="#">Imantados</a></li>
+                    <li><a href="#">Libretas</a></li>
+                    <li><a href="#">Otros</a></li>
+                    <li><a href="#">Todos</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
-
     <main>
 
             <div class="box">
@@ -87,7 +111,7 @@
     </div>
 
        <div class="icono">
-        <i class="fa-brands fa-whatsapp"></i>
+        <li><a href="https://api.whatsapp.com/send/?phone=542395424929&text&app_absent=0" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-whatsapp"></i> +54 2395 42 4929</a></li>
     </div>
 </div>
 
@@ -120,57 +144,30 @@
     </main>
 
     <footer>
-
-        <div class="fondo">
-            <div class="enLinea">
-
-                <div class="categorias">
-                    <h4>Categorias:</h4>
+        <div class="main-footer">
+            <div class="category">
+                <h2>Categorías</h2>
                     <ul>
-                        <div class="columna">
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Productos</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </div>
-                </div>
-
-                </ul>
-
-                <div class="contacto">
-                    <h4>Contactame:</h4>
-                    <div class="comunicacion">
-                        <i class="fa-solid fa-phone"></i>
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                </div>
-
-                <div class="social">
-                    <h4>Nos vemos por acá:</h4>
-                    <div class="sociales">
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook-square"></i>
-                    </div>
-                </div>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/products">Productos</a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                    </ul>
             </div>
-
-            <div class="medios">
-                <h4>Medios de pago:</h4>
-                <div class="pago">
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-solid fa-money-bill-1"></i>
-                </div>
+            <div class="contact">
+                <h2>Querés contactarnos?</h2>
+                <ul>
+                    <li><a href="https://api.whatsapp.com/send/?phone=542395424929&text&app_absent=0" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-whatsapp"></i> +54 2395 42 4929</a></li>
+                    <li><a href="mailto:quierominefelibata@gmail.com?Subject=Quiero%20mi%20Nefelibata%20" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-envelope"></i> quierominefelibata@gmail.com</a></li>
+                    <li><a href="https://www.google.com.ar/maps/place/Schapira+378,+Carlos+Casares,+Provincia+de+Buenos+Aires/@-35.6133172,-61.3621189,17z/data=!3m1!4b1!4m5!3m4!1s0x95c082384c94d26f:0xf8034bbd4431b8cd!8m2!3d-35.6133216!4d-61.3599302" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-location-dot"></i> Av Schapira 378 (Carlos Casares, BSAS)</a></li>
+                </ul>  
             </div>
-
-            <div class="ayuda">
-                <h4>Ayuda:</h4>
-                <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <div class="wh">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-
+        </div>
+        <div class="payment">
+            <h2>Medios de pago</h2>
+                <img src="/image/efectivo_1.png" alt="">
+                <img src="/image/transferencia.png" alt="">
+                <img src="/image/cuentadni.png" alt="">
+                <img src="/image/mercadopago.png" alt="">
         </div>
     </footer>
 </body>

@@ -154,7 +154,7 @@ header {
 }
 
 .redes {
-    display: none;
+    display: flex;
 }
 
 .burguer-menu, .login-cart {
