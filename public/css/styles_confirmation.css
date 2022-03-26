@@ -1,22 +1,22 @@
 :root {
-    --negro: #42464a;
-    --blanco: #ffffff;
-    --azul: #92a0a3;
-    --beige: #e2d0bd;
-    --gris: #e7e7e7;
-  }
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Josefin Sans", sans-serif;
-    background-color:var(--gris);
-    margin: 0;
-  }
+  --negro: #42464a;
+  --blanco: #ffffff;
+  --azul: #92a0a3;
+  --beige: #e2d0bd;
+  --gris: #e7e7e7;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--gris);
+  margin: 0;
+}
+/*
   header
   {background-color:var(--beige);}
 
@@ -104,9 +104,9 @@
   }
   
   .fa-cart-shopping {
-    /* margin: 5px;
-    padding:5px;*/
-    /*width: 1em;*/
+     margin: 5px;
+    padding:5px;
+    width: 1em;
     height: 1em;
     font-size: 1.5em;
     display: flex;
@@ -160,105 +160,120 @@
     color: var(--gris);
     border-radius: 5px 0 0 5px;
     padding-left: 10px;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  .cuenta li a {
-    color: black;
-    padding-top: 5px;
-    display: block;
-    font-size: 18px;
-  }
-  
-  .top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .usuario {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
-    padding: 20px;
-    margin: 20px;
-    margin-top: 20px;
-  }
-  
-  .usuario li a {
-    color: black;
-    padding: 5px;
-    text-align: center;
-    margin-right: 5px;
-    font-size: 16px;
-    font-size: 20px;
-    color: var(--negro) bolder;
-  }
-  
-  .flecha1 {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .flecha2 {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .flecha3 {
-    display: flex;
-    flex-direction: row;
-  }
+  }*/
 
-main{}
-
-.path{display:flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 16px;
-    padding-top: 20px;
-    color: var(--negro);
+a {
+  text-decoration: none;
 }
 
-.path p {padding:0 5px 0 0;}
+ul {
+  list-style-type: none;
+}
 
-.creating-account{font-size: 25px;
+.cuenta li a {
+  color: black;
+  padding-top: 5px;
+  display: block;
+  font-size: 18px;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.usuario {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 20px;
+}
+
+.usuario li a {
+  color: black;
+  padding: 5px;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 16px;
+  font-size: 20px;
+  color: var(--negro) bolder;
+}
+
+.flecha1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flecha2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flecha3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.path {
+  display: flex;
+  justify-content: center;
   font-weight: bold;
-    text-align: center;
-    padding-top:30px;
+  font-size: 16px;
+  padding-top: 20px;
+  color: var(--negro);
 }
 
-.text-benefit{text-align: center;
-padding-top:10px;
-padding-bottom: 40px;}
+.path p {
+  padding: 0 5px 0 0;
+}
 
-  .confirmation{
-    background-color: var(--gris);
-    margin:10%;
-text-align: center;
-font-size: 18px;}
+.creating-account {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+}
 
-.confirmation p{padding:10px 0px}
+.text-benefit {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
 
-.confirmation p i{font-size: 40px;}
+.confirmation {
+  background-color: var(--gris);
+  margin: 10%;
+  text-align: center;
+  font-size: 18px;
+}
 
-.confirmationp1 {font-size: 22px;
-    font-weight: bold;}
+.confirmation p {
+  padding: 10px 0px;
+}
 
-.resending{text-align: center;}
+.confirmation p i {
+  font-size: 40px;
+}
 
-.resending a{font-weight: bold;}
+.confirmationp1 {
+  font-size: 22px;
+  font-weight: bold;
+}
 
+.resending {
+  text-align: center;
+}
+
+.resending a {
+  font-weight: bold;
+}
+/*
 footer{ margin-top: 50px;}
 
 
@@ -309,7 +324,7 @@ footer .categorias {
 
 /*.contacto{
   padding: 5px;
-}*/
+}
 
 .comunicacion {
   display: flex;
@@ -412,4 +427,4 @@ footer .categorias {
 
 .fondo {
   background-color: var(--azul);
-}
+}*/
