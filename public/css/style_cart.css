@@ -1,9 +1,13 @@
 :root {
     --negro: #42464a;
+    --negro-hover: #676d73;
     --blanco: #ffffff;
     --azul: #92a0a3;
     --beige: #e2d0bd;
+    --beige-hover: #e7d9ca;
     --gris: #e7e7e7;
+    --warning: #d29b9a;
+    --shadow: #adb2b6;
   }
   * {
     margin: 0px;
@@ -17,7 +21,7 @@
     background-color: var(--gris);
     margin: 0;
     max-width: 768px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   img {
@@ -57,7 +61,7 @@
     color: var(--negro);
 }
 .main-header button:hover{
-    color: #676d73;
+    color: var(--negro-hover);
 }
 
 .empty {
@@ -95,7 +99,7 @@
     transition: all 0.5s;
 }
 .name-product a:hover{
-    color: #676d73;
+    color: var(--negro-hover);
 }
 
 .img-product {
@@ -135,7 +139,7 @@
     transition: all 0.5s;
 }
 .delete i:hover{
-    color: #e7d9ca;
+    color: var(--beige-hover);
 }
 
 .price-per-unit p{
@@ -181,7 +185,7 @@
     transition: all 0.5s;
 }
 .cp button:hover{
-    background-color: #e7d9ca;
+    background-color: var(--beige-hover);
 }
 
 .cp p span {
@@ -219,7 +223,7 @@
     transition: all 0.5s;
 }
 .cp-button button:hover{
-    background-color: #e7d9ca;
+    background-color: var(--beige-hover);
 }
 
 .cp-button div a {
@@ -244,9 +248,9 @@
     width: 100%;
     margin: 15px auto;
     text-align: center;
-    border: solid 1px #d29b9a;
+    border: solid 1px var(--warning);
     border-radius: 8px;
-    color: #d29b9a;
+    color: var(--warning);
     padding: 5px;
 }
 
@@ -259,7 +263,7 @@
     display: flex;
     align-items: center;
     background-color: var(--blanco);
-    box-shadow: 0px 0px 5px #adb2b6;
+    box-shadow: 0px 0px 5px var(--shadow);
     margin: 5px 0 15px 0;
     border-radius: 8px;
     transition: all 0.5s infinity;
@@ -341,7 +345,7 @@
     transition: all 0.5s;
 }
 .finish-order button:hover{
-    background-color: #e7d9ca;
+    background-color: var(--beige-hover);
 }
 
 .finish-order a {

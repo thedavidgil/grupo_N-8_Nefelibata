@@ -1,9 +1,13 @@
 :root {
   --negro: #42464a;
+  --negro-hoover: #676d73;
   --blanco: #ffffff;
   --azul: #92a0a3;
   --beige: #e2d0bd;
+  --beige-hoover: #e7d9ca;
   --gris: #e7e7e7;
+  --warning: #d29b9a;
+  --shadow: #adb2b6;
 }
 * {
   margin: 0px;
@@ -15,13 +19,17 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--gris);
   margin: 0;
+<<<<<<< HEAD
   position: relative;
+=======
+  /*position: absolute;*/
+>>>>>>> 98b5bf0a9096362af469a4e69dc75438f59ed259
 }
 
 header {
   background-color: var(--beige);
   width: 100%;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .fa-instagram {
@@ -118,14 +126,14 @@ header {
 
 .logo {
   display: flex;
-  width: 300px;
+  width: 50%;
   margin: auto;
   flex-direction: row;
   justify-content: center;
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 20px;
+  /*padding: 20px;*/
 }
 
 .search-bar button {
@@ -185,7 +193,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .usuario {
@@ -195,7 +203,7 @@ ul {
   align-self: center;
   padding: 20px;
   margin: 20px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .usuario li a {
@@ -524,6 +532,7 @@ footer .categorias {
   width: 100%;
 }
 
+<<<<<<< HEAD
 CONTACT
 
 .contact{
@@ -642,6 +651,9 @@ CONTACT
 
 
 @media (max-width: 480px) {
+=======
+@media (min-width: 480px) {
+>>>>>>> 98b5bf0a9096362af469a4e69dc75438f59ed259
   .menu {
     display: flex;
     justify-content: center;
@@ -828,6 +840,9 @@ cuadrado <i class="fa-solid fa-square-dollar"></i>
 
 Tarjeta de crédito
 <i class="fa-solid fa-credit-card"></i>
+
+Transferencia bancaria
+}<i class="fa-solid fa-money-bill-transfer"></i>
 
 Facebook
 circulo <i class="fa-brands fa-facebook"></i>

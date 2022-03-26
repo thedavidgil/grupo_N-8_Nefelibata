@@ -11,6 +11,7 @@ app.use(express.static(publicPath));
 app.listen(port, () => console.log(`Servidor en línea en puerto ${port}`));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/home.html')));
+app.get('/desarrollo', (req, res) => res.sendFile(path.join(__dirname, './views/hoja_de_desarrollo.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, './views/login.html')));
 app.get('/products', (req, res) => res.sendFile(path.join(__dirname, './views/products.html')));
@@ -19,3 +20,4 @@ app.get('/cart', (req, res) => res.sendFile(path.join(__dirname, './views/cart.h
 app.get('/confirmation', (req, res) => res.sendFile(path.join(__dirname, './views/confirmation.html')));
 app.get('/recovery', (req, res) => res.sendFile(path.join(__dirname, './views/password_recovery.html')));
 app.get('/detalle_producto', (req, res) => res.sendFile(path.join(__dirname, './views/detalle_producto.html')));
+app.get('/crear_editar', (req, res) => res.sendFile(path.join(__dirname, './views/crear_editar.html')));
