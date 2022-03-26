@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="../css/styles_login.css">
+    <title>Iniciar sesión - Nefelitaba</title>
+</head>
+<body>
+    
+    <%- include("./partials/header") %>
+    
+    <main>
+        <div class="path">
+            <p>Inicio></p>
+            <p>Mi cuenta></p>
+            <p>Login</p>
+        </div>
+        
+        <p class="creating-account">INICIÁ SESIÓN</p>
+
+    
+         <div class="socialnetwork">
+         <button type="submit">Iniciá sesión con <i class="fa-brands fa-facebook-square"></i>
+            FACEBOOK</button>
+        </div>
+
+
+        <form action="../views/confirmation.html" method="post" class="form1">
+            <div class="control-formulario"> 
+                <label for="email">Email</label>
+                <input type="email" name="Email" id="email" placeholder="Minombre@mail.com" required class="control">
+            </div>
+            <div class="control-formulario">    
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Máximo 10 carácteres" required class="control">
+                <p class="tenescuenta"><a href="http://localhost:5000/recovery">¿Olvidaste tu contraseña</a></p>
+            </div>
+            <div class="button1">
+              <button type="submit">Iniciar sesión</button>
+            </div>
+        </form>
+
+        <p class="tenescuenta">¿No tenés cuenta aún?<a href="http://localhost:5000/register">Crear cuenta</a></p>
+
+    </main>
+    
+    <%- include("./partials/footer") %> 
+</body>
+</html>

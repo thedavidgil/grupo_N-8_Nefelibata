@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Contacto - Nefelibata</title>
+</head>
+<body>
+
+    <%- include("./partials/header") %>
+
+    <main>
+
+            <div class="box">
+
+                <div class="ci">
+        <div class="contact">
+        <h2>Contacto</h2>
+    </div>
+
+       <div class="icono">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+</div>
+
+
+
+        <form action="#" method="POST">
+            <div class="form">
+            <div class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="Nombre" id= "nombre" placeholder="Nombre" size="30" maxlength="10" requerid>
+            </div>
+            <div class="formulario">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id= "email" placeholder="Ingrese su E-mail" required>
+            </div>
+            <div class="formulario">
+            <label for="tel">Teléfono:</label>
+            <input name="tel" type="tel" placeholder="Ingrese su número sin guiones" maxlength="10">
+            </div>
+            <div class="formulario">
+            <label for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" id="mensaje" cols="50" rows="10" placeholder="El mensaje">Dejanos tu mensaje</textarea>
+            </div>
+
+            <input type="submit" value="Enviar" class="boton">
+
+        </div>
+        </form>
+    </div>
+    </main>
+
+  <%- include("./partials/footer") %>
+</body>
+</html>
