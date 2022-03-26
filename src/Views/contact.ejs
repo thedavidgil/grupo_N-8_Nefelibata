@@ -1,81 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Nefelibata</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <%- include("./partials/head") %>
     <link rel="stylesheet" href="../css/styles.css">
+    <title>Contacto - Nefelibata</title>
 </head>
 <body>
-    <header>
-        <p class="descuento">10% Descuento en efectivo</p>
 
-        <div class="top">
-            <div class="redes">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="facebook-square"></i>
-            </div>
-
-            <img src="/image/logo-fondo_claro (sin_fondo).png" class="logo">
-
-            <nav>
-
-                <ul>
-                    <div class="cuenta">
-                        <div class="miCuenta">
-                            <i class="fa-solid fa-user"></i>
-                            <li><a href="#">Mi cuenta</a></li>
-                        </div>
-
-                        <label for="search-bar"></label>
-                        <div>
-                            <input type="text" name="search" placeholder="¿Qué estás buscando?">
-                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-
-                        <div class="carrito">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <li><a href="">Mi carrito</a></li>
-                        </div>
-
-                    </div>
-                </ul>
-
-
-
-        </div>
-        <div class="menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-
-
-        <ul>
-            <div class="usuario">
-                <div class="flecha1">
-                    <li><a href="">Inicio</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-
-                <div class="flecha2">
-                    <li><a href="">Productos</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-
-                <div class="flecha3">
-                    <li><a href="">Contacto</a></li>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
-        </ul>
-
-        </nav>
-
-    </header>
+    <%- include("./partials/header") %>
 
     <main>
 
@@ -119,59 +51,6 @@
     </div>
     </main>
 
-    <footer>
-
-        <div class="fondo">
-            <div class="enLinea">
-
-                <div class="categorias">
-                    <h4>Categorias:</h4>
-                    <ul>
-                        <div class="columna">
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Productos</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </div>
-                </div>
-
-                </ul>
-
-                <div class="contacto">
-                    <h4>Contactame:</h4>
-                    <div class="comunicacion">
-                        <i class="fa-solid fa-phone"></i>
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                </div>
-
-                <div class="social">
-                    <h4>Nos vemos por acá:</h4>
-                    <div class="sociales">
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook-square"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="medios">
-                <h4>Medios de pago:</h4>
-                <div class="pago">
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-solid fa-money-bill-1"></i>
-                </div>
-            </div>
-
-            <div class="ayuda">
-                <h4>Ayuda:</h4>
-                <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <div class="wh">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-
-        </div>
-    </footer>
+  <%- include("./partials/footer") %>
 </body>
 </html>
