@@ -403,13 +403,15 @@ contacto
   align-content: flex-end;
   align-items: flex-end;
   align-self: flex-end;
+  position: relative;
+  bottom:30px;
 }
 
 .formulario {
   display: flex;
   font-size: 16px;
   color: var(--negro);
-  padding: 12px;
+  padding: 10px;
   margin: 5px;
   width: 100%;
   flex-direction: column;
@@ -435,6 +437,7 @@ contacto
   font-size: 16px;
   width: 100%;
   background-color: var(--gris);
+  transition: all 450ms;
 }
 
 .formulario textarea {
@@ -546,7 +549,7 @@ contacto
     flex-direction: column;
   }
 
-  .ci {
+  /*.ci {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -567,8 +570,23 @@ contacto
     position:relative;
     padding: 5px;
     margin: 5px;
+  }*/
+
+  .icono li a {
+    position:relative;
+    right: 145px;
+  }
+
+  .contact{
+    padding-bottom:20px;
+  }
+
+  .formulario input:hover{
+    border: radius 5%;
+    background-color: var(--warning);
   }
 }
+
 
 @media (min-width: 1280px) {
   .red {
@@ -672,7 +690,8 @@ contacto
   align-content: center;
   text-align: center;
   align-items: center;
-  position:absolute;
+  position:relative;
+  left: 20px;
 }
 
   .contact {
@@ -681,14 +700,15 @@ contacto
     text-align: left;
   }
 
-  .ci, .form{
+
+  /*.ci, .form{
     display: flex;
     flex-wrap:wrap;
     padding:5px;
     margin:10px;
-  }
+  }*/
 
-  .form {
+  /*.form {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -697,6 +717,11 @@ contacto
     align-self: flex-end;
     padding-top: 0;
     margin-top: 0;
+  }*/
+
+  .form{
+    position: relative;
+    bottom:110px;
   }
 
   /*.formulario {
@@ -747,6 +772,11 @@ contacto
     align-content:flex-end;
     align-self: flex-end;
     text-align: left;
+  }
+
+  .formulario input:hover{
+    border: radius 5%;
+    background-color: var(--warning);
   }
 
   .formulario textarea {
