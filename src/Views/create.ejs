@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include("./partials/head") %>
-    <link rel="stylesheet" href="../css/crear_editar.css">
+    <link rel="stylesheet" href="../css/create_edit.css">
     <title>Crear cuenta - Nefelibata</title>
 </head>
 <body>
@@ -10,14 +10,8 @@
     <%- include("./partials/header") %>
 
     <main>
-
-        <div class="path">
-            <p>Inicio></p>
-            <p>Mi cuenta></p>
-            <p>Crear/Editar Producto</p>
-        </div>
         
-        <p class="creating-account">CREAR/EDITAR PRODUCTO</p>
+        <p class="creating-account">CREAR PRODUCTO</p>
 
         <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
  
@@ -57,22 +51,24 @@
             </div>
 
             <div class="control-formulario">
-                <label>Principales</label>
+                <label>Imagenes Principales</label>
                 <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
             </div>
 
             <div class="control-formulario">
-                <label>Adicionales</label>
+                <label>Imagenes Adicionales</label>
                 <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
             </div>
 
-            <div class="button1">
-              <button type="submit">Crear/Editar</button>
-            </div>
+            <div class="responsivebuttons">
+             <div class="button1">
+               <button type="submit">Crear</button>
+             </div>
 
-            <div class="button1">
+             <div class="button1">
                 <button type="reset">Reset</button>
-              </div>
+             </div>
+            </div>
 
         </form>
 

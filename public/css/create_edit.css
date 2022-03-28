@@ -1,0 +1,73 @@
+:root {
+    --negro: #42464a;
+    --blanco: #ffffff;
+    --azul: #92a0a3;
+    --beige: #e2d0bd;
+    --gris: #e7e7e7;
+  }
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color:var(--gris);
+    margin: 0;
+  }
+
+
+main{}
+
+  
+
+
+.creating-account{font-size: 25px;
+  font-weight: bold;
+    text-align: center;
+    padding-top:30px;
+}
+
+.text-benefit{text-align: center;
+padding-top:10px;
+padding-bottom: 40px;}
+
+
+
+  .form1{ margin-top: 30px;
+margin: auto;
+width: 100%;
+max-width: 1200px;
+padding-bottom: 50px;}
+
+  .control-formulario {
+margin-bottom: 15px;
+margin-left: 20px;
+margin-right: 20px;}
+
+.control{width:100%;
+padding: 8px 8px;
+border-radius: 5px;}
+
+.control-formulario label{margin-bottom: 5px;
+  margin-left: 15px;
+font-weight: bold;
+display:block}
+
+.button1{padding-top: 10px;
+text-align:center;
+margin: auto;}
+
+.button1 button{background-color:var(--negro);
+    padding: 10px 120px;
+border-radius: 10px;
+font-weight: bolder;
+color: var(--blanco);
+}
+
+@media (min-width: 1280px) {
+  .responsivebuttons {
+    display: flex;
+  }
+}
