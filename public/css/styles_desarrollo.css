@@ -234,23 +234,23 @@ header {
   color: var(--negro);
 }
 
-.header-background{
+.header-background {
   height: 175px;
   background-color: var(--beige);
 }
 
-.whatsapp{
+.whatsapp {
   position: fixed;
   bottom: 12px;
   right: 12px;
   padding: 12px;
   border-radius: 100px;
   background-color: var(--whatsapp);
-  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
   z-index: 150;
 }
 
-.whatsapp i{
+.whatsapp i {
   font-size: 30px;
   vertical-align: middle;
   color: var(--blanco);
@@ -278,7 +278,8 @@ footer h2 {
   border-bottom: solid 1px var(--azul);
 }
 
-.main-footer, .payment {
+.main-footer,
+.payment {
   padding: 0 20px 20px 20px;
 }
 
@@ -324,7 +325,7 @@ footer h2 {
     justify-content: space-around;
   }
   .category,
-  .contact {
+  .contacto {
     width: 50%;
     padding: 20px 40px;
   }
@@ -334,7 +335,7 @@ footer h2 {
   .payment img {
     width: 70px;
   }
-  .header-background{
+  .header-background {
     height: 220px;
   }
 }
