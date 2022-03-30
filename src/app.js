@@ -32,6 +32,8 @@ const confirmationRoutes =require("./routes/confirmationRoutes");
 const recoveryRoutes = require("./routes/recoveryRoutes");
 const detailRoutes = require("./routes/detailRoutes");
 const contactRoutes  =require("./routes/contactRoutes");
+const createRoutes  =require("./routes/createRoutes");
+const editRoutes  =require("./routes/editRoutes");
 app.use('/',homeRoutes);
 app.use('/register', registerRoutes);
 app.use('/login', loginRoutes);
@@ -41,4 +43,6 @@ app.use('/confirmation',confirmationRoutes);
 app.use('/recovery',recoveryRoutes);
 app.use('/detail',detailRoutes);
 app.use('/contact',contactRoutes);
+app.use('/create',createRoutes);
+app.use('/edit',editRoutes);
 
