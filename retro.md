@@ -13,3 +13,27 @@
 <li><p style="text-align: justify">4. Como experiencia en este sprint, es fundamental la organización de los tiempos, es por ello que creemos necesario un mejor aprovechamiento desde el inicio para luego no pasar apuros al momento de hacer efectivas las entregas.</p></li>
 <li><p style="text-align: justify">5. Otro gran aprendizaje en este proceso es no dudar de nuestras aptitudes y compromiso a la hora de encarar las consignas, ya que como grupo nos exponenciamos a fin de lograr todo lo que nos propongamos.</p></li>
 </ul>
+
+
+<h1>Retrospectiva SPRINT 3</h1>
+<ul>
+<li><h2>1. Comenzar a hacer.</h2></li>
+<li><h2>2. Hacer más.</h2></li>
+<li><h2>3. Continuar haciendo.</h2></li>
+<li><h2>4. Hacer menos.</h2></li>
+<li><h2>5. Dejar de hacer.</h2></li>
+</ul>
+
+<ul>
+ <li><p style="text-align: justify">1-Como equipo comenzamos a trabajar en los objetivos propuestos desde el primer momento, poniendo mano casi sin temor y siendo un trabajo positivo para todos</p></li>
+
+ <li><p style="text-align: justify">2- Profundizar más en los temas vistos y que vamos trabajando</p></li>
+
+ <li><p style="text-align: justify">3- Continuar tabajando en las vistas, para ir mejorandolas. Debemos continuar creciendo como grupo</p></li>
+
+ <li><p style="text-align: justify">4-  Consideramos que debemos siempre hacer más y no menos. Siempre podemos hacer un poco más</p></li>
+
+ <li><p style="text-align: justify">5- Continuar confiando en nosostros mismos, nuestras capacidades personales y como grupo. No dudar de nosostros</p></li>
+ </ul>
+
+
