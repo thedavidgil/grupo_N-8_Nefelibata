@@ -11,37 +11,38 @@
     
     <main>
         <div class="path">
-            <p>Inicio></p>
-            <p>Mi cuenta></p>
+            <p>Inicio ></p>
+            <p>Mi Cuenta ></p>
             <p>Login</p>
         </div>
         
         <p class="creating-account">INICIÁ SESIÓN</p>
 
     
-         <div class="socialnetwork">
-         <button type="submit">Iniciá sesión con <i class="fa-brands fa-facebook-square"></i>
-            FACEBOOK</button>
-        </div>
-
-
+        
+        
         <form action="../views/confirmation.html" method="post" class="form1">
             <div class="control-formulario"> 
                 <label for="email">Email</label>
-                <input type="email" name="Email" id="email" placeholder="Minombre@mail.com" required class="control">
+                <input type="email" name="Email" id="email" placeholder="minombre@mail.com" required class="control">
             </div>
             <div class="control-formulario">    
                 <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Máximo 10 carácteres" required class="control">
-                <p class="tenescuenta"><a href="http://localhost:5000/recovery">¿Olvidaste tu contraseña</a></p>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Máximo 10 carácteres" required class="control"><br>
+                <p class="tenescuenta"><a href="passwordRecovery.ejs">¿Olvidaste tu contraseña?</a></p>
             </div>
             <div class="button1">
               <button type="submit">Iniciar sesión</button>
             </div>
         </form>
 
-        <p class="tenescuenta">¿No tenés cuenta aún?<a href="http://localhost:5000/register">Crear cuenta</a></p>
-
+        <p class="tenescuenta">¿No tenés cuenta aún?<a href="./register.ejs"> Crear cuenta</a></p>
+        
+        <div class="socialnetwork">
+        <button type="submit">Iniciá sesión con <i class="fa-brands fa-facebook-square"></i>
+           FACEBOOK</button>
+        </div>
+        
     </main>
     
     <%- include("./partials/footer") %> 

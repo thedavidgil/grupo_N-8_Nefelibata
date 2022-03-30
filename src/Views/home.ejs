@@ -12,28 +12,64 @@
         
         <main>
             <!--CARRUSEL-->
-
-            <div class="carrusel">
-                <i class="fa-solid fa-circle-chevron-left"></i>
-                <img src="/image/producto_4.png" class="carrusel4">
-                <i class="fa-solid fa-circle-chevron-right"></i>
+            <div class="main-container-carrusel">
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <div class="slide first">
+                            <img src="/image/plantilla_1.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/image/plantilla_2.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/image/plantilla_3.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/image/plantilla_4.png" alt="">
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                    </div>
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    var counter = 1;
+                    setInterval(function(){
+                        document.getElementById('radio' + counter).checked = true; counter++;
+                        if(counter > 4){
+                            counter = 1;
+                        }
+                    }, 5000);
+                </script>
             </div>
-
             <div class="pieCarrusel">
                 <div class="envio">
-                    <p><i class="fa-solid fa-dolly"></i>Envíos gratis a partir de $ X</p>
+                    <p><i class="fa-solid fa-dolly"></i>Envíos gratis a partir de $xxx,xx</p>
                 </div>
 
                 <div class="porcentaje">
-                    <p><i class="fa-solid fa-percent"></i>$10% de descuento pagando en efectivo</p>
+                    <p><i class="fa-solid fa-percent"></i>10% de descuento pagando en efectivo</p>
                 </div>
 
                 <div class="datos">
                     <p><i class="fa-solid fa-user-shield"></i>Todos tus datos están protegidos</p>
                 </div>
             </div>
-
-            <h4>Productos</h4>
+            
+            <h4>Destacados</h4>
 
             <section>
                 <div class="seccion">
