@@ -1,18 +1,28 @@
-//Inicializar Servidor
+// ************ Require's ************
 const express = require("express");
-const app = express();
 const path = require("path");
-const port = process.env.PORT || 5000;
+const methodOverride =  require('method-override'); 
 
-//habilitar carpeta publica
+
+// ************ express() ************
+const app = express();
+
+
+// ************ Middlewares ************
 const publicPath = path.join(__dirname, '../', 'public');
 app.use(express.static(publicPath));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
-//habilitar motor de vistas
+
+// ************ Template Engine ************
 app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.set('views', path.join(__dirname, '/views'));
 
-//levantar servidor
+
+// ************ Levantar servidor ************
+const port = process.env.PORT || 5000;
 app.listen(port, err =>{
 
   if(err){
@@ -22,27 +32,16 @@ app.listen(port, err =>{
 
 }) ;
 
-//rutas
-const homeRoutes = require("./routes/homeRoutes");
-const registerRoutes = require("./routes/registerRoutes");
-const loginRoutes = require("./routes/loginRoutes");
-const productsRoutes =  require("./routes/productsRoutes");
-const cartRoutes = require("./routes/cartRoutes");
-const confirmationRoutes =require("./routes/confirmationRoutes");
-const recoveryRoutes = require("./routes/recoveryRoutes");
-const detailRoutes = require("./routes/detailRoutes");
-const contactRoutes  =require("./routes/contactRoutes");
-const createRoutes  =require("./routes/createRoutes");
-const editRoutes  =require("./routes/editRoutes");
-app.use('/',homeRoutes);
-app.use('/register', registerRoutes);
-app.use('/login', loginRoutes);
-app.use('/products', productsRoutes);
-app.use('/cart',cartRoutes);
-app.use('/confirmation',confirmationRoutes);
-app.use('/recovery',recoveryRoutes);
-app.use('/detail',detailRoutes);
-app.use('/contact',contactRoutes);
-app.use('/create',createRoutes);
-app.use('/edit',editRoutes);
+
+// ************ Route System require and use() ************
+const mainRouter = require("./routes/main");
+const productsRoutes = require("./routes/products");
+const usersRoutes = require("./routes/users");
+
+app.use('/',mainRouter);
+app.use("/products", productsRoutes);
+app.use("/users", usersRoutes);
+
+
+
 
