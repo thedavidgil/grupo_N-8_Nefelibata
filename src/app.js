@@ -1,7 +1,7 @@
 // ************ Require's ************
 const express = require("express");
 const path = require("path");
-const methodOverride =  require('method-override'); 
+//const methodOverride = require('method-override');
 
 
 // ************ express() ************
@@ -13,7 +13,11 @@ const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(methodOverride('_method'));
+//app.use(methodOverride('_method'));
+
+app.use((req, res, next) => {
+  res.status(404).render('not-found')
+});
 
 
 // ************ Template Engine ************
