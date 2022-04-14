@@ -25,7 +25,7 @@ router.get("/create",productsController.create);
 
 
 /**EDIT ONE PRODUCT */
-router.get("/edit",productsController.edit);
+router.get("/edit/:id",productsController.edit);//Formulario de edicion de productos
 
 
 module.exports = router;

@@ -1,3 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../dataBase/productsDataBasePrueba.json');
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+
+
 const controller ={
 
   index:(req,res) =>{
@@ -17,7 +26,9 @@ const controller ={
   },
 
   edit:(req,res) =>{
-    res.render("./products/edit")
+    const id = req.params.id;
+		const product = products.find(product => product.id == id);
+    res.render("./products/edit",{product});
   }
 
 }

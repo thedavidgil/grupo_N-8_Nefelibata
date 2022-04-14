@@ -9,7 +9,7 @@ const app = express();
 
 
 // ************ Middlewares ************
-const publicPath = path.join(__dirname, '../', 'public');
+const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
