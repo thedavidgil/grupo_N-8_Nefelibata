@@ -1,6 +1,15 @@
+const fs = require("fs"); //Sabrina
+const path = require("path");//Sabrina
+
+const productsFilePath = path.join(__dirname, "../dataBase/productsDataBasePrueba.json"); //Sabrina
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); //Sabrina
+
 const controller = {
 
   index:(req,res) => {
+    //const destacados = products.filter(product => product.category == "destacados");// Sabrina filtra los productos destacados
+
+		//return res.render("./main/home", { destacados }); //Sabrina
     res.render("./main/home")
   },
 

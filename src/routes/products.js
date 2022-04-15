@@ -9,23 +9,25 @@ const productsController = require('../controller/productsController');
 
 
 /*** GET ALL PRODUCTS ***/ 
-router.get("/",productsController.index);
+router.get("/",productsController.index);//muestra la vista de index
 
 
 /** CART **/
 router.get("/cart",productsController.cart);
 
 
-/*** GET ONE PRODUCT ***/ 
-router.get("/detail",productsController.detail);
+/*** GET ONE PRODUCT ***/
+router.get("/detail",productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
 
 
 /** CREATE ONE PRODUCT */
-router.get("/create",productsController.create);
+router.get("/create",productsController.create); //para ver una vista
+router.post("/", upload.single("image"), productsController.store); //sabrina -recibe la información del formulario y debe hacer algo. procesa la info del formulario y la deberia guardar en la BD. como crea un nuevo producto se usa POST
 
 
 /**EDIT ONE PRODUCT */
-router.get("/edit/:id",productsController.edit);//Formulario de edicion de productos
+router.get("/edit/:id",productsController.edit);// Similar a crear. Ruta que muestra el formulario de edicion de productos
+router.put("/edit/:id", productsController.update); //sabrina. La ruta que procesa la información que llega del formulario. Acá se modifica un dato
 
 
 module.exports = router;
