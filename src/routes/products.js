@@ -46,4 +46,5 @@ router.get("/edit/:id", productsController.edit);// Similar a crear. Ruta que mu
 router.put("/edit/:id", productsController.update); //sabrina. La ruta que procesa la información que llega del formulario. Acá se modifica un dato
 
 
+
 module.exports = router;
