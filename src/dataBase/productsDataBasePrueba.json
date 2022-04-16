@@ -37,6 +37,6 @@
     "category": "Categoria 4",
     "color": "Amarillo",
     "price": "$400  ",
-    "show": false
+    "show": true
   }
 ]

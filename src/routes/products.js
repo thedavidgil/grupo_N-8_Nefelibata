@@ -47,5 +47,7 @@ router.post("/", upload.single("image"), productsController.store); //sabrina - 
 router.get("/edit/:id", productsController.edit);// Similar a crear. Ruta que muestra el formulario de edicion de productos
 router.put("/edit/:id", productsController.update); //sabrina. La ruta que procesa la información que llega del formulario. Acá se modifica un dato
 
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/delete/:id', productsController.destroy);
 
 module.exports = router;
