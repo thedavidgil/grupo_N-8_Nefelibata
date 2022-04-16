@@ -7,6 +7,11 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 return products.filter(product=>product.show);
 }// leer BD actualizada y solo mostrar los productos no eliminados.
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina
+
+
+
+
 const controller ={
 
   index:(req,res) =>{
@@ -43,8 +48,10 @@ const controller ={
     const id = req.params.id;
     let products = readBD();
 		const product = products.find(product => product.id == id);
-    res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita)
+    res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita). carga los productos, los envia al json
   },
+
+
 
 update: (req, res) => {
   const id = req.params.id;
