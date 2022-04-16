@@ -4,6 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../dataBase/productsDataBasePrueba.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina
+
 
 
 
@@ -41,7 +43,7 @@ const controller ={
   edit:(req,res) =>{
     const id = req.params.id;
 		const product = products.find(product => product.id == id);
-    res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita)
+    res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita). carga los productos, los envia al json
   }
 
 }
