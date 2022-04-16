@@ -10,6 +10,8 @@ const multer = require("multer");
 const productsController = require('../controller/productsController');
 
 
+/*** GET ALL PRODUCTS ***/ 
+router.get("/",productsController.index);
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.resolve(__dirname, "../../public/image"))
@@ -45,6 +47,8 @@ router.post("/", upload.single("image"), productsController.store); //sabrina - 
 router.get("/edit/:id", productsController.edit);// Similar a crear. Ruta que muestra el formulario de edicion de productos
 router.put("/edit/:id", productsController.update); //sabrina. La ruta que procesa la información que llega del formulario. Acá se modifica un dato
 
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/delete/:id', productsController.destroy);
 
 
 module.exports = router;

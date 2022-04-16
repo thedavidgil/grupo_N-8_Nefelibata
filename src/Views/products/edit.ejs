@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include("../partials/head",{title: "Editando:" + product.name}) %>
+    <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/create_edit.css">
         <title>Crear cuenta - Nefelibata</title>
 </head>
@@ -15,9 +15,7 @@
 
             <p class="creating-account">EDITAR PRODUCTO</p>
 
-            <p class="text-benefit">Estas editando: <i>
-                    <%= product.name %>
-                </i></p>
+            <p class="text-benefit">Estas editando: <i><%= product.name %></i></p>
 
             <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form1">
                 <div class="control-formulario">
@@ -59,6 +57,8 @@
                     <input type="texto" name="price" id="price" required value="$<%= product.price %> " class="control">
                 </div>
 
+        </form>
+        
                 <div class="control-formulario">
                     <label>Imagenes Principales</label>
                     <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
@@ -80,6 +80,9 @@
 
                 </div>
 
+            </form>
+            <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST"class="button1">
+                <button type="submit">ELIMINAR</button>
             </form>
 
         </main>
