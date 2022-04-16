@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-
 const productsFilePath = path.join(__dirname, '../dataBase/productsDataBasePrueba.json');
+
+function readBD(){
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
-
+return products.filter(product=>product.show);
+}// leer BD actualizada y solo mostrar los productos no eliminados.
 
 const controller ={
 
@@ -26,6 +26,7 @@ const controller ={
   },
 
 	store: (req, res) => {
+    let products = readBD();
 		const productoNuevo = {
 			id: products.length > 0 ? products[ products.length - 1 ].id + 1 : 1,
 			...req.body,
@@ -40,14 +41,14 @@ const controller ={
 
   edit:(req,res) =>{
     const id = req.params.id;
+    let products = readBD();
 		const product = products.find(product => product.id == id);
     res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita)
-  }
-
-}
+  },
 
 update: (req, res) => {
   const id = req.params.id;
+  let products = readBD();
   products = products.map(product => {
     if(product.id == id){
       product.name = req.body.name,
@@ -62,7 +63,23 @@ update: (req, res) => {
   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
       return res.redirect("/products");// aca se edita el producto
-}, //sabrina
+},
+
+destroy: (req,res) =>{
+
+  const id = req.params.id;
+  let products  = readBD();
+  products = products.map(product =>{
+    if(product.id == id){
+      product.show = false
+    }
+    return product;
+  }) 
+  fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2));
+  return res.redirect("/");
+
+} 
+} 
 
 
 module.exports = controller;
