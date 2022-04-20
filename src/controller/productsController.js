@@ -15,7 +15,8 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sa
 const controller ={
 
   index:(req,res) =>{
-    return res.render("products", { products, toThousand}); //Sabrina. Muestra todos los productos
+    const products = readBD();
+    return res.render("./products/products", { products, toThousand}); //Sabrina. Muestra todos los productos
   },
 
   cart:(req,res) => {
