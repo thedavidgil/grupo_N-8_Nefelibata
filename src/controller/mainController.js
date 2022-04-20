@@ -12,7 +12,7 @@ const controller = {
     const destacados = products.filter(product => product.category == "destacados");// Sabrina filtra los productos destacados
 
 		return res.render("/", { destacados, toThousand }); //Sabrina
-    //res.render("./main/home")
+
   },
 
   contact:(req,res) => {
