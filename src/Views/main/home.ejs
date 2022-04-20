@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include("./partials/head") %>
+        <%- include("../partials/head") %>
         <link rel="stylesheet" href="../css/styles.css">
         <title>Nefelibata</title>
     </head>
 
     <body>
         
-        <%- include("./partials/header") %>
+        <%- include("../partials/header") %>
         
         <main>
             <!--CARRUSEL-->
@@ -71,12 +71,34 @@
                     <p>Todos tus datos están protegidos</p>
                 </div>
             </div>
+<<<<<<< HEAD:src/Views/home.ejs
             
             <!-- destacados -->
             <div class="products-wrapper">
                 <div class="product-row">
                     <div class="col-12">
                         <h2 class="products-title">Destacados</h2>
+=======
+
+            <h4>Destacados</h4>
+
+            <section>
+                <div class="seccion">
+
+                    <div class="agenda">
+                        <% destacados.forEach(product =>{ %> <!--sabrina-->
+                        <article>
+                            <a href="/products/detail/<%= product.id %>"> <!--Sabrina. Agregué esta ancla porque es un link que al hacer clik me lleva a mi pagina de detalle de producto. La ruta de esta pagina se componia por /product/detail/:id del producto que quiero mostrar. Si no es util se quita-->
+                            <img src="/image/producto_1/<%= product.image %>" class="producto1"> <!--Sabrina-->
+                            <div class="color">
+                                <p><%= product.name %></p> <!--Sabrina-->
+                                <p><%= product.description %></p> <!--sabrina-->
+                                <p><%= product.discount > 0 ? toThousand ((product.price * ((100 - product.discount)/100))) : toThousand (product.price) %></p> <!--Sabrina-->
+                                <% if(product.discount > 0){ %> <!--Sabrina. Si no tiene descuento no se muestra-->
+                            </div>
+                        </article>
+                    <% }) %>
+>>>>>>> c8f2c40fd7fd030bfa8b2b97bafbbc9e33e202c4:src/Views/main/home.ejs
                     </div>
                     <% outstanding.forEach( product => { %>
                         <div class="col-12 col-sm-6 col-lg-3">
@@ -140,7 +162,7 @@
 
         </main>
 
-        <%- include("./partials/footer") %> 
+        <%- include("../partials/footer") %> 
     </body>
 
 </html>

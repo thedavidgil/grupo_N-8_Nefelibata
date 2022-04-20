@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Producto 1",
+    "description": "esta es la desrcipcion del producto 1",
+    "image": "producto_1.png",
+    "category": "Categoria 1",
+    "color": "Rojo",
+    "price": "100 ",
+    "show": true
+  },
+  {
+    "id": 2,
+    "name": "Producto 2",
+    "description": "esta es la desrcipcion del producto 2",
+    "image": "producto_2.png",
+    "category": "Categoria 2",
+    "color": "Verde",
+    "price": "200 ",
+    "show": true
+  },
+  {
+    "id": 3,
+    "name": "Producto 3",
+    "description": "esta es la desrcipcion del producto 3",
+    "image": "producto_3.png",
+    "category": "Categoria 3",
+    "color": "Azul",
+    "price": "300 ",
+    "show": true
+  },
+  {
+    "id": 4,
+    "name": "Producto 4 ",
+    "description": "esta es la desrcipcion del producto 4 ",
+    "image": "default-image.png",
+    "category": "Categoria 4",
+    "color": "Amarillo",
+    "price": "$400  ",
+    "show": true
+  }
+]

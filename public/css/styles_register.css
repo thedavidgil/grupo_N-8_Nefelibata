@@ -47,10 +47,9 @@ main{}
 }
 
 .form1 {
-  margin:auto;
-  width: 100%;
-  max-width: 1200px;
-  padding-top: 30px;
+  width: 60%;
+  margin: auto;
+  padding: 20px 0 5px 0;
 }
 
 .control-formulario {
@@ -98,11 +97,11 @@ main{}
 }
 
 .button1 button {
-  background-color: var(--negro);
+  background-color: var(--beige);
   padding: 10px 120px;
   border-radius: 10px;
   font-weight: bolder;
-  color: var(--blanco);
+  color: var(--negro);
 }
 .tenescuenta {
   text-align: center;
