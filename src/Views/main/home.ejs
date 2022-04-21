@@ -83,10 +83,10 @@
             <h4>Destacados</h4>
 
             <section>
-                <div class="seccion">
+                <div class="seccion"> <!--Sabrina. Como tiene que ser dinamico, tomo el producto y repetir el codigo tantas veces con categoria destacado  tengas-->
 
+                    <% destacados.forEach( product =>{ %> <!--sabrina. forEach ejecuta la función una vez por cada elemento del array. Encapsula codigo ya que se pasa una funcion al codigo-->
                     <div class="agenda">
-                        <% destacados.forEach(product =>{ %> <!--sabrina-->
                         <article>
                             <a href="/products/detail/<%= product.id %>"> <!--Sabrina. Agregué esta ancla porque es un link que al hacer clik me lleva a mi pagina de detalle de producto. La ruta de esta pagina se componia por /product/detail/:id del producto que quiero mostrar. Si no es util se quita-->
                             <img src="/image/producto_1/<%= product.image %>" class="producto1"> <!--Sabrina-->
@@ -94,12 +94,13 @@
                                 <p><%= product.name %></p> <!--Sabrina-->
                                 <p><%= product.description %></p> <!--sabrina-->
                                 <p><%= product.discount > 0 ? toThousand ((product.price * ((100 - product.discount)/100))) : toThousand (product.price) %></p> <!--Sabrina-->
-                                <% if(product.discount > 0){ %> <!--Sabrina. Si no tiene descuento no se muestra-->
+                                <% if(product.discount > 0){ %> <!--Sabrina. Si no tiene descuento no se muestra, pero funcionaria con span...-->
                             </div>
                         </article>
+                    </div>
                     <% }) %>
 >>>>>>> c8f2c40fd7fd030bfa8b2b97bafbbc9e33e202c4:src/Views/main/home.ejs
-                    </div>
+
                     <% outstanding.forEach( product => { %>
                         <div class="col-12 col-sm-6 col-lg-3">
                             <section class="product-box">

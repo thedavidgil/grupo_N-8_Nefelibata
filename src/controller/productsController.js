@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../dataBase/productsDataBasePrueba.json');
+const productsFilePath = path.join(__dirname, '../dataBase/productsDataBasePrueba.json');//Sabrina. Crea la ruta al archivo de la base de datos
 
 function readBD(){
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //Sabrina. Lee el archivo y al mismo tiempo lo trasnforma de jason a un dato que sirva y sea manipulable para js
 return products.filter(product=>product.show);
 }// leer BD actualizada y solo mostrar los productos no eliminados.
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina. El replace funciona en los strings
 
 
 
@@ -47,7 +47,7 @@ const controller ={
   edit:(req,res) =>{
     const id = req.params.id;
     let products = readBD();
-		const product = products.find(product => product.id == id);
+		const product = products.find(product => product.id == id); //es la busqueda de un producto por medio de su id
     res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita). carga los productos, los envia al json
   },
 
@@ -69,7 +69,7 @@ update: (req, res) => {
   });
   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)) //el null, 2 es para que al ingresar un producto en el json se mantenga el formato
 
-      return res.redirect("/products");// aca se edita el producto
+      return res.redirect("/products");// aca se edita el producto al ser redirigido
 },
 
 destroy: (req,res) =>{

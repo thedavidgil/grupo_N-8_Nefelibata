@@ -43,7 +43,7 @@ const productsRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 
 app.use('/',mainRouter);
-app.use("/products", productsRoutes);
+app.use("/products", productsRoutes);//todas las rutas que empiecen con products usan el enrutador productsRoutes que es products.js
 app.use("/users", usersRoutes);
 
 

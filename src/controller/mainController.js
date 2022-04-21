@@ -11,7 +11,7 @@ const controller = {
   home:(req,res) => {
     const destacados = products.filter(product => product.category == "destacados");// Sabrina filtra los productos destacados
 
-		return res.render("/", { destacados, toThousand }); //Sabrina
+		return res.render("./main/home", { destacados, toThousand }); //Sabrina. El render recibe el objeto literal , en su segundo parámetro con todas las variables que necesita
 
   },
 
