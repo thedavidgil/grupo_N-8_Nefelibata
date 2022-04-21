@@ -11,7 +11,7 @@ const productsController = require('../controller/productsController');
 
 
 /*** GET ALL PRODUCTS ***/ 
-router.get("/",productsController.index);
+router.get("/",productsController.home);
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.resolve(__dirname, "../../public/image"))
@@ -27,7 +27,7 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL PRODUCTS ***/
-router.get("/", productsController.index);//muestra la vista de index
+router.get("/", productsController.home);//muestra la vista de index
 
 
 /** CART **/

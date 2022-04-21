@@ -8,11 +8,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sa
 
 const controller = {
 
-  index:(req,res) => {
+  home:(req,res) => {
     const destacados = products.filter(product => product.category == "destacados");// Sabrina filtra los productos destacados
 
 		return res.render("./main/home", { destacados, toThousand }); //Sabrina
-    //res.render("./main/home")
+
   },
 
   contact:(req,res) => {

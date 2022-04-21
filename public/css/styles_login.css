@@ -29,14 +29,14 @@ main {
   padding: 10px 0 40px 0;
 }
 
-a {
+main a {
   text-decoration: none;
   font-weight: bolder;
   color: var(--beige);
   transition: all 0.5s;
 }
 
-a:hover{
+main a:hover{
   color: var(--beige-hover);
 }
 

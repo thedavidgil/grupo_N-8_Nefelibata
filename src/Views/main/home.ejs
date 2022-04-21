@@ -20,16 +20,16 @@
                         <input type="radio" name="radio-btn" id="radio3">
                         <input type="radio" name="radio-btn" id="radio4">
                         <div class="slide first">
-                            <img src="/image/plantilla_1.png" alt="">
+                            <img src="/images/plantilla_1.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="/image/plantilla_2.png" alt="">
+                            <img src="/images/plantilla_2.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="/image/plantilla_3.png" alt="">
+                            <img src="/images/plantilla_3.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="/image/plantilla_4.png" alt="">
+                            <img src="/images/plantilla_4.png" alt="">
                         </div>
                         <div class="navigation-auto">
                             <div class="auto-btn1"></div>
@@ -57,17 +57,28 @@
             </div>
             <div class="pieCarrusel">
                 <div class="envio">
-                    <p><i class="fa-solid fa-dolly"></i>Envíos gratis a partir de $xxx,xx</p>
+                    <i class="fa-solid fa-dolly"></i>
+                    <p>Envíos gratis a partir de $xxx,xx</p>
                 </div>
 
                 <div class="porcentaje">
-                    <p><i class="fa-solid fa-percent"></i>10% de descuento pagando en efectivo</p>
+                    <i class="fa-solid fa-percent"></i>
+                    <p>10% de descuento pagando en efectivo</p>
                 </div>
 
                 <div class="datos">
-                    <p><i class="fa-solid fa-user-shield"></i>Todos tus datos están protegidos</p>
+                    <i class="fa-solid fa-user-shield"></i>
+                    <p>Todos tus datos están protegidos</p>
                 </div>
             </div>
+<<<<<<< HEAD:src/Views/home.ejs
+            
+            <!-- destacados -->
+            <div class="products-wrapper">
+                <div class="product-row">
+                    <div class="col-12">
+                        <h2 class="products-title">Destacados</h2>
+=======
 
             <h4>Destacados</h4>
 
@@ -87,8 +98,34 @@
                             </div>
                         </article>
                     <% }) %>
+>>>>>>> c8f2c40fd7fd030bfa8b2b97bafbbc9e33e202c4:src/Views/main/home.ejs
                     </div>
-
+                    <% outstanding.forEach( product => { %>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/detail/<%= product.id %>">
+                                    <figure class="product-box_image">
+                                        <img src="/images/<%= product.image %>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2><%= product.name %></h2>
+                                        <span><%= product.price %></span>
+                                    </article>
+                                    <div class="product-button">
+                                        <form>
+                                            <button type="submit" class="buy-buttom">Comprar</button>
+                                        </form>
+                                        <form>
+                                            <button type="submit" class="view-buttom">Ver</button>
+                                        </form>
+                                    </div>
+                                </a>
+                            </section>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+<!--
                     <div class="agenda">
                         <article>
                             <img src="/image/producto_2.png" class="producto2">
@@ -120,9 +157,8 @@
                                 <p>$Precio:</p>
                             </div>
                         </article>
-                    </div>
-                </div>
-            </section>
+                    </div> -->
+
 
         </main>
 

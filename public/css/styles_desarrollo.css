@@ -45,7 +45,7 @@ ul {
 /*---------->> INICIO HEADER <<----------*/
 header {
   background-color: transparent;
-  background-image: url("/image/background-header.png");
+  background-image: url("/images/background-header.png");
   position: fixed;
   width: 100%;
   height: auto;
@@ -141,16 +141,16 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
-.row {
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.row i {
+.header-row i {
   color: var(--azul);
   transition: all 0.5s;
 }
-.row i:hover {
+.header-row i:hover {
   color: var(--azul-hover);
 }
 
@@ -261,7 +261,7 @@ header {
 /*---------->> INICIO FOOTER <<----------*/
 footer {
   background-color: transparent;
-  background-image: url("/image/background-footer_3.png");
+  background-image: url("/images/background-footer_3.png");
 }
 
 footer a {
@@ -291,7 +291,7 @@ footer h2 {
 /*---------->> INICIO MEDIA QUERY <<----------*/
 
 @media (min-width: 768px) {
-  .row {
+  .header-row {
     padding: 0 50px;
     max-width: 1100px;
     margin: auto;
