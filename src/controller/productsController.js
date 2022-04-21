@@ -22,12 +22,18 @@ const controller ={
     res.render("./products/cart")
   },
 
-  detail:(req,res) => {
-    res.render("./products/detail") //vista detalle de producto, debe mostrar todo
-  },
+  detail:(req,res) => { //Sabrina
+    const id = req.params.id;
+		const products = readDBFiltered();
+		const product = products.find(product => product.id == id);
+		return res.render("detail", { product, toThousand });
+	},
+    //res.render("./products/detail") //vista detalle de producto, debe mostrar todo
 
-  create:(req,res) =>{
-    res.render("./products/create")
+
+  create:(req,res) =>{//Sabrina
+    return res.render("create");
+    //res.render("./products/create")
   },
 
 	store: (req, res) => {
