@@ -70,13 +70,8 @@ const controller = {
     });
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)) //el null, 2 es para que al ingresar un producto en el json se mantenga el formato
 
-<<<<<<< HEAD
     return res.redirect("/products");// aca se edita el producto
   },
-=======
-      return res.redirect("/products");// aca se edita el producto al ser redirigido
-},
->>>>>>> feb5d6858997de6775363d34a7b537a48f0dd9c9
 
   destroy: (req,res) => {
     const id = req.params.id;
