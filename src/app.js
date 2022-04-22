@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-//app.use((req, res, next) => {
-  //res.status(404).render('not-found')
-//});//sabrina
+app.use((req, res, next) => {
+  res.status(404).render("¡Caramba! Esta página no se encuentra")
+});//sabrina
 
 
 // ************ Template Engine ************
