@@ -5,13 +5,9 @@ const path = require("path");
 const multer = require("multer");
 
 
-
 // ************ Controller Require ************
 const productsController = require('../controller/productsController');
 
-
-/*** GET ALL PRODUCTS ***/ 
-router.get("/",productsController.home);
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.resolve(__dirname, "../../public/image"))
@@ -25,17 +21,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 
-
 /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.home);//muestra la vista de index
 
 
-/** CART **/
-router.get("/cart", productsController.cart);
-
-
 /*** GET ONE PRODUCT ***/
-router.get("/detail", productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
+router.get('/:id/', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
 
 
 /** CREATE ONE PRODUCT */
