@@ -1,11 +1,11 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const path = require("path");
 
 // ************ Controller Require ************
-const mainController = require('../controller/mainController');
+const cartController = require('../controller/cartController');
 
-router.get('/', mainController.home); 
-router.get("/contact", mainController.contact);
+router.get("/", cartController.cart);
 
 module.exports = router;

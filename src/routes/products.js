@@ -5,13 +5,9 @@ const path = require("path");
 const multer = require("multer");
 
 
-
 // ************ Controller Require ************
 const productsController = require('../controller/productsController');
 
-
-/*** GET ALL PRODUCTS ***/ 
-router.get("/",productsController.home);
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.resolve(__dirname, "../../public/image"))
@@ -25,26 +21,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 
-
 /*** GET ALL PRODUCTS ***/
-router.get("/", productsController.home);//muestra la vista de index
-
-
-/** CART **/
-router.get("/cart", productsController.cart);
+router.get("/", productsController.home);//muestra la vista principal que es home. Apunta a / que es products. productsController (el archivo) retorna la vista de home
 
 
 /*** GET ONE PRODUCT ***/
-router.get("/detail", productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
+router.get('/:id/', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
 
 
 /** CREATE ONE PRODUCT */
-router.get("/create", productsController.create); //para ver una vista
+router.get("/create", productsController.create); //muestra el formulario de creacion de un producto. para ver una vista
 router.post("/", upload.single("image"), productsController.store); //sabrina - Middleware de Multer. Recibe la información del formulario y debe hacer algo. procesa la info del formulario y la deberia guardar en la BD. como crea un nuevo producto se usa POST
 
 
 /**EDIT ONE PRODUCT */
-router.get("/edit/:id", productsController.edit);// Similar a crear. Ruta que muestra el formulario de edicion de productos
+router.get("/edit/:id", productsController.edit);// Similar al de crear. Ruta que muestra el formulario de edicion de productos
 router.put("/edit/:id", productsController.update); //sabrina. La ruta que procesa la información que llega del formulario. Acá se modifica un dato
 
 /*** DELETE ONE PRODUCT***/ 
