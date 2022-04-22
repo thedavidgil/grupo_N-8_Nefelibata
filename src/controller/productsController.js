@@ -11,7 +11,7 @@ function readBD(){
 	return JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 }
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); //Sabrina. El replace funciona en los strings
 
 const controller = {
 
@@ -27,8 +27,10 @@ const controller = {
 		return res.render("detail", { product, toThousand }); //vista detalle de producto, debe mostrar todo
   },
 
-  create:(req,res) =>{
-    res.render("./products/create")
+
+  create:(req,res) =>{//Sabrina
+    return res.render("create");
+    //res.render("./products/create")
   },
 
 	store: (req, res) => {
@@ -48,7 +50,7 @@ const controller = {
   edit:(req,res) =>{
     const id = req.params.id;
     let products = readBD();
-		const product = products.find(product => product.id == id);
+		const product = products.find(product => product.id == id); //es la busqueda de un producto por medio de su id
     res.render("./products/edit",{product}); //Muestra el formulario de edición (no lo edita). carga los productos, los envia al json
   },
 
@@ -68,8 +70,13 @@ const controller = {
     });
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)) //el null, 2 es para que al ingresar un producto en el json se mantenga el formato
 
+<<<<<<< HEAD
     return res.redirect("/products");// aca se edita el producto
   },
+=======
+      return res.redirect("/products");// aca se edita el producto al ser redirigido
+},
+>>>>>>> feb5d6858997de6775363d34a7b537a48f0dd9c9
 
   destroy: (req,res) => {
     const id = req.params.id;
