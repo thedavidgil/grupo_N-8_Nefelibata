@@ -39,8 +39,8 @@ app.listen(port, err =>{
 
 // ************ Route System require and use() ************
 const mainRouter = require("./routes/main");
-const productsRoutes = require("./routes/products");
-const usersRoutes = require("./routes/users");
+const productsRouter = require("./routes/products");
+const usersRouter = require("./routes/users");
 const cartRouter = require("./routes/cartRouter");
 
 app.use('/', mainRouter);
