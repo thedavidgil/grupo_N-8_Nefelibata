@@ -39,13 +39,11 @@ app.listen(port, err =>{
 
 // ************ Route System require and use() ************
 const mainRouter = require("./routes/main");
-const productsRoutes = require("./routes/products");
-const usersRoutes = require("./routes/users");
+const productsRouter = require("./routes/products");
+const usersRouter = require("./routes/users");
+const cartRouter = require("./routes/cartRouter");
 
-app.use('/',mainRouter);
-app.use("/products", productsRoutes);//todas las rutas que empiecen con products usan el enrutador productsRoutes que es products.js
-app.use("/users", usersRoutes);
-
-
-
-
+app.use('/', mainRouter);
+app.use("/products", productsRouter);
+app.use("/users", usersRouter);
+app.use("/cart", cartRouter);
