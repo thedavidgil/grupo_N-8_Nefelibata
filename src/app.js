@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 //app.use((req, res, next) => {
-  //res.status(404).render('not-found')
+  //res.status(404).render('./main/error')
 //});//sabrina
 
 

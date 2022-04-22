@@ -1,119 +1,119 @@
 [
-    {
-        "id": 1,
-        "name": "agenda",
-        "description": "Agenda",
-        "image": "producto_1.png",
-        "category": "outstanding",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 2,
-        "name": "agenda",
-        "description": "Agenda",
-        "image": "producto_2.png",
-        "category": "outstanding",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 3,
-        "name": "agenda",
-        "description": "Agenda",
-        "image": "producto_3.png",
-        "category": "outstanding",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 4,
-        "name": "agenda",
-        "description": "Agenda",
-        "image": "producto_4.png",
-        "category": "outstanding",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 5,
-        "name": "agenda",
-        "description": "Agenda",
-        "image": "producto_5.png",
-        "category": "outstanding",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 6,
-        "name": "cuadernillo",
-        "description": "Cuadernillo",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 7,
-        "name": "cuaderno",
-        "description": "Cuaderno",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 8,
-        "name": "anotador",
-        "description": "Anotador",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 9,
-        "name": "album",
-        "description": "Álbum",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 10,
-        "name": "planner",
-        "description": "Planner",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 11,
-        "name": "inmantado",
-        "description": "Inmantado",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 12,
-        "name": "libreta",
-        "description": "Libreta",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      },
-      {
-        "id": 13,
-        "name": "otros",
-        "description": "Otros",
-        "image": "default-image.png",
-        "category": "none",
-        "price": "1000",
-        "show": true
-      }
+  {
+    "id": 1,
+    "name": "agenda",
+    "description": "Agenda",
+    "image": "producto_1.png",
+    "category": "outstanding",
+    "price": "1000",
+    "show": false
+  },
+  {
+    "id": 2,
+    "name": "agenda",
+    "description": "Agenda",
+    "image": "producto_2.png",
+    "category": "outstanding",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 3,
+    "name": "agenda",
+    "description": "Agenda",
+    "image": "producto_3.png",
+    "category": "outstanding",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 4,
+    "name": "agenda",
+    "description": "Agenda",
+    "image": "producto_4.png",
+    "category": "outstanding",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 5,
+    "name": "agenda",
+    "description": "Agenda",
+    "image": "producto_5.png",
+    "category": "outstanding",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 6,
+    "name": "cuadernillo",
+    "description": "Cuadernillo",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 7,
+    "name": "cuaderno",
+    "description": "Cuaderno",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 8,
+    "name": "anotador",
+    "description": "Anotador",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 9,
+    "name": "album",
+    "description": "Álbum",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 10,
+    "name": "planner",
+    "description": "Planner",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 11,
+    "name": "inmantado",
+    "description": "Inmantado",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 12,
+    "name": "libreta",
+    "description": "Libreta",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  },
+  {
+    "id": 13,
+    "name": "otros",
+    "description": "Otros",
+    "image": "default-image.png",
+    "category": "none",
+    "price": "1000",
+    "show": true
+  }
 ]

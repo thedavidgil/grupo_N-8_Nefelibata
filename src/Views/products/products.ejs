@@ -54,11 +54,33 @@
                 </form>
             </section>
 
+            <div class="col-12 col-sm-6 col-lg-3">
+                <section class="product-box">
+                    <a href="/products/detail/<%= products.id %>">
+                        <figure class="product-box_image">
+                            <img src="/images/<%= products.image %>" alt="imagen de producto">
+                        </figure>
+                        <article class="product-box_data">
+                            <h2><%= products.name %></h2>
+                            <span><%= products.price %></span>
+                        </article>
+                        <div class="product-button">
+                            <form>
+                                <button type="submit" class="buy-buttom">Comprar</button>
+                            </form>
+                            <form>
+                                <button type="submit" class="view-buttom">Ver</button>
+                            </form>
+                        </div>
+                    </a>
+                </section>
+            </div>
+
             <section class="productos">
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_1.png" alt="producto_1">
+                        <img src="images\producto_1.png" alt="producto_1">
                     </div>
                     <div>
                         <div class="titulo">Producto 1</div>
@@ -79,7 +101,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_2.png" alt="producto_2">
+                        <img src="images\producto_2.png" alt="producto_2">
                     </div>
                     <div>
                         <div class="titulo">Producto 2</div>
@@ -97,7 +119,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_3.png" alt="producto_3">
+                        <img src="images\producto_3.png" alt="producto_3">
                     </div>
                     <div>
                         <div class="titulo">Producto 3</div>
@@ -115,7 +137,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_4.png" alt="producto_4">
+                        <img src="images\producto_4.png" alt="producto_4">
                     </div>
                     <div>
                         <div class="titulo">Producto 4</div>
@@ -134,7 +156,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_1.png" alt="producto_1">
+                        <img src="images\producto_1.png" alt="producto_1">
                     </div>
                     <div>
                         <div class="titulo">Producto 1</div>
@@ -155,7 +177,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_2.png" alt="producto_2">
+                        <img src="images\producto_2.png" alt="producto_2">
                     </div>
                     <div>
                         <div class="titulo">Producto 2</div>
@@ -173,7 +195,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_3.png" alt="producto_3">
+                        <img src="images\producto_3.png" alt="producto_3">
                     </div>
                     <div>
                         <div class="titulo">Producto 3</div>
@@ -191,7 +213,7 @@
 
                 <article class="detalle">
                     <div>
-                        <img src="image\producto_4.png" alt="producto_4">
+                        <img src="images\producto_4.png" alt="producto_4">
                     </div>
                     <div>
                         <div class="titulo">Producto 4</div>
