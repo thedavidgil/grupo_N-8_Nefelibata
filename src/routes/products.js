@@ -26,11 +26,7 @@ router.get("/", productsController.home);
 
 
 /*** GET ONE PRODUCT ***/
-<<<<<<< HEAD
-router.get('/:id', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
-=======
 router.get('/:id/', productsController.detail);
->>>>>>> 9f48160a429e26892575ad98ba8a62c2a6735154
 
 
 /** CREATE ONE PRODUCT */
