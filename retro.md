@@ -36,4 +36,23 @@
  <li><p style="text-align: justify">5- Continuar confiando en nosostros mismos, nuestras capacidades personales y como grupo. No dudar de nosostros</p></li>
  </ul>
 
+<h1>Retrospectiva SPRINT 4</h1>
+<ul>
+<li><h2>1. Comenzar a hacer.</h2></li>
+<li><h2>2. Hacer más.</h2></li>
+<li><h2>3. Continuar haciendo.</h2></li>
+<li><h2>4. Hacer menos.</h2></li>
+<li><h2>5. Dejar de hacer.</h2></li>
+</ul>
 
+<ul>
+ <li><p style="text-align: justify">1-Comenzamos a ver y experimentar nuevos desafios que de a poco, con cuidado, esfuerzo y mucha perceberancia fueron fluyendo.</p></li>
+
+ <li><p style="text-align: justify">2- Siempre queremos profundizar más en los temas que vamos viendo y ejercitando, poniendo todos lo mejor de si y con mucho esfuerzo. Todo esto es el medio para alcanzar el objetivo.</p></li>
+
+ <li><p style="text-align: justify">3- Continuar esforzandonos, trabajar en los nuevos desafios y seguir optimizando el proyecto. Debemos continuar creciendo como grupo y consolidarnos aún más.</p></li>
+
+ <li><p style="text-align: justify">4- Consideramos que debemos siempre hacer más y no menos. Siempre podemos hacer un poco más</p></li>
+
+ <li><p style="text-align: justify">5- Todo lo que hagamos y podamos dar es beneficioso para nosotros a nivel personal y como grupo. </p></li>
+ </ul>
