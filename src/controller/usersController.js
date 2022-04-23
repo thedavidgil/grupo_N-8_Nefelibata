@@ -30,6 +30,13 @@ const controller = {
 
   },
 
+  edit: (req, res) => {
+    let idUser = req.params.idUser;
+    let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    let userToEdit = users[idUser-1];
+    res.render("./users/edit", {userToEdit : userToEdit}) //Muestra el formulario de edición
+  },
+
   confirmation:(req,res) => {
     res.render("./users/confirmation")
   },

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="../../css/styles_register.css">
+    <title>Editar Usuario - Nefelibata</title>
+</head>
+<body>
+    
+    <%- include("../partials/header") %>
+
+    <main>
+
+        <div class="path">
+            <p>Inicio></p>
+            <p>Mi usuario></p>
+            <p>Editar</p>
+        </div>
+        
+        <p class="creating-account">EDITAR USUARIO</p>
+ 
+
+        <form action=" /users/edit?_method=PUT" method="POST" class="form1">
+            <div class="control-formulario">
+                <label for="firstName">Nombre</label>
+                <input type="text" name="firstName" id="Nombre" value="<%= userToEdit.firstName %>" required class="control">
+            </div>
+            <div class="control-formulario">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName" id="Nombre" value="<%= userToEdit.lastName %>" required class="control">
+            </div>
+            <div class="control-formulario"> 
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= userToEdit.email %>" required class="control">
+            </div>
+            <div class="control-formulario">    
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required class="control">
+            </div>
+            <div class="control-formulario">
+                <label for="category">Categoria</label>
+                <select name="category" value="<%= userToEdit.category %>" required>
+                    <option value="">Admin</option>
+                    <option value="">Client</option>
+                    <option value="">Categoria 3</option>
+                    <option value="">Categoria 4</option>
+                </select>
+            </div>
+
+            <div class="control-formulario">
+                <label>Avatar</label>
+                <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control" value="<%= userToEdit.image %>">
+            </div>
+            
+            <div class="button1">
+              <button type="submit">Crear Cuenta</button>
+            </div>
+        </form>
+
+        <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
+
+    </main>
+
+    <%- include("../partials/footer") %>
+
+    
+</body>
+</html>
