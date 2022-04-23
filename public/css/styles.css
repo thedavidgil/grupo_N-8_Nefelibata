@@ -582,7 +582,7 @@ contacto
 }
 
 .not-found h1{
-  color:var(--negro);
+  color:var(--warning);
   margin:0;
   padding: 15px;
   position: absolute;
