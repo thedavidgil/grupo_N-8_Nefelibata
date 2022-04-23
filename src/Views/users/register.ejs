@@ -28,7 +28,7 @@
         </div>
 
 
-        <form action="../views/confirmation.html" method="post" class="form1">
+        <form action=" /users/register" method="post" class="form1">
             <div class="control-formulario">
                 <label for="Nombre">Nombre y Apellido</label>
                 <input type="text" name="Nombre" id="Nombre" placeholder="Ej. Mario Pérez" required class="control">
@@ -49,6 +49,13 @@
                 <label for="contraseña1">Confirmar Contraseña</label>
                 <input type="password" name="contraseña1" id="contraseña1" required placeholder="Confirmar" class="control">
             </div>
+
+            
+            <div class="control-formulario">
+                <label>Avatar</label>
+                <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
+            </div>
+
             <div class="captcha">
                 <input type="checkbox" name="captcha">
                 <label for="captcha">No soy un robot.</label>
@@ -58,7 +65,7 @@
             </div>
         </form>
 
-        <p class="tenescuenta">¿Ya tenés cuenta?<a href="http://localhost:5000/login">Inicia sesión</a></p>
+        <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
 
     </main>
 
