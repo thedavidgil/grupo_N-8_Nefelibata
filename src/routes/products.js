@@ -26,7 +26,7 @@ router.get("/", productsController.home);//muestra la vista principal que es hom
 
 
 /*** GET ONE PRODUCT ***/
-router.get('/:id/', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
+router.get('/:id', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
 
 
 /** CREATE ONE PRODUCT */
