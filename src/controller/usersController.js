@@ -15,7 +15,7 @@ const controller = {
     res.render("./users/register")
   },
 
-  create:(req,res) => {
+  store:(req,res) => {
     let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		const userNuevo = {
 			id: users.length > 0 ? users[ users.length - 1 ].id + 1 : 1,
