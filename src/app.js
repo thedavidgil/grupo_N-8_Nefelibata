@@ -17,7 +17,6 @@ app.use(methodOverride('_method'));
 
 
 
-
 // ************ Template Engine ************
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
@@ -41,8 +40,15 @@ const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/users");
 const cartRouter = require("./routes/cartRouter");
 
+
+
 app.use('/', mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/cart", cartRouter);
+
+//**********Error page**********
+app.get("*", (req,res)=>{
+  res.render("./main/error")
+});
 

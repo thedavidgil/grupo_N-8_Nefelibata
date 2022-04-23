@@ -24,9 +24,14 @@ const upload = multer({ storage: storage })
 
 /** REGISTER USER */
 router.get("/register",usersController.register);
-router.post("/register", upload.single("images"), usersController.create);
+router.post("/register", upload.single("images"), usersController.store);
 router.get("/confirmation", usersController.confirmation);
 router.get("/list", usersController.list);
+
+/** EDIT USER */
+
+router.get("/edit/:idUser",usersController.edit);
+//router.put("/edit/:idUser",usersController.edit2);
 
 
 /**Loggin */
