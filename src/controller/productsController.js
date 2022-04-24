@@ -17,7 +17,8 @@ const controller = {
 
   home:(req,res) =>{
 	const products = readDBFiltered();
-    return res.render("./products/products", { products, toThousand});
+  return res.render("./products/products", { products, toThousand});
+  
   },
 
   detail:(req,res) => {
