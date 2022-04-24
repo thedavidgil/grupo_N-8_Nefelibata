@@ -10,7 +10,7 @@ const productsController = require('../controller/productsController');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.resolve(__dirname, "../../public/image"))
+        cb(null, path.resolve(__dirname, "../../public/images"))
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -26,7 +26,7 @@ router.get("/", productsController.home);//muestra la vista principal que es hom
 
 
 /*** GET ONE PRODUCT ***/
-router.get('/:id/', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
+router.get('/:id', productsController.detail);//obtener el detalle de un producto. Es una vista. De los productos llega un id y busco el producto con ese id
 
 
 /** CREATE ONE PRODUCT */
