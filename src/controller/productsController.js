@@ -7,7 +7,7 @@ function readDBFiltered(){
 	return products.filter(product=>product.show);
 }
 
-function readBD(){
+function readDB(){
 	return JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 }
 
@@ -41,7 +41,7 @@ const controller = {
   },
 
 	store: (req, res) => {
-    let products = readBD();
+    let products = readDB();
 		const productoNuevo = {
 			id: products.length > 0 ? products[ products.length - 1 ].id + 1 : 1,
       name: req.body.name,
@@ -67,25 +67,24 @@ const controller = {
 
   update: (req, res) => {
     const id = req.params.id;
-    let products = readBD();
+    let products = readDB();
     products = products.map(product => {
     if(product.id == id){
         product.name = req.body.name,
         product.description = req.body.description,
-        product.image = req.file?.filename ?? "default-image.png",
+        product.image = req.file.filename,
         product.category = req.body.category,
         product.price = req.body.price
     }
     return product;
     });
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-
-    return res.redirect("./products/products");
+    return res.redirect("/products");
   },
 
   destroy: (req,res) => {
     const id = req.params.id;
-    let products  = readBD();
+    let products  = readDB();
     products = products.map(product => {
       if(product.id == id){
         product.show = false
