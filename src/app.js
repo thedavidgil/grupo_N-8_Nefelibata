@@ -15,9 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-//app.use((req, res, next) => {
-  //res.status(404).render('./main/error')
-//});//sabrina
 
 
 // ************ Template Engine ************
@@ -43,7 +40,15 @@ const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/users");
 const cartRouter = require("./routes/cartRouter");
 
+
+
 app.use('/', mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/cart", cartRouter);
+
+//**********Error page**********
+app.get("*", (req,res)=>{
+  res.render("./main/error")
+});
+
