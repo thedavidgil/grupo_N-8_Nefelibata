@@ -6,16 +6,16 @@
     "image": "producto_1.png",
     "category": "outstanding",
     "price": "1000",
-    "show": false
+    "show": true
   },
   {
     "id": 2,
     "name": "agenda",
     "description": "Agenda",
-    "image": "producto_1.png",
+    "image": "producto_2.png",
     "category": "outstanding",
     "price": "1000",
-    "show": false
+    "show": true
   },
   {
     "id": 3,

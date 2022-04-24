@@ -26,7 +26,7 @@ router.get("/", productsController.home);
 
 
 /*** GET ONE PRODUCT ***/
-router.get('/detail/:id', productsController.detail);
+router.get('/:id', productsController.detail);
 
 /** CREATE ONE PRODUCT */
 router.get("/create", productsController.create);
