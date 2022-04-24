@@ -3,8 +3,7 @@
 
 <head>
   <%- include("../partials/head") %>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/detalle_producto.css">
+    <link rel="stylesheet" href="/css/detalle_producto.css">
     <title>Productos - Nefelibata</title>
 
 
@@ -19,16 +18,9 @@
     <main>
 
       <section class="detalle_producto">
-        <div class="imagenes">
-          <img src="/images/<%= product.image %>" alt="imagen 1">
-          <img src="/images/default-image.png" alt="imagen 2">
-          <img src="/images/default-image.png" alt="imagen 3">
-          <img src="/images/default-image.png" alt="imagen 4">
-
-        </div>
-
+        
         <div class="imagen_principal">
-          <img src="/images/producto_5.png" alt="imgaen principal">
+          <img src="/images/<%= product.image %>" alt="imgaen principal">
         </div>
 
         <div class="detalle">
@@ -39,10 +31,12 @@
           <p><%= product.description %></p>
 
           <form action="#" method="post">
+
             <div class="delete">
               <label for="delete"></label>
               <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
             </div>
+
             <div class="amount">
               <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
               <p>0</p>

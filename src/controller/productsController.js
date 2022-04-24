@@ -25,7 +25,13 @@ const controller = {
 		const id = req.params.id;
 		const products = readDBFiltered();
 		const product = products.find(product => product.id == id);
-    return res.render("./products/detail", { product, toThousand });
+    if(typeof product != "undefined"){
+      res.render("./products/detail", { product, toThousand });
+    }
+    else{
+      res.render("./main/error")
+    }
+    
   },
 
 
