@@ -30,8 +30,8 @@ router.get("/list", usersController.list);
 
 /** EDIT USER */
 
-router.get("/edit/:idUser",usersController.edit);
-//router.put("/edit/:idUser",usersController.edit2);
+router.get("/edit/:id",usersController.edit);
+router.put("/edit/:id",usersController.update);
 
 
 /**Loggin */

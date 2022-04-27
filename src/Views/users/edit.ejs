@@ -20,7 +20,7 @@
         <p class="creating-account">EDITAR USUARIO</p>
  
 
-        <form action=" /users/edit?_method=PUT" method="POST" class="form1">
+        <form action=" /users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form1">
             <div class="control-formulario">
                 <label for="firstName">Nombre</label>
                 <input type="text" name="firstName" id="Nombre" value="<%= userToEdit.firstName %>" required class="control">
@@ -39,11 +39,11 @@
             </div>
             <div class="control-formulario">
                 <label for="category">Categoria</label>
-                <select name="category" value="<%= userToEdit.category %>" required>
-                    <option value="">Admin</option>
-                    <option value="">Client</option>
-                    <option value="">Categoria 3</option>
-                    <option value="">Categoria 4</option>
+                <select name="category" required id ="category">
+                    <option value="Admin" <%= userToEdit.category =="Admin" ? "selected" :null %>>Admin</option>
+                    <option value="Client" <%= userToEdit.category =="Client" ? "selected" :null %>>Client</option>
+                    <option value="Categoria 3" <%= userToEdit.category =="Categoria 3" ? "selected" :null %>>Categoria 3</option>
+                    <option value="Categoria 4" <%= userToEdit.category =="Categoria 4" ? "selected" :null %>>Categoria 4</option>
                 </select>
             </div>
 
@@ -53,7 +53,7 @@
             </div>
             
             <div class="button1">
-              <button type="submit">Crear Cuenta</button>
+              <button type="submit">Editar</button>
             </div>
         </form>
 
