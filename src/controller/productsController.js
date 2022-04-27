@@ -17,14 +17,21 @@ const controller = {
 
   home:(req,res) =>{
 	const products = readDBFiltered();
-    return res.render("./products/products", { products, toThousand});
+  return res.render("./products/products", { products, toThousand});
+  
   },
 
   detail:(req,res) => {
 		const id = req.params.id;
 		const products = readDBFiltered();
 		const product = products.find(product => product.id == id);
-		return res.render("./products/detail", { product, toThousand });
+    if(typeof product != "undefined"){
+      res.render("./products/detail", { product, toThousand });
+    }
+    else{
+      res.render("./main/error")
+    }
+    
   },
 
 
@@ -37,14 +44,18 @@ const controller = {
     let products = readDB();
 		const productoNuevo = {
 			id: products.length > 0 ? products[ products.length - 1 ].id + 1 : 1,
-			...req.body,
-			image: req.file?.filename ?? "default-image.png"
+      name: req.body.name,
+      description:req.body.description,
+      image: req.file?.filename ?? "default-image.png",
+      category: req.body.category,
+      price:req.body.price,
+      show:true
 		}
 
 		products.push(productoNuevo);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
-		return res.redirect("./products/products");
+		return res.redirect("/products");
 	},
 
   edit:(req,res) =>{
@@ -61,15 +72,14 @@ const controller = {
     if(product.id == id){
         product.name = req.body.name,
         product.description = req.body.description,
-        product.image = req.file?.filename ?? "default-image.png",
+        product.image= req.file?.filename ?? "default-image.png",
         product.category = req.body.category,
         product.price = req.body.price
     }
     return product;
     });
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-
-    return res.redirect("./products/products");
+    return res.redirect("/products");
   },
 
   destroy: (req,res) => {

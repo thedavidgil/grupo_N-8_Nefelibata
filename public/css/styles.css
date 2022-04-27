@@ -232,6 +232,7 @@ p {
 }
 
 .product-box {
+  flex-wrap: wrap;
   background-color: #ffffff;
   border-radius: 18px;
   border: var(--negro);

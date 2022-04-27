@@ -10,7 +10,7 @@ const productsController = require('../controller/productsController');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.resolve(__dirname, "../../public/image"))
+        cb(null, path.resolve(__dirname, "../../public/images"))
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -26,8 +26,7 @@ router.get("/", productsController.home);
 
 
 /*** GET ONE PRODUCT ***/
-router.get('/:id/', productsController.detail);
-
+router.get('/detail/:id', productsController.detail);
 
 /** CREATE ONE PRODUCT */
 router.get("/create", productsController.create);
@@ -36,7 +35,7 @@ router.post("/", upload.single("image"), productsController.store);
 
 /**EDIT ONE PRODUCT */
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", productsController.update);
+router.put("/edit/:id", upload.single("image"),productsController.update);
 
 /*** DELETE ONE PRODUCT***/
 router.delete('/delete/:id', productsController.destroy);

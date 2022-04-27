@@ -71,17 +71,27 @@
                     <p>Todos tus datos están protegidos</p>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
             
             <!-- destacados -->
             <div class="products-wrapper">
                 <div class="product-row">
                     <div class="col-12">
                         <h2 class="products-title">Destacados</h2>
+                    </div>
+>>>>>>> ed474cc47e9f110f9ec75aeee8e45e8edde8ff88
 
+            <h4>Destacados</h4>
+
+            <section>
+                <div class="seccion">
+
+                    
                     <% outstanding.forEach( product => { %>
                         <div class="col-12 col-sm-6 col-lg-3">
                             <section class="product-box">
-                                <a href="/products/detail/<%= product.id %>">
+                                <a href="/products/<%= product.id %>">
                                     <figure class="product-box_image">
                                         <img src="/images/<%= product.image %>" alt="imagen de producto">
                                     </figure>
@@ -103,6 +113,40 @@
                     <% }) %>
                 </div>
             </div>
+<!--
+                    <div class="agenda">
+                        <article>
+                            <img src="/image/producto_2.png" class="producto2">
+                            <div class="color">
+                                <p>Título del producto:</p>
+                                <p>Descripción:</p>
+                                <p>$Precio:</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="agenda">
+                        <article>
+                            <img src="/image/producto_3.png" class="producto3">
+                            <div class="color">
+                                <p>Título del producto:</p>
+                                <p>Descripción:</p>
+                                <p>$Precio:</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="agenda">
+                        <article>
+                            <img src="/image/producto_5.png" class="producto5">
+                            <div class="color">
+                                <p>Título del producto:</p>
+                                <p>Descripción:</p>
+                                <p>$Precio:</p>
+                            </div>
+                        </article>
+                    </div> -->
+
 
         </main>
 

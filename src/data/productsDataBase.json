@@ -12,10 +12,10 @@
     "id": 2,
     "name": "agenda",
     "description": "Agenda",
-    "image": "producto_2.png",
+    "image": "producto_1.png",
     "category": "outstanding",
     "price": "1000",
-    "show": true
+    "show": false
   },
   {
     "id": 3,

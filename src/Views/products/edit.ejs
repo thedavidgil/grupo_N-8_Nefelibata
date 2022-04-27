@@ -4,7 +4,7 @@
 <head>
     <%- include("../partials/head") %> <!--Sabrina-. el primer parametro es la ruta que quiero mostrar. el segundo parametro es un objeto con todos los valores que le quiero pasar a ese partials. se usa igual que un render-->
         <link rel="stylesheet" href="/css/create_edit.css">
-        <title>Crear cuenta - Nefelibata</title>
+        <title>Editar producto - Nefelibata</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
             <p class="text-benefit">Estas editando: <i><%= product.name %></i></p>
 
-            <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form1">
+            <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data">
                 <div class="control-formulario">
                     <label for="name">Nombre de Prducto</label>
                     <input type="text" name="name" id="name" placeholder="Ej. Agenda" required class="control"
@@ -36,6 +36,7 @@
                             4</option>
                     </select>
                 </div>
+                <!--
                 <div class="control-formulario">
                     <label for="color">Color</label>
                     <select name="color" id="color">
@@ -44,7 +45,7 @@
                         <option value="Azul" <%=product.color=="Azul" ? "selected" :null %> >Azul</option>
                         <option value="Amarillo" <%=product.color=="Amarillo" ? "selected" :null %> >Amarillo</option>
                     </select>
-                </div>
+                </div>-->
 
                 <div class="control-formulario">
                     <label for="description">Descripción</label>
@@ -57,17 +58,16 @@
                     <input type="texto" name="price" id="price" required value="$<%= product.price %> " class="control">
                 </div>
 
-        </form>
-        
                 <div class="control-formulario">
                     <label>Imagenes Principales</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
+                    <input type="file" name="image" id="productImage" class="control">
                 </div>
 
+                <!--
                 <div class="control-formulario">
                     <label>Imagenes Adicionales</label>
                     <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
-                </div>
+                </div>-->
 
                 <div class="responsivebuttons">
                     <div class="button1">

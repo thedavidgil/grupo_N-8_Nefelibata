@@ -24,14 +24,14 @@ app.set('views', path.join(__dirname, '/views'));
 
 // ************ Levantar servidor ************
 const port = process.env.PORT || 5000;
-app.listen(port, err =>{
+app.listen(port, err => {
 
-  if(err){
-    return console.log("ERROR",err);
+  if (err) {
+    return console.log("ERROR", err);
   }
   console.log(`Servidor en línea en puerto ${port}`);
 
-}) ;
+});
 
 
 // ************ Route System require and use() ************
