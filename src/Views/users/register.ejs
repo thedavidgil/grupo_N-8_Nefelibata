@@ -28,7 +28,7 @@
         </div>
 
 
-        <form action=" /users/register" method="post" class="form1">
+        <form action=" /users/register" method="POST" enctype="multipart/form-data" class="form1">
             <div class="control-formulario">
                 <label for="firstName">Nombre</label>
                 <input type="text" name="firstName" id="firstName" placeholder="Ej. Mario" required class="control">
@@ -61,12 +61,12 @@
 
             
             <div class="control-formulario">
-                <label>Avatar</label>
-                <input type="file" accept=".jpg, .pdf .jepg" multiple class="control">
+                <label>Imagen de perfil</label>
+                <input type="file" name="userImage" accept=".jpg, .pdf .jepg" multiple class="control">
             </div>
 
             <div class="captcha">
-                <input type="checkbox" name="captcha">
+                <input type="checkbox" name="captcha" required>
                 <label for="captcha">No soy un robot.</label>
             </div>
             <div class="button1">
@@ -75,7 +75,6 @@
         </form>
 
         <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
-
     </main>
 
     <%- include("../partials/footer") %>
