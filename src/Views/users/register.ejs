@@ -29,26 +29,57 @@
 
 
         <form action=" /users/register" method="POST" enctype="multipart/form-data" class="form1">
+
             <div class="control-formulario">
                 <label for="firstName">Nombre</label>
-                <input type="text" name="firstName" id="firstName" placeholder="Ej. Mario" required class="control">
+                <input type="text" name="firstName" id="firstName" placeholder="Ej. Mario"
+                 class="control" value="<%= locals.oldData ? oldData.firstName : null %>">
+                 <% if(locals.errors && errors.firstName){ %> 
+                    <div class="error">
+                        <%= errors.firstName.msg %> 
+                    </div>
+                <% } %> 
             </div>
+                
             <div class="control-formulario">
                 <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Ej. Pérez" required class="control">
+                <input type="text" name="lastName" id="lastName" placeholder="Ej. Pérez" 
+                class="control" value="<%= locals.oldData ? oldData.lastName : null %>">
+                <% if(locals.errors && errors.lastName){ %> 
+                    <div class="error">
+                        <%= errors.lastName.msg %> 
+                    </div>
+                <% } %> 
             </div>
+
             <div class="control-formulario"> 
                 <label for="email">Email</label>
-                <input type="email" name="Email" id="email" placeholder="Minombre@mail.com" required class="control">
+                <input type="email" name="email" id="email" placeholder="Minombre@mail.com"
+                class="control" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if(locals.errors && errors.email){ %> 
+                    <div class="error">
+                        <%= errors.email.msg %> 
+                    </div>
+                <% } %> 
             </div>
+
+    
             <div class="control-formulario">    
                 <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password placeholder="Máximo 10 carácteres" required class="control">
+                <input type="password" name="password" id="password" placeholder="Máximo 8 carácteres" class="control">
             </div>
+            <% if(locals.errors && errors.password){ %> 
+                <div class="error">
+                    <%= errors.password.msg %> 
+                </div>
+            <% } %> 
+
+            <!--
             <div class="control-formulario">    
                 <label for="password1">Confirmar Contraseña</label>
-                <input type="password" name="password1" id="password1" required placeholder="Confirmar" class="control">
+                <input type="password" name="password1" id="password1" placeholder="Confirmar" class="control">
             </div>
+
             <div class="control-formulario">
                 <label for="category">Categoria</label>
                 <select name="category" required>
@@ -57,18 +88,27 @@
                     <option >Categoria 3</option>
                     <option >Categoria 4</option>
                 </select>
-            </div>
+            </div>-->
 
             
             <div class="control-formulario">
                 <label>Imagen de perfil</label>
-                <input type="file" name="userImage" accept=".jpg, .pdf .jepg" multiple class="control">
+                <input type="file" name="userImage" class="control" >
+
+                <% if(locals.errors && errors.userImage){ %> 
+                    <div class="error">
+                        <%= errors.userImage.msg %>
+                        
+                    </div>
+                <% } %> 
             </div>
 
-            <div class="captcha">
+
+            <!--<div class="captcha">
                 <input type="checkbox" name="captcha" required>
                 <label for="captcha">No soy un robot.</label>
-            </div>
+            </div>-->
+
             <div class="button1">
               <button type="submit">Crear Cuenta</button>
             </div>

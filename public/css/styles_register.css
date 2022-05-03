@@ -64,6 +64,14 @@ body {
   border-radius: 5px;
 }
 
+.error{
+  color: red;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 2%;
+  }
+
 .control-formulario label {
   margin-bottom: 5px;
   margin-left: 15px;

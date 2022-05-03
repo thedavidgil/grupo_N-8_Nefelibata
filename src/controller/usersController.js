@@ -1,16 +1,9 @@
-const { constants } = require('crypto');
-const { resolveSoa } = require('dns');
+const bcrypt = require("bcryptjs");
+const {validationResult}= require("express-validator")
 const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-//function readBD(){
-//let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-//return users.filter(users=>users.show == true);
-//}// leer BD actualizada y solo mostrar usuarios activos.
-
-
 
 const controller = {
 
@@ -19,17 +12,27 @@ const controller = {
   },
 
   store:(req,res) => {
+    const validaciones = validationResult(req);
+    
+    if(validaciones.errors.length > 0){
+      
+      return res.render("./users/register",{
+        errors: validaciones.mapped(),
+        oldData: req.body,
+      })
+    }
+
 		const userNuevo = {
 			id: users.length > 0 ? users[ users.length - 1 ].id + 1 : 1,
 			...req.body,
-			image: req.file?.filename ?? "default-image.png"
+      password:bcrypt.hashSync(req.body.password,12)
 		}
 
 		users.push(userNuevo); // Gabriel Guarda el usuario nuevo
 		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2)) //Gabriel. Hay que escribir de nuevo el archivo con los datos nuevos. Users viaja como strin por eso es json.stringify de users
 
 		return res.redirect("confirmation")
-
+   
   },
 
   edit: (req, res) => {
