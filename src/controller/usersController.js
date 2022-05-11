@@ -6,7 +6,7 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const Users = require("./models/Users");//Sabrina. requierimos el archivo (modulo) de modelos Users.js
+const Users = require("../../models/Users");//Sabrina. requierimos el archivo (modulo) de modelos Users.js
 
 const controller = {
 
