@@ -11,7 +11,7 @@
 const fs = require("fs");
 
 const Users ={
-    fileName: "./data/usersDataBase.json", //referencia a la base de datos con su ubicación
+    fileName: "./src/data/usersDataBase.json", //referencia a la base de datos con su ubicación
 
     obtainData: function () {//metodo para traer a todos los usuarios cuando quiero borrar, modificar, ingresar, etc
 		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));//return de la lectura del archivo, para eso requiere la libreria fs. La lectura la devuelve en formato de string pero debe ser convertido en array. Por eso hace uso del objeto json y el metodo parse que entrega un array(json.parse)

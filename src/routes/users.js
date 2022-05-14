@@ -9,11 +9,13 @@ const usersController = require('../controller/usersController');
 // ************ Middlewares ************
 const upload = require("../middlewares/multerMiddleware");
 const validation = require("../middlewares/validationRegisterMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 
 /** REGISTER USER */
-router.get("/register",usersController.register);
-router.post("/register",upload.single("userImage"),validation, usersController.store);
+router.get("/register", guestMiddleware, usersController.register);
+router.post("/register",upload.single("userImage"),validation, usersController.processRegister);
 router.get("/confirmation", usersController.confirmation);
 router.get("/list", usersController.list);
 
@@ -24,7 +26,14 @@ router.put("/edit/:id",usersController.update);
 
 
 /**Loggin */
-router.get("/login",usersController.login);
+router.get("/login", guestMiddleware, usersController.login);
+router.post("/login", usersController.loginProcess);
+
+/**profile Perfil de usuario*/
+router.get("/profile", authMiddleware, usersController.profile)
+
+/**Logout Perfil de usuario*/
+router.get("/logout", usersController.logout)
 
 
 /**RECOVERY USER */

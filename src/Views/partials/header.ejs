@@ -32,10 +32,17 @@
                                 </ul>
                             <a href="/contact">Contacto</a>
                         </div>
+                        <% if (locals.isLogged) { %>
                         <div class="modal-footer">
-                            <i class="fa-solid fa-user"></i>
-                            <a href="/users/register">Crear cuenta</a>
-                            <a href="/users/login">Iniciar sesión</a>
+                            <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%;"</a>
+                            <a href="/users/profile">Mi perfil</a>
+                            <a href="/users/logout">Cerrar Sesión</a>
+                        <% } else { %> 
+                            <div class="modal-footer">
+                                <i class="fa-solid fa-user"></i>
+                                <a href="/users/register">Crear cuenta</a>
+                                <a href="/users/login">Iniciar sesión</a>
+                        <% } %>
                         </div>
                     </div>
                 </div>
@@ -53,11 +60,24 @@
             <div class="principal-logo">
                 <a href="/"><img src="/images/logos/logo_sin_fondo.png" class="logo"></a>
             </div>
+            <% if (locals.isLogged) { %>
             <div class="login-cart">
                 <div class="login">
-                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                    <p>Mi Cuenta</p>
+                    <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%;"</a>
+                        <p><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></p>
+                        <a href="/users/logout"><p>Cerrar Sesión</p></a>
+                        <span class="cart-widget"></span>
+
+                    <% } else { %> 
+                        <<div class="login-cart">
+                            <div class="login">
+                                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                    <p>Iniciar Sesión</p>
+                                    <span class="cart-widget"></span>
+                      <% } %>
+                    
                 </div>
+
                 <div class="cart">
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
                     <p>Mi Carrito</p>

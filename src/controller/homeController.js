@@ -19,7 +19,9 @@ const controller = {
 		// Do the magic
 		const outstanding = products.filter( product => product.category == "outstanding");
 		
-		return res.render("./main/home", { outstanding, toThousand });
+		return res.render("./main/home", { outstanding, toThousand }, {
+			user: req.session.userLogged
+		  });
 	}
 };
 

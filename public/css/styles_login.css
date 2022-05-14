@@ -89,6 +89,15 @@ main a:hover{
   margin-bottom: 5px;
 }
 
+.error{
+  color: red;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 2%;
+  }
+
+
 .socialnetwork {
   text-align: center;
   margin: auto;

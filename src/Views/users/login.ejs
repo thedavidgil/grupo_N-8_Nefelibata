@@ -21,14 +21,19 @@
     
         
         
-        <form action="../views/confirmation.html" method="post" class="form1">
+        <form action="/users/login" method="POST" class="form1">
             <div class="control-formulario">
                 <label for="email">Email</label>
-                <input type="email" name="Email" id="email" placeholder="minombre@mail.com" required class="control">
+                <input type="email" name="email" id="email" placeholder="minombre@mail.com" required class="control">
+                <% if (locals.errors && errors.email) { %>
+                <div class="error">
+                    <%= errors.email.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="control-formulario">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Máximo 10 carácteres" required class="control"><br>
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Al menos 8 carácteres" required class="control"><br>
                 <p class="tenescuenta"><a href="/users/recovery">¿Olvidaste tu contraseña?</a></p>
             </div>
             <div class="button1">

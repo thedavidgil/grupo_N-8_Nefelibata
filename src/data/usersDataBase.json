@@ -1,47 +1,47 @@
 [
-  {
-    "id": 1,
-    "firstName": "Lorena",
-    "lastName": "Grammatico",
-    "email": "loregrammatico@gmail.com",
-    "password": "",
-    "category": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 2,
-    "firstName": "Sabrina",
-    "lastName": "Basoa",
-    "email": "",
-    "password": "",
-    "category": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 3,
-    "firstName": "David",
-    "lastName": "Gil",
-    "email": "",
-    "password": "",
-    "category": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 4,
-    "firstName": "Gabriel",
-    "lastName": "Alvarez",
-    "email": "",
-    "password": "",
-    "category": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 5,
-    "firstName": "Mariano",
-    "lastName": "Uceda",
-    "email": "marianouceda@hotmail.com",
-    "password": "",
-    "category": "admin",
-    "image": "default-image.png"
-  }
+ {
+  "id": 1,
+  "firstName": "Lorena",
+  "lastName": "Grammatico",
+  "email": "loregrammatico@gmail.com",
+  "password": "",
+  "category": "admin",
+  "image": "default-image.png"
+ },
+ {
+  "id": 2,
+  "firstName": "Sabrina",
+  "lastName": "Basoa",
+  "email": "",
+  "password": "",
+  "category": "admin",
+  "image": "default-image.png"
+ },
+ {
+  "id": 3,
+  "firstName": "David",
+  "lastName": "Gil",
+  "email": "",
+  "password": "",
+  "category": "admin",
+  "image": "default-image.png"
+ },
+ {
+  "id": 4,
+  "firstName": "Gabriel",
+  "lastName": "Alvarez",
+  "email": "",
+  "password": "",
+  "category": "admin",
+  "image": "default-image.png"
+ },
+ {
+  "id": 5,
+  "firstName": "Mariano",
+  "lastName": "Uceda",
+  "email": "marianouceda@hotmail.com",
+  "password": "",
+  "category": "admin",
+  "image": "default-image.png"
+ }
 ]
