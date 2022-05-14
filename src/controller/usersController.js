@@ -58,7 +58,11 @@ const controller = {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
         if (isOkThePassword) {
           delete userToLogin.password;
-          req.session.userLogged = userToLogin
+          req.session.userLogged = userToLogin;
+          if (req.body.remember_user){
+            res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2 })
+          }
+
           return res.redirect("profile");
 
     }
@@ -123,6 +127,7 @@ const controller = {
   },
 
   logout: (req, res) => {
+    res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect('/');
   },
