@@ -130,7 +130,9 @@ const controller = {
   recovery:(req,res) => {
     res.render("./users/passwordRecovery")
   }
-
 }
+
+
+
 
 module.exports = controller;
