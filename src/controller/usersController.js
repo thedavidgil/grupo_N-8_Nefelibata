@@ -48,48 +48,60 @@ const controller = {
   },
 
   login: (req, res) => {//Sabrina. controlador que renderiza la vista de login. Este es el metodo de login
-		return res.render("usersLoginForm");
+		return res.render("login");
 	},
 	loginProcess: (req, res) => {// Sabrina. otro metodo que recibirá al req, al res
 		//aca se procesa todo el formulario: tomar lo que viajo en el req del body y verificar si tengo a x persona registrada
-		let userToLogin = User.findByField('email', req.body.email);// voy a buscar el usuario...tomo del modelo User.findByField donde digo que quiero buscar por email, y lo que vino en el body del req en el email
+		let userToLogin = User.findByField('email', req.body.email);// voy a buscar el usuario...tomo del modelo, el metodo User.findByField donde digo que quiero buscar por email, y lo que vino en el body del req en el email
 		
 		if(userToLogin) {// Sabrina. si obtuve algo es true, sino es false
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);//encontrado el usuario hay que verificar si su contraseña , guardada en la Bd corresponde con la ingresada
-			if (isOkThePassword) {//si todo esta bien, antes de redirigir quiero guardar al usuario en session, para eso se hace la linea 56
-				delete userToLogin.password;//antes de pasar el usuario en sesion es borrar del userToLogin la propiedad password. Es solo por seguridad. Con delete podemos borrar una propiedad determinada.
-				req.session.userLogged = userToLogin;//session es la parte que nos va a permitir implementar a lo largo de toda nuestra aplicacion la variable session que es objeto literal que va a contener info que yo quiera (se instala express-session. npm install express-session) luego inicializo la sesion en app.js
+			let okPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);//encontrado el usuario hay que verificar si su contraseña , guardada en la Bd corresponde con la ingresada
+			if (okPassword) {//si todo esta bien, antes de redirigir quiero guardar al usuario en session, para eso se hace la linea 56
+				delete userToLogin.password;//antes de pasar el usuario en sesion es borrar del userToLogin la propiedad password. Es solo por seguridad. Con delete podemos borrar una propiedad determinada. basicamente, borra la contraseña.
+				req.session.userLogged = userToLogin;//session es la parte que nos va a permitir implementar a lo largo de toda nuestra aplicacion la variable session que es objeto literal que va a contener info que yo quiera (se instala express-session. npm install express-session) luego inicializo la sesion en app.js. Al usuario logueado le asigno el userToLogin
 
-				if(req.body.remember_user) {//si en el req, en el body vino remember_user, entonces, a linea 59
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })//proceso para recordar el usuario. seteo una cookie. En el res voy a setaer una cookie userEmail y lo que va a guardar la cookie es el valor de lo que vino en el body del req que es la propiedad email. Esto va a durar maxAge es para indicar que la cookie dura 1000 milisegundos pero lo multiplica por 60 que son 60 segundos. va a userLoggedMiddleware
+				if(req.body.remember_user) {//si en el req, en el body vino remember_user, entonces, a linea 64. este remember estoa agregado en login.ejs
+					res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 60 })//proceso para recordar el usuario. seteo una cookie. En el res voy a setaer una cookie userEmail y lo que va a guardar la cookie es el valor de lo que vino en el body del req que es la propiedad email. Esto va a durar maxAge es para indicar que la cookie dura 1000 milisegundos pero lo multiplica por 60 que son 60 segundos. va a userLoggedMiddleware
 				}
 
-				return res.redirect('/user/profile');//si da verdadero, redirigir a /user/profile
-			} 
-			return res.render('userLoginForm', {//cuando no se obtiene nada (undefined)
+				return res.redirect('/users/profile');//si da verdadero, redirigir a la vista /user/profile
+			}
+			return res.render("login", {//cuando no se obtiene nada (undefined)
 				errors: {//crear un objeto literal
 					email: {//va a tener un error para el email
-						msg: 'Las credenciales son inválidas'//el mensaje de error del email
+						msg: "No es válido"//el mensaje de error del email
 					}
 				}
 			});
 		}
 
-		return res.render('userLoginForm', {
+		return res.render("login", {
 			errors: {
 				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
+					msg: "Este mail no está en nuestra base de datos"
 				}
 			}
 		});
 	},
 
-  store:(req,res) => {
+	profile: (req, res) => {//
+		return res.render("usersProfile", {
+			users: req.session.userLogged//recibe una variable que va a tener del rq de la session el userLogged
+		});
+	},
+
+    logout: (req, res) => {// Sabrina. Metodo logout
+		res.clearCookie("userEmail");//Sabrina. res.clearCookie y el mail para indicar que cookie hay que eliminar y esto automaticamente destruye cualquir cookie que exista. entonces aca se destruye la cookie
+		req.sessio.destroy(); //Sabrina.hace un req.session.destroy para borrar todo lo que está directamente en session. Lo destruye automaticamente. Aca se destruye la session
+		return res.redirect("/"); //luego se hace un redirect a la raiz. Aca se redirige a la home
+	},
+
+store:(req,res) => {
     const validaciones = validationResult(req);
-    
+
     if(validaciones.errors.length > 0){
-      
-      return res.render("./users/register",{
+
+    return res.render("./users/register",{
         errors: validaciones.mapped(),
         oldData: req.body,
       })
@@ -146,7 +158,9 @@ const controller = {
   recovery:(req,res) => {
     res.render("./users/passwordRecovery")
   }
-
 }
+
+
+
 
 module.exports = controller;

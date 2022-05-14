@@ -8,23 +8,29 @@
 <body>
     
     <%- include("../partials/header") %>
-    
+
     <main>
         <div class="path">
             <p>Inicio ></p>
             <p>Mi Cuenta ></p>
             <p>Login</p>
         </div>
-        
+
         <p class="creating-account">INICIÁ SESIÓN</p>
 
-    
-        
-        
+
+
+
         <form action="../views/confirmation.html" method="post" class="form1">
             <div class="control-formulario">
                 <label for="email">Email</label>
                 <input type="email" name="Email" id="email" placeholder="minombre@mail.com" required class="control">
+                <% if (locals.errors && errors.email) { %><!--si tengo un error, si en locals tengo los errores && si en los errores vino el email-->
+                    <!--entonces --><div class="text-danger">
+                        <%= errors.email.msg %><!--de errores quiero, de la propiedad email, el mensaje-->
+                    </div>
+                <% } %>
+            </div>
             </div>
             <div class="control-formulario">
                 <label for="contraseña">Contraseña</label>
@@ -37,6 +43,14 @@
         </form>
 
         <p class="tenescuenta">¿No tenés cuenta aún?<a href="/users/register"> Crear cuenta</a></p>
+
+        <div class="col-md-6 my-2"> <!--Sabrina. agregue de esta linea hasta 52 para recordar el usuario. Está bien?-->
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+                </label>
+            </div>
+        </div>
         
         <div class="socialnetwork">
         <button type="submit">Iniciá sesión con <i class="fa-brands fa-facebook-square"></i>
