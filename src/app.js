@@ -23,11 +23,6 @@ app.use(session({ secret: "It's a secret",
 
 }));
 
-app.use(session({//este es el middleware de aplicacion de session que es un objeto literal que . Se accede a todo lo que tenga en el req
-	secret: "Esto es un secreto",//la propiedad secret
-	resave: false,//propiedad (configuración de la session)
-	saveUninitialized: false,//propiedad (configuración de la session)
-}));
 
 app.use(cookies());//el middleware de las cookies. Permite trabajar directamente en req y res con un objeto literal. se va al controlador, linea 10
 
