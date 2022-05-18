@@ -80,8 +80,6 @@
                         <h2 class="products-title">Destacados</h2>
                     </div>
 
-            <h4>Destacados</h4>
-
             <section>
                 <div class="seccion">
 
@@ -93,6 +91,7 @@
                                     <figure class="product-box_image">
                                         <img src="/images/products/<%= product.image %>" alt="imagen de producto">
                                     </figure>
+                                </a>
                                     <article class="product-box_data">
                                         <h2><%= product.name %></h2>
                                         <span><%= product.price %></span>
@@ -105,7 +104,6 @@
                                             <button type="submit" class="view-buttom">Ver</button>
                                         </form>
                                     </div>
-                                </a>
                             </section>
                         </div>
                     <% }) %>

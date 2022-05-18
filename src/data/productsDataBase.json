@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "agenda ",
-    "description": "Agenda ",
+    "name": "agenda",
+    "description": "Agenda",
     "image": "producto_1.png",
-    "category": "Categoria 1",
-    "price": "$1000 ",
+    "category": "outstanding",
+    "price": "1000",
     "show": true
   },
   {

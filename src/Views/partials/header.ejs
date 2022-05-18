@@ -16,19 +16,19 @@
                             <label for="modal-close"><i class="fa-solid fa-circle-xmark"></i></label>
                         </div>
                         <div class="acordeon">
-                            <a href="/">Inicio</a></li>
-                            <a href="/product">Productos</a>
+                            <a href="/">Inicio</a>
+                            <a href="/products">Productos</a>
                                 <ul id="product">
-                                    <li><a href="/product"><strong>Todos los productos</strong></a></li>
-                                    <li><a href="/product">Agendas</a></li>
-                                    <li><a href="/product">Cuadernillos</a></li>
-                                    <li><a href="/product">Cuadernos</a></li>
-                                    <li><a href="/product">Anotadores</a></li>
-                                    <li><a href="/product">Álbumes</a></li>
-                                    <li><a href="/product">Planner</a></li>
-                                    <li><a href="/product">Imantados</a></li>
-                                    <li><a href="/product">Libretas</a></li>
-                                    <li><a href="/product">Otros</a></li>
+                                    <li><a href="/products"><strong>Todos los productos</strong></a></li>
+                                    <li><a href="/products">Agendas</a></li>
+                                    <li><a href="/products">Cuadernillos</a></li>
+                                    <li><a href="/products">Cuadernos</a></li>
+                                    <li><a href="/products">Anotadores</a></li>
+                                    <li><a href="/products">Álbumes</a></li>
+                                    <li><a href="/products">Planner</a></li>
+                                    <li><a href="/products">Imantados</a></li>
+                                    <li><a href="/products">Libretas</a></li>
+                                    <li><a href="/products">Otros</a></li>
                                 </ul>
                             <a href="/contact">Contacto</a>
                         </div>
@@ -63,28 +63,29 @@
             <% if (locals.isLogged) { %>
             <div class="login-cart">
                 <div class="login">
-                    <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%;"</a>
+                    <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%"</a>
                         <p><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></p>
                         <a href="/users/logout"><p>Cerrar Sesión</p></a>
                         <span class="cart-widget"></span>
 
-                    <% } else { %> 
-                        <<div class="login-cart">
+            <% } else { %> 
+                            <div class="login-cart">
                             <div class="login">
                                 <a href="/users/login"><i class="fa-solid fa-user"></i></a>
                                     <p>Iniciar Sesión</p>
                                     <span class="cart-widget"></span>
-                      <% } %>
+                        </div>
+            <% } %>
                     
-                </div>
+
 
                 <div class="cart">
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
                     <p>Mi Carrito</p>
                     <span class="cart-widget"></span>
                 </div>
+                </div>
             </div>
-        </div>
         <nav class="navbar">
             <ul>
                 <li><a href="/">Inicio</a></li>

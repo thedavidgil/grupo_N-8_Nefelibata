@@ -6,6 +6,7 @@
 <li><h2>4. Hacer menos.</h2></li>
 <li><h2>5. Dejar de hacer.</h2></li>
 </ul>
+
 <ul>
 <li><p style="text-align: justify">1. Como equipo debemos explorar todas las alternativas posibles para resolver una problemática, aunque un camino no nos lleve a una salida visible debemos usar eso como aprendizaje, no quedarse solamente con los contenidos abordados en las clases sino que los mismos sean el puntapié para comenzar una búsqueda hacía una o varias soluciones posibles. En otras palabras, extender nuestros límites.</p></li>
 <li><p style="text-align: justify">2. Debemos continuar probando nuevas alternativas, diferentes opciones para llegar a un mismo camino, a fin de que resulte un proceso de aprendizaje más allá de las consignas propuestas. Entendemos que la práctica es indispensable en el proceso de formación.</p></li>
@@ -25,7 +26,7 @@
 </ul>
 
 <ul>
- <li><p style="text-align: justify">1-Como equipo comenzamos a trabajar en los objetivos propuestos desde el primer momento, poniendo mano casi sin temor y siendo un trabajo positivo para todos</p></li>
+ <li><p style="text-align: justify">1- Como equipo comenzamos a trabajar en los objetivos propuestos desde el primer momento, poniendo mano casi sin temor y siendo un trabajo positivo para todos</p></li>
 
  <li><p style="text-align: justify">2- Profundizar más en los temas vistos y que vamos trabajando</p></li>
 
@@ -46,7 +47,7 @@
 </ul>
 
 <ul>
- <li><p style="text-align: justify">1-Comenzamos a ver y experimentar nuevos desafios que de a poco, con cuidado, esfuerzo y mucha perceberancia fueron fluyendo.</p></li>
+ <li><p style="text-align: justify">1- Comenzamos a ver y experimentar nuevos desafios que de a poco, con cuidado, esfuerzo y mucha perceberancia fueron fluyendo.</p></li>
 
  <li><p style="text-align: justify">2- Siempre queremos profundizar más en los temas que vamos viendo y ejercitando, poniendo todos lo mejor de si y con mucho esfuerzo. Todo esto es el medio para alcanzar el objetivo.</p></li>
 
@@ -55,4 +56,25 @@
  <li><p style="text-align: justify">4- Consideramos que debemos siempre hacer más y no menos. Siempre podemos hacer un poco más</p></li>
 
  <li><p style="text-align: justify">5- Todo lo que hagamos y podamos dar es beneficioso para nosotros a nivel personal y como grupo. </p></li>
+ </ul>
+
+ <h1>Retrospectiva SPRINT 5</h1>
+<ul>
+<li><h2>1. Comenzar a hacer.</h2></li>
+<li><h2>2. Hacer más.</h2></li>
+<li><h2>3. Continuar haciendo.</h2></li>
+<li><h2>4. Hacer menos.</h2></li>
+<li><h2>5. Dejar de hacer.</h2></li>
+</ul>
+
+<ul>
+ <li><p style="text-align: justify">1- Debemos confiar en la base de nuestros conocimientos adquirirdos y desprendernos de la idea o el temor a la hora de encarar un nuevo sprint.</p></li>
+
+ <li><p style="text-align: justify">2- Quizás deberíamos ampliar los horizontes de las consignas en post de generar nuevas experiencias, que sirven como generador de conocimientos.</p></li>
+
+ <li><p style="text-align: justify">3- Con el paso de los sprint notamos que fluye la sinergía en el grupo, debemos continuar por esa senda.</p></li>
+
+ <li><p style="text-align: justify">4- Con respecto al weekly, si bien es una práctica que venimos realizando, no nos queremos comprometer estrictamente a ella.</p></li>
+
+ <li><p style="text-align: justify">5- Decidimos desistir de las daily ya que consideramos que nos quita tiempo que podemos emplearlo en el proyecto.</p></li>
  </ul>
