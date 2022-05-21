@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="../../css/styles_register.css">
-    <title>Editar Usuario - Nefelibata</title>
+        <link rel="stylesheet" href="../../css/styles_register.css">
+        <title>Editar Usuario - Nefelibata</title>
 </head>
+
 <body>
-    
+
     <%- include("../partials/header") %>
 
-    <main>
+        <main>
 
-        <div class="path">
-            <p>Inicio></p>
-            <p>Mi usuario></p>
-            <p>Editar</p>
-        </div>
-        
-        <p class="creating-account">EDITAR USUARIO</p>
- 
-
-        <form action=" /users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form1">
-            <div class="control-formulario">
-                <label for="firstName">Nombre</label>
-                <input type="text" name="firstName" id="Nombre" value="<%= userToEdit.firstName %>" required class="control">
-            </div>
-            <div class="control-formulario">
-                <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="Nombre" value="<%= userToEdit.lastName %>" required class="control">
-            </div>
-            <div class="control-formulario"> 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" value="<%= userToEdit.email %>" required class="control">
-            </div>
-            <div class="control-formulario">    
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required class="control">
-            </div>
-            <div class="control-formulario">
-                <label for="category">Categoria</label>
-                <select name="category" required id ="category">
-                    <option value="Admin" <%= userToEdit.category =="Admin" ? "selected" :null %>>Admin</option>
-                    <option value="Client" <%= userToEdit.category =="Client" ? "selected" :null %>>Client</option>
-                    <option value="Categoria 3" <%= userToEdit.category =="Categoria 3" ? "selected" :null %>>Categoria 3</option>
-                    <option value="Categoria 4" <%= userToEdit.category =="Categoria 4" ? "selected" :null %>>Categoria 4</option>
-                </select>
+            <div class="path">
+                <p>Inicio></p>
+                <p>Mi usuario></p>
+                <p>Editar</p>
             </div>
 
-            <div class="control-formulario">
-                <label>Avatar</label>
-                <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control" value="<%= userToEdit.image %>">
-            </div>
-            
-            <div class="button1">
-              <button type="submit">Editar</button>
-            </div>
-        </form>
+            <p class="creating-account">EDITAR USUARIO</p>
 
-        <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
 
-    </main>
+            <form action=" /users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form1">
+                <div class="control-formulario">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" name="firstName" id="Nombre" value="<%= userToEdit.firstName %>" required
+                        class="control">
+                </div>
+                <div class="control-formulario">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" name="lastName" id="Nombre" value="<%= userToEdit.lastName %>" required
+                        class="control">
+                </div>
+                <div class="control-formulario">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="<%= userToEdit.email %>" required
+                        class="control">
+                </div>
+                <div class="control-formulario">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required
+                        class="control">
+                </div>
+                <div class="control-formulario">
+                    <label for="category">Categoria</label>
+                    <select name="category" required id="category">
+                        <option value="Admin" <%=userToEdit.category=="Admin" ? "selected" :null %>>Admin</option>
+                        <option value="Client" <%=userToEdit.category=="Client" ? "selected" :null %>>Client</option>
+                        <option value="Categoria 3" <%=userToEdit.category=="Categoria 3" ? "selected" :null %>
+                            >Categoria 3</option>
+                        <option value="Categoria 4" <%=userToEdit.category=="Categoria 4" ? "selected" :null %>
+                            >Categoria 4</option>
+                    </select>
+                </div>
 
-    <%- include("../partials/footer") %>
+                <div class="control-formulario">
+                    <label>Avatar</label>
+                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control"
+                        value="<%= userToEdit.image %>">
+                </div>
 
-    
+                <div class="button1">
+                    <button type="submit">Editar</button>
+                </div>
+            </form>
+
+            <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
+
+        </main>
+
+        <%- include("../partials/footer") %>
+
+
 </body>
+
 </html>

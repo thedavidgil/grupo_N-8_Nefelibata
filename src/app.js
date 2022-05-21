@@ -3,8 +3,8 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-const session = require("express-session");//Sabrina. instalado session, se requiere el mismo.
-const cookies = require("cookie-parser");//descargo em modulo cookie-parser y lo requiere aca. Cookie-parser es basicamente un modulo que permite trabajar con las cookies que esto aquello que se guarda del lado del navegador (la session se guarda del lado del servidor). pero las cookies se guardan por navegador y servidor
+const session = require("express-session");
+const cookies = require("cookie-parser");
 
 
 // ************ express() ************
@@ -24,9 +24,9 @@ app.use(session({ secret: "It's a secret",
 }));
 
 
-app.use(cookies());//el middleware de las cookies. Permite trabajar directamente en req y res con un objeto literal. se va al controlador, linea 10
+app.use(cookies());
 
-app.use(userLoggedMiddleware);//se ejecuta solo cuando necesite por eso no se le pasan parametros. Este se inicia siempre despues de session por eso va en este lugar
+app.use(userLoggedMiddleware);
 
 
 
