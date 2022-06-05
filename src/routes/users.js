@@ -16,13 +16,13 @@ const authMiddleware = require("../middlewares/authMiddleware");
 /** REGISTER USER */
 router.get("/register", guestMiddleware, usersController.register);
 router.post("/register",upload.single("userImage"),validation, usersController.processRegister);
-router.get("/confirmation", usersController.confirmation);
-router.get("/list", usersController.list);
+router.get("/confirmation", usersController.confirmation);//??????????????????
+router.get("/list", usersController.list);//?????????????????????
 
 /** EDIT USER */
 
-router.get("/edit/:id",usersController.edit);
-router.put("/edit/:id",usersController.update);
+router.get("/edit/:id",usersController.edit);//???????????????
+router.put("/edit/:id",usersController.update);//??????????????????
 
 
 /**Loggin */
@@ -35,17 +35,8 @@ router.get("/profile", authMiddleware, usersController.profile)
 /**Logout Perfil de usuario*/
 router.get("/logout", usersController.logout)
 
-/**Procesar el login */
-router.post("/login",usersController.loginProcess);
-
-/**Perfil del usuario */
-router.get("/profile/",authMiddleware, usersController.profile);
-
-/**Logout */
-router.get("/logout/", usersController.logout);
-
 /**RECOVERY USER */
-router.get("/recovery",usersController.recovery);
+router.get("/recovery",usersController.recovery);//???????????????
 
 
 

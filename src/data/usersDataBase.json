@@ -43,5 +43,13 @@
   "password": "",
   "category": "admin",
   "image": "default-image.png"
+ },
+ {
+  "id": 6,
+  "firstName": "David",
+  "lastName": "David Gil",
+  "email": "davidgil.gnz@gmail.com",
+  "password": "$2a$10$2bs9qsl3ABXq2AJ/Br7gs.puSILojpc2cDFU0Bu5DDxc9ZMMe05jO",
+  "avatar": "userImage-1653351505012-278091059.jpg"
  }
 ]

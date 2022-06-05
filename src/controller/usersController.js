@@ -86,14 +86,14 @@ const controller = {
    
 
   
-
+//??????????????????????????????
   edit: (req, res) => {
     const id = req.params.id;
     const userToEdit = users[id-1];
     res.render("./users/edit", {userToEdit : userToEdit})
   },
 
-  update:(req, res) => {
+  update:(req, res) => {//???????????????????
     const id = req.params.id;
    users = users.map(user => {
     if(user.id == id){
@@ -111,11 +111,11 @@ const controller = {
   },
  
   confirmation:(req,res) => {
-    res.render("./users/confirmation")
+    res.render("./users/confirmation") //?????
   },
 
   list:(req,res) => {
-    res.render("./users/usersList")
+    res.render("./users/usersList") //?????
   },
 
 
@@ -130,9 +130,9 @@ const controller = {
     req.session.destroy();
     return res.redirect('/');
   },
-  
+ 
   recovery:(req,res) => {
-    res.render("./users/passwordRecovery")
+    res.render("./users/passwordRecovery") //?????
   }
 }
 
