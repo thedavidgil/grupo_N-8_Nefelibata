@@ -6,7 +6,6 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require("../../database/models");
 
-const Users = require("../../models/Users");
 
 const controller = {
 
@@ -22,29 +21,44 @@ const controller = {
 				oldData: req.body
 			});
 		}
-
-		let userInDB = Users.findByField("email", req.body.email);
-
-		if (userInDB) {
-			return res.render("./users/register", {
-				errors: {
-					email: {
-						msg: "Este email ya está registrado"
-					}
-				},
-				oldData: req.body
-			});
-		}
-
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-		}
-
-		let usersCreated = Users.create(userToCreate);
-
-		return res.redirect("login");
+    
+    db.User.findOne({
+      where:{
+        email : req.body.email
+      }
+    }).then( result => {
+        
+      if (result !== null){
+        res.render("./users/register" 
+        ,{
+          errors: {
+            email: {
+              msg: "Este email ya está registrado"
+            }
+          },
+          oldData: req.body
+        })
+      }else{
+        return result
+      }
+    }).then(resultado  =>{
+      let promesaCreateUser = db.User.create({
+        first_name : req.body.firstName,
+        last_name : req.body.lastName,
+        email: req.body.email,
+        password : bcryptjs.hashSync(req.body.password, 10),
+      });
+  
+      let promesaAvatar = db.Avatar.create({
+        avatar: req.file.filename
+      });
+      
+      Promise.all([promesaCreateUser,promesaAvatar])
+      .then((resultado)=>{
+        res.redirect("login")
+      })
+    })
+     
   },
 
 
