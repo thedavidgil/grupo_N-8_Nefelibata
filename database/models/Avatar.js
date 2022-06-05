@@ -1,11 +1,9 @@
-const { sequelize, dataTypes } = require('sequelize');
-
-const alias = "Avatar";
-
-const cols = {
+module.exports = (sequelize, dataTypes) =>{
+let alias = "Avatar";
+let cols = {
 
   avatar_id:{
-    type: dataTypes.INT(10).UNSIGNED,
+    type: dataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
     autoIncrement: true
   },
@@ -29,4 +27,7 @@ Avatar.associate = function(models){
   })
 }
 
-module.exports = Avatar;
+return Avatar
+
+};
+

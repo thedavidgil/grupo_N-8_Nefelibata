@@ -1,11 +1,10 @@
-const { sequelize, dataTypes } = require('sequelize');
-
+module.exports = (sequelize, dataTypes) => {
 const alias = "Product_category";
 
 const cols = {
 
   product_category_id:{
-    type: dataTypes.INT(10).UNSIGNED,
+    type: dataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
     autoIncrement: true
   },
@@ -32,4 +31,6 @@ Product_category.associate = function(models){
   
 }
 
-module.exports = Product_category;
+return  Product_category;
+}
+

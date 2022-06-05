@@ -1,11 +1,10 @@
-const { sequelize, dataTypes } = require('sequelize');
-
+module.exports = (sequelize, dataTypes) =>{
 const alias = "Product_image";
 
 const cols = {
 
   product_image_id:{
-    type: dataTypes.INT(10).UNSIGNED,
+    type: dataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
     autoIncrement: true
   },
@@ -13,7 +12,7 @@ const cols = {
     type: dataTypes.STRING(100),
     allowNull: false
   },
-  product_id:dataTypes.INT(10).UNSIGNED
+  product_id:dataTypes.INTEGER(10).UNSIGNED
 };
 
 let config = {
@@ -32,5 +31,6 @@ Product_image.associate = function(models){
 
 }
 
+return Product_image
+} 
 
-module.exports = Product_image;
