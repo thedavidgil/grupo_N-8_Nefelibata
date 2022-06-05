@@ -26,10 +26,9 @@ const controller = {
       where:{
         email : req.body.email
       }
-    }).then( result => {
-        
+    }).then( result => {      
       if (result !== null){
-        res.render("./users/register" 
+        throw res.render("./users/register" 
         ,{
           errors: {
             email: {
@@ -37,28 +36,35 @@ const controller = {
             }
           },
           oldData: req.body
+         
         })
       }else{
         return result
       }
-    }).then(resultado  =>{
-      let promesaCreateUser = db.User.create({
-        first_name : req.body.firstName,
-        last_name : req.body.lastName,
-        email: req.body.email,
-        password : bcryptjs.hashSync(req.body.password, 10),
-      });
-  
-      let promesaAvatar = db.Avatar.create({
+    }).then(()=>{
+      db.Avatar.create({
         avatar: req.file.filename
-      });
-      
-      Promise.all([promesaCreateUser,promesaAvatar])
-      .then((resultado)=>{
-        res.redirect("login")
       })
-    })
-     
+      .then(()=>{
+        db.Avatar.findOne({
+          where:{
+            avatar: req.file.filename
+          }
+        })
+        .then(result=>{
+          db.User.create({
+            first_name : req.body.firstName,
+            last_name : req.body.lastName,
+            email: req.body.email,
+            password : bcryptjs.hashSync(req.body.password, 10),
+            avatar_id : result.avatar_id
+          })
+          .then(()=>{
+            res.redirect("login")
+          })
+        }) 
+      })
+    })  
   },
 
 
