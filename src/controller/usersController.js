@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-const db = require("../../database/models");
+const db = require("../../database/models");//Sabrina. Cambiar el nombre de nuestra db?!
 
 
 const controller = {
