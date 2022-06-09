@@ -12,47 +12,47 @@ const controller = {
   register: (req, res) => {
     res.render("./users/register")
   },
-  processRegister: (req, res) => {
+  processRegister: (req, res) => {//hace la previa validacion
     const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
+    if (resultValidation.errors.length > 0) {//validacion de express validator
       return res.render("./users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body
       });
     }
 
-    db.User.findOne({
-      where: {
-        email: req.body.email
+    db.User.findOne({//Sabrina. Devuelve el primer resultado de la busqueda.
+      where: {//condicion 
+        email: req.body.email// por el email
       }
-    }).then(result => {
-      if (result !== null) {
-        throw res.render("./users/register"
+    }).then(result => {//la promesa
+      if (result !== null) {//si el resultado es diferente a nulo
+        throw res.render("./users/register"//entonces me redirije a esta vista
           , {
-            errors: {
-              email: {
-                msg: "Este email ya está registrado"
+            errors: {//si hay error
+              email: {//objeto literal donde en la propiedad email tenga a su vez
+                msg: "Este email ya está registrado"//muestra este mensaje
               }
             },
-            oldData: req.body
+            oldData: req.body//mantiene laa info que se registró previamente
 
           })
       } else {
-        return result
+        return result//sino, retorna el resultado
       }
     }).then(() => {
-      db.Avatar.create({
+      db.Avatar.create({//trae de la db el avatar para crear
         avatar: req.file.filename
       })
         .then(() => {
           db.Avatar.findOne({
             where: {
-              avatar: req.file.filename
+              avatar: req.file.filename//guarda la imagen
             }
           })
-            .then(result => {
-              db.User.create({
+            .then(result => {//de ese resultado 
+              db.User.create({//de la db de usuarios, lo crea con lo que a continuación solicita
                 first_name: req.body.firstName,
                 last_name: req.body.lastName,
                 email: req.body.email,
@@ -60,7 +60,7 @@ const controller = {
                 avatar_id: result.avatar_id
               })
                 .then(() => {
-                  res.redirect("login")
+                  res.redirect("login")//finalizado ese proceso lo redirige a login (para loguearse)
                 })
             })
         })
@@ -109,7 +109,7 @@ const controller = {
 
 
   //??????????????????????????????
-  edit: (req, res) => {
+  edit: (req, res) => {//Sabrina. Es muy parecido al de crear. La diferencia es que como quiero editar una peli tengo que mandar los datos de la peli para que llegue y se autocomplete el formulario
     //const id = req.params.id; Sabrina. Lo comenté porque está guardado en el findByPk de linea 115.
     const userToEdit = users[id - 1];//Sabrina. Esta constante se quitaria?
     db.User.findByPk(req.params.id)//Sabrina. Me guardo el id que me llega por parámetro.
