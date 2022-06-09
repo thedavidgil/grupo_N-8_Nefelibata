@@ -20,11 +20,11 @@
       <section class="detalle_producto">
         
         <div class="imagen_principal">
-          <img src="/images/products/<%= product.image %>" alt="imgaen principal">
+          <img src="/images/products/<%= product.product_images[0].image %>" alt="imgaen principal">
         </div>
 
         <div class="detalle">
-          <h2><%= product.name %></h2>
+          <h2><%= product.product_name %></h2>
           <div class="price-per-unit">
             <p><%= product.price %></p>
           </div>
