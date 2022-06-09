@@ -68,28 +68,29 @@ const controller = {
   },
 
 
-  login: (req, res) => {
+  login: (req, res) => {//controlador que renderiza la vista de login
     return res.render("./users/login");
   },
 
-  loginProcess: (req, res) => {
-    let userToLogin = Users.findByField('email', req.body.email);
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-        if (req.body.remember_user) {
-          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+  loginProcess: (req, res) => {//otro metodo que recibirá al req, al res
+    //aca se procesa todo el formulario: tomar lo que viajo en el req del body y verificar si tengo a x persona registrada
+    let userToLogin = Users.findByField('email', req.body.email);// voy a buscar el usuario...tomo del modelo User.findByField donde digo que quiero buscar por email, y lo que vino en el body del req en el email
+    if (userToLogin) {//si obtuve algo es true, sino es false
+      let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);//encontrado el usuario hay que verificar si su contraseña , guardada en la Bd corresponde con la ingresada
+      if (isOkThePassword) {//si todo esta bien, antes de redirigir a la persona quiero guardar al usuario en session, para eso se hace la linea 56
+        delete userToLogin.password;//antes de pasar el usuario en sesion es borrar del userToLogin la propiedad password. Es solo por seguridad. Con delete podemos borrar una propiedad determinada. Se borra la contraseña. No se quiere mantener en session toda la info del usuario. Si interesa el fullname, email
+        req.session.userLogged = userToLogin;//session es la parte que nos va a permitir implementar a lo largo de toda nuestra aplicacion la variable session que es objeto literal que va a contener info que yo quiera (se instala express-session. npm install express-session) luego inicializo la sesion en app.js
+        if (req.body.remember_user) {//si en el req, en el body vino remember_user, entonces, a linea 59
+          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })//proceso para recordar el usuario. seteo una cookie. En el res voy a setaer una cookie userEmail y lo que va a guardar la cookie es el valor de lo que vino en el body del req que es la propiedad email. Esto va a durar maxAge es para indicar que la cookie dura 1000 milisegundos pero lo multiplica por 60 que son 60 segundos. va a userLoggedMiddleware
         }
 
-        return res.redirect("profile");
+        return res.redirect("profile");//si da verdadero, redirigir a /user/profile. o sea, si los datos ingresados son correctos me llevan a userProfile
 
       }
-      return res.render("./users/login", {
-        errors: {
-          email: {
-            msg: 'Las credenciales son inválidas'
+      return res.render("./users/login", {//cuando no se obtiene nada (undefined)
+        errors: {//crear un objeto literal
+          email: {//va a tener un error para el email
+            msg: 'Las credenciales son inválidas'//el mensaje de error del email
           }
         }
       });
@@ -98,7 +99,7 @@ const controller = {
     return res.render("./users/login", {
       errors: {
         email: {
-          msg: 'No se encuentra este email en nuestra base de datos'
+          msg: 'No se encuentra este email en nuestra base de datos'//acá interesa redirigir a una persona a una vista (en este caso userProfile)
         }
       }
     });
@@ -109,7 +110,7 @@ const controller = {
 
   //??????????????????????????????
   edit: (req, res) => {
-    //const id = req.params.id; lo comenté porque está guardado en el findByPk de linea 114.
+    //const id = req.params.id; Sabrina. Lo comenté porque está guardado en el findByPk de linea 115.
     const userToEdit = users[id - 1];//Sabrina. Esta constante se quitaria?
     db.User.findByPk(req.params.id)//Sabrina. Me guardo el id que me llega por parámetro.
       .then(function (userToEdit) {//Sabrina
