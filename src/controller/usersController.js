@@ -1,5 +1,5 @@
 const bcryptjs = require("bcryptjs");
-const {validationResult}= require("express-validator")
+const { validationResult } = require("express-validator")
 const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -9,139 +9,160 @@ const db = require("../../database/models");//Sabrina. Cambiar el nombre de nues
 
 const controller = {
 
-  register:(req,res) => {
+  register: (req, res) => {
     res.render("./users/register")
   },
   processRegister: (req, res) => {
-		const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-			return res.render("./users/register", {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
-    
+      return res.render("./users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      });
+    }
+
     db.User.findOne({
-      where:{
-        email : req.body.email
+      where: {
+        email: req.body.email
       }
-    }).then( result => {      
-      if (result !== null){
-        throw res.render("./users/register" 
-        ,{
-          errors: {
-            email: {
-              msg: "Este email ya está registrado"
-            }
-          },
-          oldData: req.body
-         
-        })
-      }else{
+    }).then(result => {
+      if (result !== null) {
+        throw res.render("./users/register"
+          , {
+            errors: {
+              email: {
+                msg: "Este email ya está registrado"
+              }
+            },
+            oldData: req.body
+
+          })
+      } else {
         return result
       }
-    }).then(()=>{
+    }).then(() => {
       db.Avatar.create({
         avatar: req.file.filename
       })
-      .then(()=>{
-        db.Avatar.findOne({
-          where:{
-            avatar: req.file.filename
-          }
+        .then(() => {
+          db.Avatar.findOne({
+            where: {
+              avatar: req.file.filename
+            }
+          })
+            .then(result => {
+              db.User.create({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                avatar_id: result.avatar_id
+              })
+                .then(() => {
+                  res.redirect("login")
+                })
+            })
         })
-        .then(result=>{
-          db.User.create({
-            first_name : req.body.firstName,
-            last_name : req.body.lastName,
-            email: req.body.email,
-            password : bcryptjs.hashSync(req.body.password, 10),
-            avatar_id : result.avatar_id
-          })
-          .then(()=>{
-            res.redirect("login")
-          })
-        }) 
-      })
-    })  
+    })
   },
 
 
-  login:(req,res) =>{
-		return res.render("./users/login");
-	},
+  login: (req, res) => {
+    return res.render("./users/login");
+  },
 
   loginProcess: (req, res) => {
     let userToLogin = Users.findByField('email', req.body.email);
-    if(userToLogin) {
+    if (userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-        if (isOkThePassword) {
-          delete userToLogin.password;
-          req.session.userLogged = userToLogin;
-          if (req.body.remember_user){
-            res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2 })
+      if (isOkThePassword) {
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+        if (req.body.remember_user) {
+          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+        }
+
+        return res.redirect("profile");
+
+      }
+      return res.render("./users/login", {
+        errors: {
+          email: {
+            msg: 'Las credenciales son inválidas'
           }
-
-          return res.redirect("profile");
-
+        }
+      });
     }
-    return res.render("./users/login", {
-      errors: {
-        email:{
-          msg:'Las credenciales son inválidas'
-        }
-      }
-    });
-  }
 
     return res.render("./users/login", {
       errors: {
-        email:{
-          msg:'No se encuentra este email en nuestra base de datos'
+        email: {
+          msg: 'No se encuentra este email en nuestra base de datos'
         }
       }
     });
-    
-   },
-   
 
-  
-//??????????????????????????????
+  },
+
+
+
+  //??????????????????????????????
   edit: (req, res) => {
-    const id = req.params.id;
-    const userToEdit = users[id-1];
-    res.render("./users/edit", {userToEdit : userToEdit})
+    //const id = req.params.id; lo comenté porque está guardado en el findByPk de linea 114.
+    const userToEdit = users[id - 1];//Sabrina. Esta constante se quitaria?
+    db.User.findByPk(req.params.id)//Sabrina. Me guardo el id que me llega por parámetro.
+      .then(function (userToEdit) {//Sabrina
+        res.render("./users/edit", { userToEdit: userToEdit });
+      })
   },
 
-  update:(req, res) => {//???????????????????
-    const id = req.params.id;
-   users = users.map(user => {
-    if(user.id == id){
+  update: (req, res) => {//???????????????????
+    const id = req.params.id;//Sabrina. seria ideal poner el req params aca para validar que no me esta llegando cualquier cosa en lugrar de ponerlo en el where. Sería así: const id = req.params.id; sería la mejor forma de validar el id que nos llega
+    users = users.map(user => {
+      if (user.id == id) {
         users.firstName = req.body.firstName,
-        users.lastName = req.body.lastName,
-        users.email = req.body.email,
-        users.password = req.body.password,
-        users.category = req.body.category,
-        users.image = req.file?.filename ?? "default-image.png"
-    }
-    return users;
-    });
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2))
-    return res.redirect("usersList");
+          users.lastName = req.body.lastName,
+          users.email = req.body.email,
+          users.password = req.body.password,
+          users.category = req.body.category,
+          users.image = req.file?.filename ?? "default-image.png"
+      }
+      db.User.update({//Sabrina
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        avatar_id: result.avatar_id
+      },
+        {
+          where: {//Sabrina
+            id: req.params.id
+          }
+        })
+        .then(function (response) {//Sabrina. si devuelve cero es que no se pudo actualizar y si es un uno se actualizó. El response es para validar lo que llega, si llega el cero valida como false, el uno como true
+          if (response)
+            return users;
+        });
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2))
+      return res.redirect("usersList" + req.params.id);//sabrina. Agregué el + req.params.id
+    })
+      .catch(function (err) {//Sabrina
+        console.error(err);
+      })
   },
- 
-  confirmation:(req,res) => {
+
+  confirmation: (req, res) => {
     res.render("./users/confirmation") //?????
   },
 
-  list:(req,res) => {
+  list: (req, res) => {
     res.render("./users/usersList") //?????
   },
 
 
-  profile: (req, res) =>{
-	  return res.render("./users/profile", {
+  profile: (req, res) => {
+    return res.render("./users/profile", {
       user: req.session.userLogged
     })
   },
@@ -151,8 +172,8 @@ const controller = {
     req.session.destroy();
     return res.redirect('/');
   },
- 
-  recovery:(req,res) => {
+
+  recovery: (req, res) => {
     res.render("./users/passwordRecovery") //?????
   }
 }
