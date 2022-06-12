@@ -11,12 +11,12 @@ module.exports = (sequelize, dataTypes) => {
         user_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+
         },
         product_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+
         },
     };
 
