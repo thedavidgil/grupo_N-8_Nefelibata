@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const db = require("../../database/models");
+
 
 function readDBFiltered(){
 	let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -16,46 +18,51 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 
   home:(req,res) =>{
-	const products = readDBFiltered();
-  return res.render("./products/products", { products, toThousand});
-  
-  },
+	db.Product.findAll({
+    include: [{association:"product_images"}]
+  })
+  .then(function(products){
+    return res.render("./products/products", { products, toThousand})}
+    //return res.send(products)}
+  )},
 
   detail:(req,res) => {
-		const id = req.params.id;
-		const products = readDBFiltered();
-		const product = products.find(product => product.id == id);
-    if(typeof product != "undefined"){
-      res.render("./products/detail", { product, toThousand });
-    }
-    else{
-      res.render("./main/error")
+    db.Product.findByPk((req.params.id), {
+    include: [{association:"product_images"}]
+      })
+        .then(function(product){
+           if(product) {
+      return res.render("./products/detail", {product, toThousand})
+      //return res.send(product.product_images[0].image)
+      } else {
+       return res.render("./main/error")
     }
     
-  },
+ })
+},
 
 
-  create:(req,res) =>{
+  create:(req,res) => {
     return res.render("./products/create");
     
   },
 
 	store: (req, res) => {
-    let products = readDB();
-		const productoNuevo = {
-			id: products.length > 0 ? products[ products.length - 1 ].id + 1 : 1,
-      name: req.body.name,
-      description:req.body.description,
-      image: req.file?.filename ?? "default-image.png",
-      category: req.body.category,
-      price:req.body.price,
-      show:true
-		}
-
-		products.push(productoNuevo);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-
-		return res.redirect("/products");
+    let a = db.Product.create({
+      product_name: req.body.Nombre,
+      description: req.body.description,
+      price: req.body.price,
+      product_category_id:req.body.category,
+      show_product:true,
+      product_images:[{
+        image: req.file?.filename ?? "default-image.png",
+      }]
+		},
+    {
+      include:  [{association:"product_images"}]
+    })
+    //return res.send(a)
+    return res.redirect("/products");
 	},
 
   edit:(req,res) =>{

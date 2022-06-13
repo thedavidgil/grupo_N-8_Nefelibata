@@ -6,7 +6,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const session = require("express-session");
 const cookies = require("cookie-parser");
 
-const usersRoutes = require("./routes/users");//Sabrina
+//const usersRoutes = require("./routes/users");//Sabrina
 
 // ************ express() ************
 const app = express();
@@ -62,9 +62,9 @@ app.use("/users", usersRouter);
 app.use("/cart", cartRouter);
 
 
-//*************Models  **********
-app.use("/", usersRoutes);//Sabrina
-app.use("/users", usersRoutes);//Sabrina
+//************ Models  **********
+//app.use("/", usersRoutes);//Sabrina
+//app.use("/users", usersRoutes);//Sabrina
 
 //**********Error page**********
 app.get("*", (req,res)=>{
