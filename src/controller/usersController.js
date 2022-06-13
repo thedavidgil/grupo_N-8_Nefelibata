@@ -92,7 +92,8 @@ const controller = {
       }
       return res.redirect("profile");//si da verdadero, redirigir a /user/profile. o sea, si los datos ingresados son correctos me llevan a userProfile
     })
-
+    .then((response)=>{
+      if(response)
     return res.render("./users/login", {//cuando no se obtiene nada (undefined)
       errors: {//crear un objeto literal
         email: {//va a tener un error para el email
@@ -100,7 +101,7 @@ const controller = {
         }
       }
       })
-    
+    })
       .then((response)=>{
         if (response)
             return res.render("./users/login", {
@@ -181,11 +182,25 @@ const controller = {
                   });
 
                 confirmation: (req, res) => {
+                  db.User.findOne({
+                    where: {
+                      email: req.body.email
+                    }
+                  }).then(function (email) {
+                    if(email)
                   res.render("./users/confirmation") //?????
-                };
+                })
+              };
 
                 list: (req, res) => {
+                  db.Users.FindByPk({
+                  where:{
+                    id: req.params.id
+                  }
+                })
+                .then(()=>{
                   res.render("./users/usersList") //?????
+                })
                 };
 
 
