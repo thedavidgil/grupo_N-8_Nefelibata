@@ -20,17 +20,17 @@ let config = {
   deletedAt: false
 };
 
-const Product_image = sequelize.define(alias,cols,config);
+const Product_images = sequelize.define(alias,cols,config);
 
-Product_image.associate = function(models){
+Product_images.associate = function(models){
 
-  Product_image.belongsTo(models.Product,{ 
+  Product_images.belongsTo(models.Product,{ 
     as: "products",
     foreignKey: "product_id"
   })
 
 }
 
-return Product_image
+return Product_images
 } 
 

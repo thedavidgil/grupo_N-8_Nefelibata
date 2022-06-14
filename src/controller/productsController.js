@@ -65,6 +65,7 @@ const controller = {
     return res.redirect("/products");
 	},
 
+/* SPRING 5 */
   edit:(req,res) =>{
     const id = req.params.id;
     let products = readDB();
@@ -72,6 +73,7 @@ const controller = {
         res.render("./products/edit",{product});
   },
 
+/* SPRING 5 */
   update: (req, res) => {
     const id = req.params.id;
     let products = readDB();
@@ -88,7 +90,18 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
     return res.redirect("/products");
   },
-
+/*
+  delete: (req,res) => {
+    const id = req.params.id;
+    db.Product.destroy({
+      where:
+        {
+          id: id
+        }
+    }).then(response => res.redirect("/products"))
+  }
+*/
+  /* SPRING 5 */
   destroy: (req,res) => {
     const id = req.params.id;
     let products  = readDB();
@@ -101,6 +114,7 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2));
     return res.redirect("/products");
   }
+
 }
 
 
