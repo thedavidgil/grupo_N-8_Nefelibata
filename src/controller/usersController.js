@@ -106,10 +106,11 @@ const controller = {
                 msg: 'Las credenciales son inválidas'//el mensaje de error del email
               }
             }
+
           })
       .then((response) => {
         if (response)
-          return res.render("./users/login", {
+            return res.render("./users/login", {
             errors: {
               email: {
                 msg: 'No se encuentra este email en nuestra base de datos'//acá interesa redirigir a una persona a una vista (en este caso userProfile)
