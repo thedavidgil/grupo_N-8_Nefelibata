@@ -3,7 +3,7 @@ const alias = "Product_category";
 
 const cols = {
 
-  product_category_id:{
+  id:{
     type: dataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
     autoIncrement: true

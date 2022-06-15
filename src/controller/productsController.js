@@ -3,6 +3,10 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const db = require("../../database/models");
 
+const ProductCategory = db.Product_category;
+const ProductImage = db.Product_images;
+const Products = db.Product;
+
 
 function readDBFiltered(){
 	let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -27,7 +31,7 @@ const controller = {
   )},
 
   detail:(req,res) => {
-    db.Product.findByPk((req.params.id), {
+    Products.findByPk((req.params.id), {
     include: [{association:"product_images"}]
       })
         .then(function(product){
@@ -48,7 +52,7 @@ const controller = {
   },
 
 	store: (req, res) => {
-    let a = db.Product.create({
+    let a = Products.create({
       product_name: req.body.Nombre,
       description: req.body.description,
       price: req.body.price,
@@ -65,15 +69,42 @@ const controller = {
     return res.redirect("/products");
 	},
 
-/* SPRING 5 */
+  /* SPRING 5 
   edit:(req,res) =>{
     const id = req.params.id;
     let products = readDB();
 		const product = products.find(product => product.id == id);
         res.render("./products/edit",{product});
+  },*/
+
+  edit: async (req, res) => {
+    try {
+      const id = req.params.id
+      const allProductCategories = await ProductCategory.findAll();
+      const allProductImages = await ProductImage.findAll();
+      const products = await Product.findByPk(id, {include: [product_categories, product_images]});
+      return res.render("./products/edit",{allProductCategories, allProductImages, product})
+    } catch (err) {
+      console.error(err)
+    }
   },
 
-/* SPRING 5 */
+  update: async (req, res) => {
+    try {
+      const id = req.params.id;
+      await Products.update({
+        ...req.body
+      },
+      {
+        where: {id:id}
+      });
+      return res.redirect("/products");
+    } catch (err) {
+      console.error(err)
+    }
+  },
+
+/* SPRING 5 
   update: (req, res) => {
     const id = req.params.id;
     let products = readDB();
@@ -89,19 +120,35 @@ const controller = {
     });
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
     return res.redirect("/products");
+  },*/
+
+  delete: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const Product = await Products.findByPk(id);
+      return res.render("/delete", {Product})
+    } catch (err) {
+      console.error(err)
+    }
   },
-/*
-  delete: (req,res) => {
-    const id = req.params.id;
-    db.Product.destroy({
-      where:
-        {
-          id: id
-        }
-    }).then(response => res.redirect("/products"))
+
+  destroy: async (req, res) => {
+    try {
+      const id = req.params.id;
+      await Products.destroy({
+        where:
+          {
+            id: id
+          }        
+      })
+      
+      return res.redirect("/products");
+    } catch (err) {
+      console.error(err)
+    }
   }
-*/
-  /* SPRING 5 */
+
+  /* SPRING 5 
   destroy: (req,res) => {
     const id = req.params.id;
     let products  = readDB();
@@ -113,7 +160,7 @@ const controller = {
     })
     fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2));
     return res.redirect("/products");
-  }
+  }*/
 
 }
 
