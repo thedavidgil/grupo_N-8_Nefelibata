@@ -78,3 +78,24 @@
 
  <li><p style="text-align: justify">5- Decidimos desistir de las daily ya que consideramos que nos quita tiempo que podemos emplearlo en el proyecto.</p></li>
  </ul>
+
+<h1>Retrospectiva SPRINT 6</h1>
+<ul>
+<li><h2>1. Comenzar a hacer.</h2></li>
+<li><h2>2. Hacer más.</h2></li>
+<li><h2>3. Continuar haciendo.</h2></li>
+<li><h2>4. Hacer menos.</h2></li>
+<li><h2>5. Dejar de hacer.</h2></li>
+</ul>
+
+<ul>
+ <li><p style="text-align: justify">1- Seguir confiando en el equipo, en nosotros mismos y dejar ir cada vez más las inseguridades que nos vayan surgiendo, entendiendo que cada sprint es un nuevo desafio para nuestro crecimiento.</p></li>
+
+ <li><p style="text-align: justify">2- Debemos continuar investigando más sobre los temas, trabajados, que estamos trabajando y los que vendran para afianzar, repasar y actualizarse.</p></li>
+
+ <li><p style="text-align: justify">3- Continuar esforzándonos en todo lo que se pueda presentar y seguir confiando en el compañerismo generado en el grupo.</p></li>
+
+ <li><p style="text-align: justify">4- Poco a poco las weekly disminuyen más.</p></li>
+
+ <li><p style="text-align: justify">5- Definitivamente, nos alejamos de las dailys por diferentes motivos y consideramos que ese tiempo que se invierte en las dailys es más valioso implementarlo para cada sprint y seguir investigando.</p></li>
+ </ul>
