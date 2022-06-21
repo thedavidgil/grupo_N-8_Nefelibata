@@ -3,8 +3,6 @@ function guestMiddleware(req, res, next){
         return res.redirect("profile");
     }
     next();
-
-
 }
 
 

@@ -17,6 +17,8 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--gris);
@@ -129,48 +131,6 @@ body {
   background: var(--azul-hover);
 }
 
-
-/*
-main .carrusel {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 10px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.fa-circle-chevron-left {
-  display: flex;
-  width: 3%;
-  height: 3%;
-  padding: 5px;
-  margin: 5px;
-}
-
-.fa-circle-chevron-right {
-  display: flex;
-  width: 3%;
-  height: 3%;
-  padding: 5px;
-  margin: 5px;
-}
-
-
-.carrusel4 {
-  display: flex;
-  width: 80%;
-  height: 80%;
-  margin: auto;
-  justify-content: center;
-  border-radius: 15px;
-  padding: 10px;
-  box-shadow: 10px 5px 5px var(--azul);
-}
-*/
 .pieCarrusel {
   display: flex;
   flex-direction: row;
@@ -209,15 +169,6 @@ main .carrusel {
   margin: 5px;
   padding: 5px;
 }
-
-/*
-p {
-  font-size: 16px;
-  text-align: justify;
-  padding: 5px;
-  margin-top: 5px;
-  color: var(--negro);
-}*/
 
 .products-wrapper {
   margin-top: 30px;
@@ -322,19 +273,8 @@ p {
   border-color: var(--beige-hover);
 }
 
-/*
-.container{
-  width:100%;
-  padding-right:15px;
-  padding-left:15px;
-  margin-right:auto;
-  margin-left:auto;
-}
-*/
 .product-row{
-  /*display:-ms-flexbox;*/
   display:flex;
-  /*-ms-flex-wrap:wrap;*/
   flex-wrap:wrap;
   justify-content: center;
   width: 100%;
@@ -351,92 +291,6 @@ p {
 .col-lg-3{
   max-width:400px
 }
-
-/*
-.seccion {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 20%;
-  border-radius: 20px;
-  border: solid 1px red;
-}
-.product-img{
-  width: 100%;
-  height: 50%;
-  margin: 0;
-  border-radius: 20px 20px 0 0;
-  border: solid 1px blue;
-}
-.product-img img{
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-}
-.product-description{
-  width: 100%;
-  padding: 30px 20px;
-  justify-content: center;
-  border-radius: 0 0 20px 20px;
-  border: solid 1px blue;
-}
-.product-description div{
-  width: 100%;
-}
-.product-description p{
-  text-align: center;
-}
-.product-title, .product-price {
-  margin-bottom: 1em;
-}
-.product-title{
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.product-price{
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--beige);
-}
-*/
-/*
-.producto1 {
-  display: flex;
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 10px 5px 5px var(--negro);
-}
-
-.producto2 {
-  display: flex;
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 10px 5px 5px var(--negro);
-}
-
-.producto3 {
-  display: flex;
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 10px 5px 5px var(--negro);
-}
-
-.producto5 {
-  display: flex;
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 10px 5px 5px var(--negro);
-}
-*/
 
 .color {
   display: flex;
@@ -464,11 +318,6 @@ contacto
   text-align: center;
   padding: 12px;
 }
-
-/*.icono {
-  color: var(--negro);
-  font-size: 14px;
-}*/
 
 .icono li a {
   display: flex;
@@ -576,11 +425,15 @@ contacto
   position: relative;
   padding:0 px;
   margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+
 }
 
 .not-found img{
-  width: 100%;
+  width: 50%;
   border-radius:5px;
+ 
 }
 
 .not-found h1{
@@ -595,66 +448,19 @@ contacto
   display: flex;
   justify-content:center;
   align-items: flex-start;
-  font-size:70px;
+  font-size:30px;
 }
 
 
 @media (min-width: 480px) {
-  /*.menu {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-
-  /*.red {
-    display: none;
-  }
-
-  .redes {
-    display: none;
-  }
-
-  .miCuenta {
-    display: none;
-  }
   
-  .fa-bars {
-    padding: 10px;
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    display: block;
-    font-size: 1.5em;
-  }
-
-  .buscar {
-    display: none;
-  }
-
-  .usuario {
-    display: none;
-  }
-
-  .carrusel {
-    width: 50%;
-    display: flex;
-    padding: 5px;
-  }
-  .carrusel4 {
-    display: flex;
-    width: 80%;
-    margin: auto;
-    padding: 5px;
-  }
-*/
   .datos {
     display: none;
   }
 
-  .fa-user-shield {
+  /*.fa-user-shield {
     display: none;
-  }
+  }*/
 
   .seccion {
     display: block;
@@ -677,29 +483,6 @@ contacto
     display: block;
     flex-direction: column;
   }
-
-  /*.ci {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    text-align:left;
-    color: var(--warning);
-    font-size: 24px;
-    padding: 12px;
-    margin: 12px;
-    position:relative;
-  }
-  .icono li a {
-    display: flex;
-    text-decoration: none;
-    font-size: 18px;
-    text-align: center;
-    align-content: flex-start;
-    color: var(--negro);
-    position:relative;
-    padding: 5px;
-    margin: 5px;
-  }*/
 
   .icono li a {
     position:relative;
@@ -748,17 +531,18 @@ contacto
     position: relative;
     bottom: 20px;
   }
-
-  .fa-user-shield {
-    width: 40px;
-    padding: 5px;
-    margin: 5px;
-    font-size: 1.5em;
+  .envio{
     display: flex;
     position: relative;
-    right: 50px;
-    top: 30px;
+    bottom: 20px;
   }
+  .porcentaje{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+  }
+
+
 
   .pieCarrusel p {
     font-size: 18px;
@@ -817,43 +601,10 @@ contacto
     text-align: left;
   }
 
-
-  /*.ci, .form{
-    display: flex;
-    flex-wrap:wrap;
-    padding:5px;
-    margin:10px;
-  }*/
-
-  /*.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
-    align-self: flex-end;
-    padding-top: 0;
-    margin-top: 0;
-  }*/
-
   .form{
     position: relative;
     bottom:110px;
   }
-
-  /*.formulario {
-    display: flex;
-    font-size: 16px;
-    color: var(--negro);
-    padding: 12px;
-    margin: 5px;
-    width: 80%;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content:flex-end;
-    align-self: flex-end;
-    text-align: flex-end;
-  }*/
 
   .formulario label {
     margin-bottom: 15px;
@@ -936,192 +687,3 @@ contacto
 
 }
 
-/*-----------------CEMENTERIO DE ESTILOS--------------------
-
-Lupa
-<i class="fa-solid fa-magnifying-glass"></i>
-
-Menú hamburguesa
-<i class="fa-solid fa-bars"></i>
-
-Seguridad
-<i class="fa-solid fa-user-shield"></i>
-
-$
-circulo <i class="fa-solid fa-circle-dollar"></i>
-cuadrado <i class="fa-solid fa-square-dollar"></i>
-
-Tarjeta de crédito
-<i class="fa-solid fa-credit-card"></i>
-
-Transferencia bancaria
-}<i class="fa-solid fa-money-bill-transfer"></i>
-
-Facebook
-circulo <i class="fa-brands fa-facebook"></i>
-cuadrado <i class="fa-brands fa-facebook-square"></i>
-
-Instagram
-<i class="fa-brands fa-instagram"></i>
-
-Whatsapp
-<i class="fa-brands fa-whatsapp"></i>
-
-Carrito de compras
-<i class="fa-solid fa-cart-shopping"></i>
-
-Cesto de basura
-<i class="fa-solid fa-trash-can"></i>
-
-Más
-<i class="fa-solid fa-plus"></i>
-circulo <i class="fa-solid fa-circle-plus"></i>
-
-Menos
-<i class="fa-solid fa-minus"></i>
-circulo <i class="fa-solid fa-circle-minus"></i>
-
-Cruz
-<i class="fa-solid fa-circle-xmark"></i>
-
-Localización
-<i class="fa-solid fa-location-dot"></i>
-
-Envíos
-camión <i class="fa-solid fa-truck"></i>
-dolly <i class="fa-solid fa-dolly"></i>
-
-Mi cuenta
-<i class="fa-solid fa-user"></i>
-
-Ayuda
-<i class="fa-solid fa-comments"></i>
-
-Email
-<i class="fa-solid fa-envelope"></i>
-
-Flechas chevron
-izq <i class="fa-solid fa-circle-chevron-left"></i>
-der <i class="fa-solid fa-circle-chevron-right"></i>
-abajo (desplegar menú) <i class="fa-solid fa-chevron-down"></i>
-
-Check
-<i class="fa-solid fa-circle-check"></i>
-
-Ojo
-abierto <i class="fa-solid fa-eye"></i>
-cerrado <i class="fa-solid fa-eye-slash"></i>
-
-Corazón
-relleno <i class="fa-solid fa-heart"></i>
-contorno <i class="fa-regular fa-heart"></i>
-
-Tienda
-<i class="fa-regular fa-shop"></i>
-<i class="fa-solid fa-store"></i>
-
-Info
-<i class="fa-solid fa-circle-info"></i>
-
-Gift
-<i class="fa-solid fa-gift"></i>
-/*
-.login {
-  display: none;
-}*/
-
-/*.redes {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: center;
-}*/
-
-/*
-.login-cart {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-}
-.burguer-menu i,
-.cart,
-.logi,
-.instagram,
-.facebook {
-  text-align: center;
-  font-size: 24px;
-}
-.cart p,
-.login p {
-  font-size: 14px;
-  display: none;
-}
-
-.principal-logo {
-  display: flex;
-}
-
-.principal-logo a {
-  text-align: center;
-  width: 100%;
-}
-.logo {
-  width: 80%;
-  max-width: 250px;
-  padding: 15px;
-}
-
-.fa-user {
-  height: 1em;
-  font-size: 1.5em;
-  display: flex;
-  flex-direction: column;
-}
-
-.fa-cart-shopping {
-  margin: 5px;
-  padding: 5px;
-  width: 1em;
-  height: 1em;
-  font-size: 1.5em;
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  display: flex;
-  width: 50%;
-  margin: auto;
-  display: none;
-  border-top: solid 1px var(--beige-hover);
-}
-#navbar-dropdown {
-  padding: 10px 0;
-  margin: auto;
-  display: none;
-  font-size: 14px;
-  transition: all 0.5s;
-}
-#navbar-dropdown:target {
-  display: block;
-}
-
-.navbar ul,
-#navbar-dropdown ul {
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-}
-.navbar ul {
-  padding: 0 25%;
-}
-.navbar li {
-  width: 33%;
-  text-align: center;
-  justify-content: center;
-}
-.navbar li a {
-  font-size: 18px;
-  color: var(--negro);
-}*/

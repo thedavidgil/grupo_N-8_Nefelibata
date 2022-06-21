@@ -1,10 +1,8 @@
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator")
-const fs = require('fs');
-const path = require('path');
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require("../../database/models");
+const fs = require('fs');
+const path = require("path");
 
 
 const controller = {
@@ -12,16 +10,22 @@ const controller = {
   register: (req, res) => {
     res.render("./users/register")
   },
+
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
+      if(req.file){
+        fs.unlink(path.join(__dirname, "../../public/images/avatars/", req.file.filename), function (err) {
+          if (err) throw err;
+          console.log('Avatar deleted due to error on validation');
+        }); 
+      }
       return res.render("./users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body
       })
     }
-
     db.User.findOne({
       where: {
         email: req.body.email
@@ -68,6 +72,7 @@ const controller = {
   },
 
 
+  
   login: (req, res) => {
     return res.render("./users/login");
   },
@@ -181,7 +186,7 @@ const controller = {
             return res.redirect("usersList")
           })
 
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2))
+       
         return res.redirect("usersList" + req.params.id);
       })
       .catch(function (err) {
@@ -189,19 +194,8 @@ const controller = {
       })
   },
 
-  confirmation: (req, res) => {
-    db.User.findAll({
-      where: {
-        email: req.body.email
-      }
-    }).then(function (email) {
-      if (email)
-        res.render("./users/confirmation") //?????
-    })
-  },
-
   list: (req, res) => {
-    db.Users.findAll()
+    db.User.findAll()
       .then(usersList => {
         res.render("./users/usersList.ejs", { usersList }) //?????
       })

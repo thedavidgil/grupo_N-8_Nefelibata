@@ -2,12 +2,12 @@ module.exports = (sequelize, dataTypes ) => {
   const alias = "Product";
   const cols = {
   
-    id:{
+    product_id:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true
     },
-    name:{
+    product_name:{
       type: dataTypes.STRING(30),
       allowNull: false
     },
@@ -29,12 +29,8 @@ module.exports = (sequelize, dataTypes ) => {
   };
   
   let config = {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    deletedAt: 'deleted_at',
-    paranoid: true
-    /*timestamps: false,
-    deletedAt: false*/
+    timestamps: false,
+    deletedAt: false
   }
   
   const Product = sequelize.define(alias,cols,config);
@@ -46,7 +42,7 @@ module.exports = (sequelize, dataTypes ) => {
       foreignKey:"product_category_id"
   
     })
-                                                                                                                                                    
+
     Product.hasMany(models.Product_image,{ 
       as: "product_images", 
       foreignKey: "product_id"
@@ -60,7 +56,6 @@ module.exports = (sequelize, dataTypes ) => {
       timestamps: false
     })
     
-  
   }
   
   return Product
