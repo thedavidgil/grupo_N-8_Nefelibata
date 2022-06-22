@@ -14,8 +14,8 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 
 /** REGISTER USER */
-router.get("/register", guestMiddleware, usersController.register);//OK
-router.post("/register",upload.single("userImage"),validation,usersController.processRegister);//OK
+router.get("/register", guestMiddleware, usersController.register);//OK? DEJAR EL CATEGORIA DE USUARIO COMO CLIENTE POR DEFECTO
+router.post("/register",upload.single("avatar"),validation,usersController.processRegister);//OK
 
 /** EDIT USER AND SHOW ALL USERS TO EDIT */
 router.get("/edit/:id",usersController.edit);//OK

@@ -21,32 +21,18 @@
                 <div class="control-formulario">
                     <label for="name">Nombre de Producto</label>
                     <input type="text" name="name" id="name" placeholder="Ej. Agenda" required class="control"
-                        value="<%= product.name %> ">
+                        value="<%= product.product_name %> ">
                 </div>
                 <div class="control-formulario">
                     <label for="category">Categoria</label>
                     <select name="category" id="category">
-                        <option value="Categoria 1" <%=product.category=="Categoria 1" ? "selected" :null %> >Categoria
-                            1</option>
-                        <option value="Categoria 2" <%=product.category=="Categoria 2" ? "selected" :null %> >Categoria
-                            2</option>
-                        <option value="Categoria 3" <%=product.category=="Categoria 3" ? "selected" :null %> >Categoria
-                            3</option>
-                        <option value="Categoria 4" <%=product.category=="Categoria 4" ? "selected" :null %> >Categoria
-                            4</option>
+                        <% for(let i = 0; i < categorias.length; i++) {%>
+                            <option value=<%= categorias[i].category %> <%=product.product_category_id == i + 1  ? "selected" :null %> ><%= categorias[i].category %></option>
+                        <% } %>     
                     </select>
+     
                 </div>
-                <!--
-                <div class="control-formulario">
-                    <label for="color">Color</label>
-                    <select name="color" id="color">
-                        <option value="Rojo" <%=product.color=="Rojo" ? "selected" :null %> >Rojo</option>
-                        <option value="Verde" <%=product.color=="Verde" ? "selected" :null %> >Verde</option>
-                        <option value="Azul" <%=product.color=="Azul" ? "selected" :null %> >Azul</option>
-                        <option value="Amarillo" <%=product.color=="Amarillo" ? "selected" :null %> >Amarillo</option>
-                    </select>
-                </div>-->
-
+               
                 <div class="control-formulario">
                     <label for="description">Descripción</label>
                     <textarea name="description" id="description" required
@@ -62,12 +48,6 @@
                     <label>Imagenes Principales</label>
                     <input type="file" name="image" id="productImage" class="control">
                 </div>
-
-                <!--
-                <div class="control-formulario">
-                    <label>Imagenes Adicionales</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
-                </div>-->
 
                 <div class="responsivebuttons">
                     <div class="button1">
