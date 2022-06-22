@@ -27,6 +27,7 @@
                 <div class="control-formulario">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="minombre@mail.com" required
+                    value="<%= locals.oldData ? oldData.email : null %>"
                         class="control">
                     <% if (locals.errors && errors.email) { %>
                         <div class="error">

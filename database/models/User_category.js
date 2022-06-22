@@ -3,7 +3,8 @@ module.exports = (sequelize, dataTypes) => {
 
   const cols = {
   
-    id:{
+
+    user_category_id:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true
@@ -16,7 +17,8 @@ module.exports = (sequelize, dataTypes) => {
   
   let config = {
     timestamps: false,
-    deletedAt: false
+    deletedAt: false,
+    freezeTableName: true
   };
   
   const User_category = sequelize.define(alias,cols,config);

@@ -42,12 +42,12 @@ app.listen(port, err => {
 
 // ************ Route System require and use() ************
 const mainRouter = require("./routes/main");//OK
-const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/users");//OK? FALTA REVISAR ALGUNAS RUTAS
 const productsRouter = require("./routes/products");
 const cartRouter = require("./routes/cartRouter");
 
 app.use('/', mainRouter);//OK
-app.use("/users", usersRouter);
+app.use("/users", usersRouter);//OK? FALTA REVISAR ALGUNAS RUTAS
 app.use("/products", productsRouter);
 app.use("/cart", cartRouter);
 

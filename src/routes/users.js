@@ -17,23 +17,25 @@ const authMiddleware = require("../middlewares/authMiddleware");
 router.get("/register", guestMiddleware, usersController.register);//OK
 router.post("/register",upload.single("userImage"),validation,usersController.processRegister);//OK
 
-/** EDIT USER */
+/** EDIT USER AND SHOW ALL USERS TO EDIT */
 router.get("/edit/:id",usersController.edit);//OK
-router.put("/edit/:id",usersController.update);//??????????????????
+router.put("/edit/:id",upload.single("avatar"),usersController.update);//OK? (falta agregar validaciones)
 
+/**SHOW ALL USERS */
+router.get("/usersList",usersController.list)//HACER CRUD CON BASE DE DATOS, AGREGAR MIDDLEWARE PARA QUE SOLO ADMIN TENGA ACCESO
 
-/**Loggin */
-router.get("/login", guestMiddleware, usersController.login);
-router.post("/login", usersController.loginProcess);
+/**Login */
+router.get("/login", guestMiddleware, usersController.login);//OK
+router.post("/login", usersController.loginProcess);//OK
 
-/**profile Perfil de usuario*/
-router.get("/profile", authMiddleware, usersController.profile)
+/**Perfil de usuario*/
+router.get("/profile", authMiddleware, usersController.profile)//FALTA REVISAR VER SESSION
 
 /**Logout Perfil de usuario*/
-router.get("/logout", usersController.logout)
+router.get("/logout", usersController.logout)//FALTA REVISAR VER SESSION
 
 /**RECOVERY USER */
-router.get("/recovery",usersController.recovery);//???????????????
+router.get("/recovery",usersController.recovery);//FALTA REVISAR VER SESSION
 
 
 

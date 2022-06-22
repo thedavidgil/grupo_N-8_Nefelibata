@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false
     },
     password:{
-      type: dataTypes.STRING(30),
+      type: dataTypes.STRING(100),
       allowNull: false
     },
     user_category_id: dataTypes.INTEGER(10).UNSIGNED,
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     })
   
     User.belongsTo(models.User_category,{
-      as:"user_categories",
+      as:"User_category",
       foreignKey:"user_category_id"
   
     })

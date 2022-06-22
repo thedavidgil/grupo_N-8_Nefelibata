@@ -22,7 +22,7 @@
             <p class="creating-account">EDITAR USUARIO</p>
 
 
-            <form action=" /users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" class="form1">
+            <form action=" /users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="form1">
                 <div class="control-formulario">
                     <label for="first_name">Nombre</label>
                     <input type="text" name="first_name" id="first_name" value="<%= userToEdit.first_name %>" required
@@ -43,8 +43,8 @@
                     <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required class="control">
                 </div>
                 <div class="control-formulario">
-                    <label for="category">Categoria</label>
-                    <select name="category" required id="category">
+                    <label for="user_category">Categoria</label>
+                    <select name="user_category" required id="category">
                         <option value="admin" <%=userToEdit.user_category=="admin" ? "selected" :null %>>Admin</option>
                         <option value="cliente" <%=userToEdit.user_category=="cliente" ? "selected" :null %>>Client</option>
                         <option value="visita" <%=userToEdit.user_category=="visita" ? "selected" :null %>>Visita</option>
@@ -53,7 +53,7 @@
 
                 <div class="control-formulario">
                     <label>Avatar</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control"
+                    <input type="file" name="avatar" accept=".jpg, .pdf .jepg" multiple class="control"
                         value="<%= userToEdit.image %>">
                 </div>
 

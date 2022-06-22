@@ -78,133 +78,116 @@ const controller = {
       })
   },
 
-  update: (req, res) => {//???????????????????
+  update: (req, res) => {
     const id = req.params.id;
-    // users = users.map(user => {
-    //if (user.id == id) {
-    //users.firstName = req.body.firstName,
-    // users.lastName = req.body.lastName,
-    //users.email = req.body.email,
-    //users.password = req.body.password,
-    //users.category = req.body.category,
-    // users.image = req.file?.filename ?? "default-image.png"
-    //}
-    //})
-    //}
-    //}
 
-    db.User.update({
-      first_name: req.body.firstName,
-      last_name: req.body.lastName,
-      email: req.body.email,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      avatar_id: result.avatar_id
-    })
-      .then(() => {
-        db.User.findByPk({
-          where: {
-            id: req.params.id
+      db.User_category.findOne({
+        where:{
+          category: req.body.user_category
+        }
+      })
+      .then(result =>{
+        db.User.update({
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          email: req.body.email,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          user_category_id: result.user_category_id,
+        },{
+          where:{
+            user_id:id
           }
         })
-      })
-      //.then(function(response){
-      //if(response)
-      //return res.redirect("/Users")
-      .then(() => {
-        db.Avatar.update({
-          avatar: req.file.filename
+        .then(() => {
+            db.Avatar.update({
+              avatar: req.file.filename
+            },{
+              where:{
+                avatar_id:id
+              }
+            })
+            .then(() =>{
+              res.redirect("/users/userList")
+            }) 
+            .catch(function (err) {
+              console.error(err);
+            }) 
+          
         })
-      })
-      .then(() => {
-        db.Avatar.findOne({
-          where: {
-            avatar: req.file.filename
-          }
-        })
-          .then(function (response) {
-            if (response)
-              return res.redirect("/movies")
-
-            return res.redirect("usersList")
-          })
-
-       
-        return res.redirect("usersList" + req.params.id);
-      })
-      .catch(function (err) {
-        console.error(err);
       })
   },
 
 
 
+//******************************FALTA CONSTRUIR***********************//
+  list:(req,res)=>{
+  return res.render("./users/usersList")
+  },
+//******************************FALTA CONSTRUIR***********************//
 
 
 
-  
-
-
-  
-  
   login: (req, res) => {
     return res.render("./users/login");
   },
 
-  loginProcess: async (req, res) => {
-    try {
-      let userToLogin = await Users.findByField('email', req.body.email);
-      //db.User.findOne({
-      //where: {
-      // email: req.body.email
-      //}
-      //})
-      //.then(function (userToLogin) {
-      //if (userToLogin !== null) {//si obtuve algo es true, sino es false. Ahora agrego  el then y al if  le digo que si el mail del  usuario logueado es diferente a nulo, entonces verifique la contraseña
-      let isOkThePassword = await bcryptjs.compareSync(req.body.password, userToLogin.password);
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-        if (req.body.remember_user) {
-          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
-          //}
-          // }
-          //}
-        }
-      }
-      return res.redirect("profile");
-      //})
-    }
-    catch (err) {
-      console.error(err)
-    }
-    return res.render("./users/login", {
-      errors: {
-        email: {
-          msg: 'Las credenciales son inválidas'
-        }
-      }
+  loginProcess: (req, res) => {
 
+    db.User.findOne({
+      where:{
+        email: req.body.email
+    }
     })
-      .then((response) => {
-        if (response)
+    .then(result=>{
+
+      bcryptjs.compare(req.body.password,result.password).then(promesa=>{
+        if(promesa){
+          req.session.userLogged = result;
+          if (req.body.remember_user) {
+            res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
+          }
+          return res.redirect("/");
+        }else{
           return res.render("./users/login", {
             errors: {
               email: {
-                msg: 'No se encuentra este email en nuestra base de datos'
+                msg: 'Las credenciales son inválidas'
               }
             }
           })
+        }
+      })  
+    })
+    .catch( () =>{
+      return res.render("./users/login", 
+      {
+        errors: {
+          email: {
+            msg: 'No se encuentra este email en nuestra base de datos'
+          }
+        },
+        oldData: req.body
       })
+    })
   },
 
-
-  
-
+//Hasta aqui todo funciona bien
 
 
 
+
+
+
+
+
+
+
+
+
+
+//****************************************FALTA REVISAR***************************//
   profile: (req, res) => {
-    db.Users.findAll({
+    /*db.User.findAll({
       where: {
         user: req.session.userLogged
       }
@@ -213,17 +196,17 @@ const controller = {
         if (userLogged)
           return res.render("./users/profile")
         //user: req.session.userLogged
-      })
+      })*/
   },
 
   logout: (req, res) => {
-    res.clearCookie('userEmail');
+   /* res.clearCookie('userEmail');
     req.session.destroy();
-    return res.redirect('/');
+    return res.redirect('/');*/
   },
 
   recovery: (req, res) => {
-    db.User.findAll({
+    /*db.User.findAll({
       where: {
         password: req.body.password
       }
@@ -231,12 +214,13 @@ const controller = {
       .then(function (password) {
         if (password)
           res.render("./users/passwordRecovery") //?????
-      })
+      })*/
   }
+
+
+
+
 }
-
-
-
 
 
 module.exports = controller
