@@ -22,15 +22,15 @@
             <p class="creating-account">EDITAR USUARIO</p>
 
 
-            <form action=" /users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form1">
+            <form action=" /users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" class="form1">
                 <div class="control-formulario">
-                    <label for="firstName">Nombre</label>
-                    <input type="text" name="firstName" id="Nombre" value="<%= userToEdit.firstName %>" required
+                    <label for="first_name">Nombre</label>
+                    <input type="text" name="first_name" id="first_name" value="<%= userToEdit.first_name %>" required
                         class="control">
                 </div>
                 <div class="control-formulario">
-                    <label for="lastName">Apellido</label>
-                    <input type="text" name="lastName" id="Nombre" value="<%= userToEdit.lastName %>" required
+                    <label for="last_name">Apellido</label>
+                    <input type="text" name="last_name" id="last_name" value="<%= userToEdit.last_name %>" required
                         class="control">
                 </div>
                 <div class="control-formulario">
@@ -40,18 +40,14 @@
                 </div>
                 <div class="control-formulario">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required
-                        class="control">
+                    <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required class="control">
                 </div>
                 <div class="control-formulario">
                     <label for="category">Categoria</label>
                     <select name="category" required id="category">
-                        <option value="Admin" <%=userToEdit.category=="Admin" ? "selected" :null %>>Admin</option>
-                        <option value="Client" <%=userToEdit.category=="Client" ? "selected" :null %>>Client</option>
-                        <option value="Categoria 3" <%=userToEdit.category=="Categoria 3" ? "selected" :null %>
-                            >Categoria 3</option>
-                        <option value="Categoria 4" <%=userToEdit.category=="Categoria 4" ? "selected" :null %>
-                            >Categoria 4</option>
+                        <option value="admin" <%=userToEdit.user_category=="admin" ? "selected" :null %>>Admin</option>
+                        <option value="cliente" <%=userToEdit.user_category=="cliente" ? "selected" :null %>>Client</option>
+                        <option value="visita" <%=userToEdit.user_category=="visita" ? "selected" :null %>>Visita</option>
                     </select>
                 </div>
 

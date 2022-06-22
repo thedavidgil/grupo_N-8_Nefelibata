@@ -71,70 +71,12 @@ const controller = {
     })
   },
 
-
-  
-  login: (req, res) => {
-    return res.render("./users/login");
-  },
-
-  loginProcess: async (req, res) => {
-    try {
-      let userToLogin = await Users.findByField('email', req.body.email);
-      //db.User.findOne({
-      //where: {
-      // email: req.body.email
-      //}
-      //})
-      //.then(function (userToLogin) {
-      //if (userToLogin !== null) {//si obtuve algo es true, sino es false. Ahora agrego  el then y al if  le digo que si el mail del  usuario logueado es diferente a nulo, entonces verifique la contraseña
-      let isOkThePassword = await bcryptjs.compareSync(req.body.password, userToLogin.password);
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-        if (req.body.remember_user) {
-          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
-          //}
-          // }
-          //}
-        }
-      }
-      return res.redirect("profile");
-      //})
-    }
-    catch (err) {
-      console.error(err)
-    }
-    return res.render("./users/login", {
-      errors: {
-        email: {
-          msg: 'Las credenciales son inválidas'
-        }
-      }
-
-    })
-      .then((response) => {
-        if (response)
-          return res.render("./users/login", {
-            errors: {
-              email: {
-                msg: 'No se encuentra este email en nuestra base de datos'
-              }
-            }
-          })
-      })
-  },
-
-
-  //??????????????????????????????
   edit: function (req, res) {
-    //const id = req.params.id; 
-    //const userToEdit = users[id - 1];
     db.User.findByPk(req.params.id)
       .then(function (Users) {
-        res.render("./users/edit", { Users });
+        res.render("./users/edit", { userToEdit:Users });
       })
   },
-
 
   update: (req, res) => {//???????????????????
     const id = req.params.id;
@@ -194,12 +136,71 @@ const controller = {
       })
   },
 
-  list: (req, res) => {
-    db.User.findAll()
-      .then(usersList => {
-        res.render("./users/usersList.ejs", { usersList }) //?????
+
+
+
+
+
+  
+
+
+  
+  
+  login: (req, res) => {
+    return res.render("./users/login");
+  },
+
+  loginProcess: async (req, res) => {
+    try {
+      let userToLogin = await Users.findByField('email', req.body.email);
+      //db.User.findOne({
+      //where: {
+      // email: req.body.email
+      //}
+      //})
+      //.then(function (userToLogin) {
+      //if (userToLogin !== null) {//si obtuve algo es true, sino es false. Ahora agrego  el then y al if  le digo que si el mail del  usuario logueado es diferente a nulo, entonces verifique la contraseña
+      let isOkThePassword = await bcryptjs.compareSync(req.body.password, userToLogin.password);
+      if (isOkThePassword) {
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+        if (req.body.remember_user) {
+          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+          //}
+          // }
+          //}
+        }
+      }
+      return res.redirect("profile");
+      //})
+    }
+    catch (err) {
+      console.error(err)
+    }
+    return res.render("./users/login", {
+      errors: {
+        email: {
+          msg: 'Las credenciales son inválidas'
+        }
+      }
+
+    })
+      .then((response) => {
+        if (response)
+          return res.render("./users/login", {
+            errors: {
+              email: {
+                msg: 'No se encuentra este email en nuestra base de datos'
+              }
+            }
+          })
       })
   },
+
+
+  
+
+
 
 
   profile: (req, res) => {
