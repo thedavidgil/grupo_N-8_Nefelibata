@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
   const cols = {
   
-    id:{
+    user_category_id:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true

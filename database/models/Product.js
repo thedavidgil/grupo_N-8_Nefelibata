@@ -2,12 +2,12 @@ module.exports = (sequelize, dataTypes ) => {
   const alias = "Product";
   const cols = {
   
-    id:{
+    product_id:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true
     },
-    name:{
+    product_name:{
       type: dataTypes.STRING(30),
       allowNull: false
     },

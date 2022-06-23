@@ -20,7 +20,7 @@
             <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data">
                 <div class="control-formulario">
                     <label for="name">Nombre de Producto</label>
-                    <input type="text" name="name" id="name" placeholder="Ej. Agenda" required class="control"
+                    <input type="text" name="name" id="name" placeholder="Ej. Agenda" required class="input"
                         value="<%= product.name %> ">
                 </div>
                 <div class="control-formulario">
@@ -50,23 +50,23 @@
                 <div class="control-formulario">
                     <label for="description">Descripción</label>
                     <textarea name="description" id="description" required
-                        class="control"><%= product.description %> </textarea>
+                        class="input"><%= product.description %> </textarea>
                 </div>
 
                 <div class="control-formulario">
                     <label for="price">Precio</label>
-                    <input type="texto" name="price" id="price" required value="$<%= product.price %> " class="control">
+                    <input type="texto" name="price" id="price" required value="$<%= product.price %> " class="input">
                 </div>
 
                 <div class="control-formulario">
                     <label>Imagenes Principales</label>
-                    <input type="file" name="image" id="productImage" class="control">
+                    <input type="file" name="image" id="productImage" class="input">
                 </div>
 
                 <!--
                 <div class="control-formulario">
                     <label>Imagenes Adicionales</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
+                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="input">
                 </div>-->
 
                 <div class="responsivebuttons">

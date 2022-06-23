@@ -20,12 +20,25 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
+// ************ Middlewares ************
+const productMiddleware = require("../middlewares/productMiddleware");
+
 
 /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.home);
 
 /** CREATE ONE PRODUCT */
-router.get("/create", productsController.create);
+router.get("/create", productMiddleware, productsController.create);
+
+// middleware que valide: 
+// Nombre
+// ■ Obligatorio.
+// ■ Deberá tener al menos 5 caracteres.
+// ○ Descripción
+// ■ Deberá tener al menos 20 caracteres.
+// ○ Imagen
+// ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+
 router.post("/", upload.single("image"), productsController.store);
 
 /*** GET ONE PRODUCT ***/
@@ -34,12 +47,22 @@ router.get('/:id', productsController.detail);
 
 /**EDIT ONE PRODUCT */
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", upload.single("image"),productsController.update);
+router.put("/edit/:id", upload.single("image"), productMiddleware, productsController.update);
+
+// middleware que valide: 
+// Nombre
+// ■ Obligatorio.
+// ■ Deberá tener al menos 5 caracteres.
+// ○ Descripción
+// ■ Deberá tener al menos 20 caracteres.
+// ○ Imagen
+// ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
 
 /*** DELETE ONE PRODUCT***/
 router.get('/delete/:id', productsController.delete);
 router.delete('/delete/:id', productsController.destroy);
 
+// middleware opcional
 
 
 module.exports = router;
