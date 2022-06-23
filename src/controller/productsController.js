@@ -15,7 +15,11 @@ const controller = {
   )},
 
   create:(req,res) => {
-    return res.render("./products/create");
+    ProductCategory.findAll()
+    .then(categorias => {
+      return res.render("./products/create",{categorias})
+    })
+    
   },
 
 	store: (req, res) => {
@@ -62,50 +66,52 @@ const controller = {
 
   },
 
-  update: async (req, res) => {
-    try {
+  update: (req, res) => {
       const id = req.params.id;
-      await Products.update({
+      Products.update({
         ...req.body
       },
       {
         where: {product_id:id}
-      });
-      return res.redirect("/products");
-    } catch (err) {
-      console.error(err)
-    }
+      })
+      .then(() =>{
+
+        if(req.file){
+          ProductImage.create({
+            image: req.file.filename,
+            product_id: id 
+          })
+          .then(()=>{
+            return res.redirect("/products");
+          })
+        }else{
+          return res.redirect("/products");
+        }
+      }) 
   },
-
-
-
-
-
 
   delete: async (req, res) => {
     try {
       const id = req.params.id;
-      const Product = await Products.findByPk(id);
-      return res.render("/delete", {Product})
+      const product = await Products.findByPk(id);
+      return res.render("./products/delete", {product})
     } catch (err) {
       console.error(err)
     }
   },
 
-
-
-
-
   destroy: async (req, res) => {
     try {
       const id = req.params.id;
-      await Products.destroy({
+      await Products.update({
+        show_product:0
+      },
+      {
         where:
           {
-            id: id
+            product_id: id
           }        
       })
-      
       return res.redirect("/products");
     } catch (err) {
       console.error(err)

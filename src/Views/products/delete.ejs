@@ -15,18 +15,21 @@
 
             <p class="creating-account">ELIMINAR PRODUCTO</p>
 
-            <p class="text-benefit">¿Estas seguro que queres eliminar <i><%= product.name %>?</i></p>
+            <p class="text-benefit">¿Estas seguro que queres eliminar <i><%= product.product_name %>?</i></p>
 
-            <p>
-                <form action="//delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <br>
-                    <p> <button class="button1" type="submit">Eliminar</button>
-                    
-                    <a  class="button1" href="/products">Listado de Productos</a></p>
+                <form action="/products/delete/<%= product.product_id %>?_method=DELETE" method="POST">
+
+                    <div class="responsivebuttons">
+
+                    <div class="button1">
+                        <button class="button1" type="submit">Si Eliminar</button>
+                    </div>
+
+                    </div>
         
-                </form>
-            </p>
-        
+                </form>    
+         
+
         </main>
 
         <%- include("../partials/footer") %>

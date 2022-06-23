@@ -26,10 +26,10 @@
                 </div>
                 <div class="control-formulario">
                     <label for="category">Categoria</label>
-                    <select name="category" required>
-                        <option value="1">Libro</option>
-                        <option value="2">Libreta</option>
-                        <option value="3">Cuaderno</option>
+                    <<select name="category" id="category">
+                        <% for(let i = 0; i < categorias.length; i++) {%>
+                            <option value=<%= categorias[i].category %>><%= categorias[i].category %></option>
+                        <% } %>     
                     </select>
                 </div>
                 

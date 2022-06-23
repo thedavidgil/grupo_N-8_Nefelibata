@@ -30,3 +30,8 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 (3, 'David', 'Gil', 'davidgil.gnz@gmail.com', '165463543654', 1, 3),
 (4, 'Gabriel', 'Alvarez', 'galvarez@gmail.com', 'fdÃ±ghkjsdflbnkj', 1, 3),
 (5, 'Mariano', 'Uceda', 'marianouceda@gmail.com', 'asldkfghklsdfagh', 1, 5);
+
+INSERT INTO `product_category` (`product_category_id`, `category`) VALUES
+(1, 'Libro'),
+(2, 'Libreta'),
+(3, 'Cuaderno');
