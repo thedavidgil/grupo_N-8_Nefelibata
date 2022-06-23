@@ -6,8 +6,6 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const session = require("express-session");
 const cookies = require("cookie-parser");
 
-//const usersRoutes = require("./routes/users");//Sabrina
-
 // ************ express() ************
 const app = express();
 
@@ -18,18 +16,13 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(cookies());
 app.use(session({ secret: "It's a secret",
                   resave:false,
                   saveUninitialized: false,
 
 }));
-
-
-app.use(cookies());
-
-app.use(userLoggedMiddleware);
-
-
+//app.use(userLoggedMiddleware);//FALTA VALIDAR
 
 // ************ Template Engine ************
 app.set("view engine", "ejs");
@@ -47,24 +40,16 @@ app.listen(port, err => {
 
 });
 
-
 // ************ Route System require and use() ************
-const mainRouter = require("./routes/main");
+const mainRouter = require("./routes/main");//OK
+const usersRouter = require("./routes/users");//OK? FALTA REVISAR ALGUNAS RUTAS
 const productsRouter = require("./routes/products");
-const usersRouter = require("./routes/users");
 const cartRouter = require("./routes/cartRouter");
 
-
-
-app.use('/', mainRouter);
+app.use('/', mainRouter);//OK
+app.use("/users", usersRouter);//OK? FALTA REVISAR ALGUNAS RUTAS
 app.use("/products", productsRouter);
-app.use("/users", usersRouter);
 app.use("/cart", cartRouter);
-
-
-//************ Models  **********
-//app.use("/", usersRoutes);//Sabrina
-//app.use("/users", usersRoutes);//Sabrina
 
 //**********Error page**********
 app.get("*", (req,res)=>{

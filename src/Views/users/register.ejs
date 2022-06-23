@@ -73,25 +73,13 @@
                 </div>
             <% } %> 
 
-            <!--
-                <div class="input-group">    
-                <label for="password1">Confirmar Contraseña</label>
-                <input type="password" name="password1" id="password1" placeholder="Confirmar" class="input">
-            </div>
+          
 
-            <div class="input-group">
-                <label for="category">Categoria</label>
-                <select name="category" required>
-                    <option >Admin</option>
-                    <option >Client</option>
-                    <option >Categoria 3</option>
-                    <option >Categoria 4</option>
-                </select>
-            </div>-->
             
             <div class="input-group">
                 <label>Imagen de perfil</label>
-                <input type="file" name="userImage" required class="input" >
+                <input type="file" name="avatar" class="input" >
+
                 <% if(locals.errors && errors.userImage){ %> 
                     <div class="error">
                         <%= errors.userImage.msg %>                       
@@ -100,11 +88,6 @@
             </div>
             
 
-            <!--<div class="captcha">
-                <input type="checkbox" name="captcha" required>
-                <label for="captcha">No soy un robot.</label>
-            </div>-->
-            
             <div class="button1">
               <button type="submit">Crear Cuenta</button>
             </div>

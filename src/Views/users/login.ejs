@@ -21,8 +21,8 @@
             <p class="creating-account">INICIÁ SESIÓN</p>
 
             <form action="/users/login" method="POST" class="form1">
-                <div class="input-group">
-                    <input type="email" name="email" id="email" required class="input">
+                <div class="control-formulario">
+                    <input type="email" name="email" id="email" placeholder="minombre@mail.com" required value="<%= locals.oldData ? oldData.email : null %>" class="input">
                     <label for="email" class="input-label">Email</label>
                     <% if (locals.errors && errors.email) { %>
                         <div class="error">

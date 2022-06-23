@@ -92,7 +92,7 @@ CREATE TABLE `users` (
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `user_category_id` int(10) NOT NULL,
   `avatar_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
