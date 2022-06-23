@@ -3,11 +3,7 @@ const alias = "Product_image";
 
 const cols = {
 
-<<<<<<< HEAD
-  product_images_id:{
-=======
   product_image_id:{
->>>>>>> desarrollo
     type: dataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
     autoIncrement: true

@@ -3,10 +3,6 @@ module.exports = (sequelize, dataTypes) => {
 
   const cols = {
   
-<<<<<<< HEAD
-=======
-
->>>>>>> desarrollo
     user_category_id:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
