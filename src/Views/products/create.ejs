@@ -21,9 +21,19 @@
             <form action="/products/store" method="post" enctype ="multipart/form-data" class= "form1">
                 <div class="control-formulario">
                     <label for="name">Nombre de Producto</label>
-                    <input type="text" name="name" id="name" placeholder="Ej. Agenda" required
-                        class="input">
+                    <input type="text" name="name" id="name" placeholder="Ej. Agenda" requiredclass="input">
                 </div>
+                <div class="front">
+                    <small class="text-danger name"></small>
+                </div>
+                <% if(typeof errores != 'undefined'){ %> <!--Sabrina-->
+                    <% for(let i = 0; i < errores.length; i++){ %> <!--Sabrina-->
+                    <% if(errores[i].param == "name"){ %> <!--Sabrina-->
+                    <small class="text-danger"> <%= errores[i].msg%> </small> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    
                 <div class="control-formulario">
                     <label for="category">Categoria</label>
                     <<select name="category" id="category">
@@ -38,6 +48,16 @@
                     <label for="description">Descripción</label>
                     <textarea name="description" id="description" required class="input">Detalle de Producto</textarea>
                 </div>
+                <div class="front">
+                    <small class="text-danger description"></small>
+                </div>
+                <% if(typeof errores != 'undefined'){ %> <!--sabrina-->
+                    <% for(let i = 0; i < errores.length; i++){ %> <!--Sabrina-->
+                    <% if(errores[i].param == "description"){ %> <!--Sabrina-->
+                    <small class="text-danger"> <%= errores[i].msg%> </small> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
 
                 <div class="control-formulario">
                     <label for="price">Precio</label>
@@ -47,7 +67,17 @@
                 <div class="multer">
                     <label for="image" class="form-label">Imagen del producto:</label>
                     <input type ="file" name="image" id="image" class="form-input">
-                </div> 
+                </div>
+                <div class="front">
+                    <small class="text-danger image"></small>
+                </div>
+                <% if(typeof errores != 'undefined'){ %> <!--Sabrina-->
+                    <% for(let i = 0; i < errores.length; i++){ %> <!--Sabrina-->
+                    <% if(errores[i].param == "image"){ %> <!--Sabrina-->
+                    <small class="text-danger"> <%= errores[i].msg%> </small> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
+                    <% } %> <!--Sabrina-->
 
                 <div class="responsivebuttons">
                     <div class="button1">

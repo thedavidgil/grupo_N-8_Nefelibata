@@ -4,6 +4,7 @@ const ProductImage = db.Product_image;
 const Products = db.Product;
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 const controller = {
 
   home:(req,res) =>{
@@ -14,13 +15,16 @@ const controller = {
     return res.render("./products/products", { products, toThousand})}
   )},
 
+
+
   create:(req,res) => {
-    ProductCategory.findAll()
-    .then(categorias => {
-      return res.render("./products/create",{categorias})
+    ProductCategory.findAll()//Marian o Gaby
+    .then(categorias => {//marian o Gaby
+      return res.render("./products/create",{categorias})//Marian o Gaby
     })
-    
-  },
+    },
+
+
 
 	store: (req, res) => {
     Products.create({
@@ -38,8 +42,9 @@ const controller = {
     })
     .then(()=>{
       return res.redirect("/products");
-    }) 
-	},
+    })
+  },
+
 
   detail:(req,res) => {
     Products.findByPk((req.params.id), {
@@ -63,8 +68,7 @@ const controller = {
     .then(function ([categorias,imagenes,product]) {
         res.render("./products/edit", {categorias,imagenes,product});
       })
-
-  },
+    },
 
   update: (req, res) => {
       const id = req.params.id;
@@ -87,8 +91,9 @@ const controller = {
         }else{
           return res.redirect("/products");
         }
-      }) 
-  },
+      })
+    },
+  
 
   delete: async (req, res) => {
     try {
@@ -110,7 +115,7 @@ const controller = {
         where:
           {
             product_id: id
-          }        
+          }
       })
       return res.redirect("/products");
     } catch (err) {
@@ -118,5 +123,7 @@ const controller = {
     }
   }
 }
+
+
 
 module.exports = controller;
