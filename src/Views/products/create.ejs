@@ -64,21 +64,21 @@
                                             <small class="text-danger description"></small>
                                         </div>
                                         <% if(typeof errores !='undefined' ){ %>
-                                            <!--sabrina-->
+
                                             <% for(let i=0; i < errores.length; i++){ %>
-                                                <!--Sabrina-->
+
                                                 <% if(errores[i].param=="description" ){ %>
-                                                    <!--Sabrina-->
+
                                                     <small class="text-danger">
                                                         <%= errores[i].msg%>
                                                     </small>
-                                                    <!--Sabrina-->
+
                                                     <% } %>
-                                                        <!--Sabrina-->
+
                                                         <% } %>
-                                                            <!--Sabrina-->
+
                                                             <% } %>
-                                                                <!--Sabrina-->
+
 
                                                                 <div class="control-formulario">
                                                                     <label for="price">Precio</label>
