@@ -1,44 +1,57 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-const path = require("path");
-const multer = require("multer");
 
 
 // ************ Controller Require ************
 const productsController = require('../controller/productsController');
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.resolve(__dirname, "../../public/images/products"))
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
-    }
-})
+// ************ Middlewares ************
+const upload = require("../middlewares/multerMiddleware");
 
-const upload = multer({ storage: storage })
+
+// ************ Middlewares ************
+const productMiddleware = require("../middlewares/productMiddleware");
 
 
 /*** GET ALL PRODUCTS ***/
-router.get("/", productsController.home);
+router.get("/", productsController.home);//OK
 
 /** CREATE ONE PRODUCT */
-router.get("/create", productsController.create);
-router.post("/", upload.single("image"), productsController.store);
+router.get("/create", productMiddleware, productsController.create);
+
+// middleware que valide: 
+// Nombre
+// ■ Obligatorio.
+// ■ Deberá tener al menos 5 caracteres.
+// ○ Descripción
+// ■ Deberá tener al menos 20 caracteres.
+// ○ Imagen
+// ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+
+router.post("/store", upload.single("image"), productsController.store);//OK? FALTAN LAS VALIDACIONES
 
 /*** GET ONE PRODUCT ***/
-router.get('/:id', productsController.detail);
-
+router.get('/:id', productsController.detail);//OK
 
 /**EDIT ONE PRODUCT */
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", upload.single("image"),productsController.update);
+router.put("/edit/:id", upload.single("image"), productMiddleware, productsController.update);
+
+// middleware que valide: 
+// Nombre
+// ■ Obligatorio.
+// ■ Deberá tener al menos 5 caracteres.
+// ○ Descripción
+// ■ Deberá tener al menos 20 caracteres.
+// ○ Imagen
+// ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
 
 /*** DELETE ONE PRODUCT***/
-router.delete('/delete/:id', productsController.destroy);
+router.get('/delete/:id', productsController.delete);//OK
+router.delete('/delete/:id', productsController.destroy);//OK
 
+// middleware opcional
 
 
 module.exports = router;

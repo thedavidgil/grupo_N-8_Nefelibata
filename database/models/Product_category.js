@@ -16,7 +16,8 @@ const cols = {
 
 let config = {
   timestamps: false,
-  deletedAt: false
+  deletedAt: false,
+  freezeTableName: true
 };
 
 

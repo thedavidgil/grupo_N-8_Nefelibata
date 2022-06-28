@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="../css/styles_register.css">
+    <link rel="stylesheet" href="../css/styles_users.css">
     <title>Registro - Nefelibata</title>
 </head>
 <body>
@@ -12,39 +12,30 @@
     <main>
 
         <div class="path">
-            <p>Inicio></p>
-            <p>Mi cuenta></p>
+            <p>Inicio ></p>
+            <p>Mi cuenta ></p>
             <p>Crear Cuenta</p>
         </div>
         
         <p class="creating-account">CREA TU CUENTA</p>
-
-        <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
- 
     
-         <div class="socialnetwork">
-         <button type="submit">Crea Cuenta con <i class="fa-brands fa-facebook-square"></i>
-            FACEBOOK</button>
-        </div>
-
-
+        
+        
         <form action=" /users/register" method="POST" enctype="multipart/form-data" class="form1">
 
-            <div class="control-formulario">
-                <label for="firstName">Nombre</label>
-                <input type="text" name="firstName" id="firstName" placeholder="Ej. Mario"
-                 class="control" value="<%= locals.oldData ? oldData.firstName : null %>">
+            <div class="input-group">
+                <input type="text" name="firstName" id="firstName" class="input" required value="<%= locals.oldData ? oldData.firstName : null %>">
+                <label for="firstName" class="input-label">Nombre</label>
                  <% if(locals.errors && errors.firstName){ %> 
                     <div class="error">
                         <%= errors.firstName.msg %> 
                     </div>
                 <% } %> 
             </div>
-                
-            <div class="control-formulario">
-                <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Ej. Pérez" 
-                class="control" value="<%= locals.oldData ? oldData.lastName : null %>">
+            
+            <div class="input-group">
+                <input type="text" name="lastName" id="lastName" class="input" required value="<%= locals.oldData ? oldData.lastName : null %>">
+                <label for="lastName" class="input-label">Apellido</label>
                 <% if(locals.errors && errors.lastName){ %> 
                     <div class="error">
                         <%= errors.lastName.msg %> 
@@ -52,21 +43,19 @@
                 <% } %> 
             </div>
 
-            <div class="control-formulario"> 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Minombre@mail.com"
-                class="control" value="<%= locals.oldData ? oldData.email : null %>">
+            <div class="input-group"> 
+                <input type="email" name="email" id="email" class="input" required value="<%= locals.oldData ? oldData.email : null %>">
+                <label for="email" class="input-label">Email</label>
                 <% if(locals.errors && errors.email){ %> 
                     <div class="error">
                         <%= errors.email.msg %> 
                     </div>
                 <% } %> 
             </div>
-
     
-            <div class="control-formulario">    
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Máximo 8 carácteres" class="control">
+            <div class="input-group">    
+                <input type="password" name="password" id="password" required class="input">
+                <label for="password" class="input-label">Contraseña</label>
             </div>
             <% if(locals.errors && errors.password){ %> 
                 <div class="error">
@@ -74,51 +63,48 @@
                 </div>
             <% } %> 
 
-            <!--
-            <div class="control-formulario">    
-                <label for="password1">Confirmar Contraseña</label>
-                <input type="password" name="password1" id="password1" placeholder="Confirmar" class="control">
+            <div class="input-group">    
+                <input type="repassword" name="repassword" id="repassword" required class="input">
+                <label for="repassword" class="input-label">Confirmar Contraseña</label>
             </div>
+            <% if(locals.errors && errors.password){ %> 
+                <div class="error">
+                    <%= errors.password.msg %> 
+                </div>
+            <% } %> 
 
-            <div class="control-formulario">
-                <label for="category">Categoria</label>
-                <select name="category" required>
-                    <option >Admin</option>
-                    <option >Client</option>
-                    <option >Categoria 3</option>
-                    <option >Categoria 4</option>
-                </select>
-            </div>-->
+          
 
             
-            <div class="control-formulario">
+            <div class="input-group">
                 <label>Imagen de perfil</label>
-                <input type="file" name="userImage" class="control" >
+                <input type="file" name="avatar" class="input" >
 
                 <% if(locals.errors && errors.userImage){ %> 
                     <div class="error">
-                        <%= errors.userImage.msg %>
-                        
+                        <%= errors.userImage.msg %>                       
                     </div>
                 <% } %> 
             </div>
-
-
-            <!--<div class="captcha">
-                <input type="checkbox" name="captcha" required>
-                <label for="captcha">No soy un robot.</label>
-            </div>-->
+            
 
             <div class="button1">
               <button type="submit">Crear Cuenta</button>
             </div>
         </form>
+        
+        <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login"> Inicia sesión</a></p>
 
-        <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
+        <div class="socialnetwork">
+        <button type="submit">Crea Cuenta con <i class="fa-brands fa-facebook-square"></i>
+           FACEBOOK</button>
+        </div>
+
     </main>
+    
 
     <%- include("../partials/footer") %>
-
+    
     
 </body>
 </html>
