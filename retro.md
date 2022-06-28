@@ -99,3 +99,24 @@
 
  <li><p style="text-align: justify">5- Definitivamente, nos alejamos de las dailys por diferentes motivos y consideramos que ese tiempo que se invierte en las dailys es más valioso implementarlo para cada sprint y seguir investigando.</p></li>
  </ul>
+
+ <h1>Retrospectiva SPRINT 7</h1>
+<ul>
+<li><h2>1. Comenzar a hacer.</h2></li>
+<li><h2>2. Hacer más.</h2></li>
+<li><h2>3. Continuar haciendo.</h2></li>
+<li><h2>4. Hacer menos.</h2></li>
+<li><h2>5. Dejar de hacer.</h2></li>
+</ul>
+
+<ul>
+ <li><p style="text-align: justify">1- Comenzar a dejar atrás toda duda, miedo que nos pueda surgir y no perder la confianza al ver que entramos en la recta final de este gran proceso.</p></li>
+
+ <li><p style="text-align: justify">2- Buscar e investigar aún más sobre los concocimientos que fuimos adquiriendo para llevarlos a la práctica que es el mayor desafío.</p></li>
+
+ <li><p style="text-align: justify">3- Continuar confiando en el grupo, en cada uno de nosotros, seguir esforzandonos y acompañarnos en los momentos que se nos hacen difíciles.</p></li>
+
+ <li><p style="text-align: justify">4- El ejercicio del weekly intentamos sostenerlo, pero sin mayores compromisos.</p></li>
+
+ <li><p style="text-align: justify">5- Nos alejamos notoriamente de las dailys porque nuestros tiempos están muy reducidos y necesitamos implementarlo para los sprint.</p></li>
+ </ul>
