@@ -23,7 +23,6 @@ const controller = {
   })
   .then(function(products){
     return res.render("./products/products", { products, toThousand})}
-    //return res.send(products)}
   )},
 
   detail:(req,res) => {
@@ -33,7 +32,6 @@ const controller = {
         .then(function(product){
            if(product) {
       return res.render("./products/detail", {product, toThousand})
-      //return res.send(product.product_images[0].image)
       } else {
        return res.render("./main/error")
     }
@@ -48,7 +46,7 @@ const controller = {
   },
 
 	store: (req, res) => {
-    let a = db.Product.create({
+    db.Product.create({
       product_name: req.body.Nombre,
       description: req.body.description,
       price: req.body.price,
@@ -61,7 +59,6 @@ const controller = {
     {
       include:  [{association:"product_images"}]
     })
-    //return res.send(a)
     return res.redirect("/products");
 	},
 
