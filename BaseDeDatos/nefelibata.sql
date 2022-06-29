@@ -3,14 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 02:06 AM
+-- Generation Time: Jun 21, 2022 at 03:15 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
-
-DROP DATABASE IF EXISTS
-nefelibata;
-CREATE DATABASE nefelibata;
-USE nefelibata;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,9 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `avatars` (
-  `avatar_id` int(10) UNSIGNED NOT NULL,
-  `avatar` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `avatar_id` int(10) NOT NULL,
+  `avatar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `avatars`
+--
+
+INSERT INTO `avatars` (`avatar_id`, `avatar`) VALUES
+(1, 'userImage-1655772323361-495154954.jpg'),
+(2, 'userImage-1655773861032-5833292.jpg');
 
 -- --------------------------------------------------------
 
@@ -44,12 +47,15 @@ CREATE TABLE `avatars` (
 --
 
 CREATE TABLE `products` (
-  `product_id` int(10) UNSIGNED NOT NULL,
-  `product_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `product_category_id` int(11) UNSIGNED DEFAULT NULL,
-  `show_product` tinyint(4) UNSIGNED NOT NULL
+  `product_id` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `product_name` varchar(30) NOT NULL,
+  `description` text NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  `product_category_id` int(11) NOT NULL,
+  `show_product` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,8 +65,8 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `product_category` (
-  `product_category_id` int(10) UNSIGNED NOT NULL,
-  `category` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `product_category_id` int(10) NOT NULL,
+  `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -70,9 +76,9 @@ CREATE TABLE `product_category` (
 --
 
 CREATE TABLE `product_images` (
-  `product_image_id` int(10) UNSIGNED NOT NULL,
-  `image` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `product_id` int(10) UNSIGNED DEFAULT NULL
+  `product_images_id` int(10) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `product_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -82,13 +88,13 @@ CREATE TABLE `product_images` (
 --
 
 CREATE TABLE `users` (
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `first_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_category_id` int(10) UNSIGNED DEFAULT NULL,
-  `avatar_id` int(10) UNSIGNED DEFAULT NULL
+  `users_id` int(10) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `user_category_id` int(10) NOT NULL,
+  `avatar_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -98,9 +104,9 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `users_products` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED DEFAULT NULL,
-  `product_id` int(10) UNSIGNED DEFAULT NULL
+  `users_products_id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `product_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -110,8 +116,8 @@ CREATE TABLE `users_products` (
 --
 
 CREATE TABLE `user_category` (
-  `user_category_id` int(10) UNSIGNED NOT NULL,
-  `category` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `user_category_id` int(10) NOT NULL,
+  `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -141,24 +147,23 @@ ALTER TABLE `product_category`
 -- Indexes for table `product_images`
 --
 ALTER TABLE `product_images`
-  ADD PRIMARY KEY (`product_image_id`),
-  ADD KEY `product_id` (`product_id`);
+  ADD PRIMARY KEY (`product_images_id`),
+  ADD KEY `porduct_id` (`product_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD KEY `user_category_id` (`user_category_id`),
-  ADD KEY `avatar_id` (`avatar_id`);
+  ADD PRIMARY KEY (`users_id`),
+  ADD KEY `avatar_id` (`avatar_id`),
+  ADD KEY `user_category_id` (`user_category_id`);
 
 --
 -- Indexes for table `users_products`
 --
 ALTER TABLE `users_products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`users_products_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `user_category`
@@ -174,43 +179,43 @@ ALTER TABLE `user_category`
 -- AUTO_INCREMENT for table `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `avatar_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `avatar_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `product_category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_category_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `product_image_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_images_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `users_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users_products`
 --
 ALTER TABLE `users_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `users_products_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user_category`
 --
 ALTER TABLE `user_category`
-  MODIFY `user_category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `user_category_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -232,15 +237,14 @@ ALTER TABLE `product_images`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_category_id`) REFERENCES `user_category` (`user_category_id`),
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`avatar_id`) REFERENCES `avatars` (`avatar_id`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`avatar_id`) REFERENCES `avatars` (`avatar_id`),
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`user_category_id`) REFERENCES `user_category` (`user_category_id`);
 
 --
 -- Constraints for table `users_products`
 --
 ALTER TABLE `users_products`
-  ADD CONSTRAINT `users_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  ADD CONSTRAINT `users_products_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `users_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

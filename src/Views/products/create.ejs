@@ -18,67 +18,104 @@
             <p class="text-benefit">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
 
-            <form action="/products" method="post" enctype ="multipart/form-data" class= "form1"> <!--Sabrina-->
+            <form action="/products/store" method="post" enctype="multipart/form-data" class="form1">
                 <div class="control-formulario">
-                    <label for="Nombre_producto">Nombre de Producto</label>
-                    <input type="text" name="Nombre" id="Nombre_producto" placeholder="Ej. Agenda" required
-                        class="control">
+                    <label for="name">Nombre de Producto</label>
+                    <input type="text" name="name" id="name" placeholder="Ej. Agenda" requiredclass="input">
                 </div>
-                <div class="control-formulario">
-                    <label for="category">Categoria</label>
-                    <select name="category" required>
-                        <option value="1">Categoria 1</option>
-                        <option value="2">Categoria 2</option>
-                        <option value="3">Categoria 3</option>
-                        <option value="4">Categoria 4</option>
-                    </select>
+                <div class="front">
+                    <small class="text-danger name"></small>
                 </div>
-                <!--
-                <div class="control-formulario">
-                    <label for="color">Color</label>
-                    <select name="color">
-                        <option value="#ff0000">Rojo</option>
-                        <option value="#00ff00">Verde</option>
-                        <option value="#0000ff">Azul</option>
-                        <option value="#770077">Morado</option>
-                    </select>
-                </div>-->
+                <% if(typeof errores !='undefined' ){ %>
+                    <!--Sabrina-->
+                    <% for(let i=0; i < errores.length; i++){ %>
+                        <!--Sabrina-->
+                        <% if(errores[i].param=="name" ){ %>
+                            <!--Sabrina-->
+                            <small class="text-danger">
+                                <%= errores[i].msg%>
+                            </small>
+                            <!--Sabrina-->
+                            <% } %>
+                                <!--Sabrina-->
+                                <% } %>
+                                    <!--Sabrina-->
+                                    <% } %>
+                                        <!--Sabrina-->
 
-                <div class="control-formulario">
-                    <label for="description">Descripción</label>
-                    <textarea name="description" id="description" required
-                        class="control">Detalle de Producto</textarea>
-                </div>
+                                        <div class="control-formulario">
+                                            <label for="category">Categoria</label>
+                                            <<select name="category" id="category">
+                                                <% for(let i=0; i < categorias.length; i++) {%>
+                                                    <option value=<%=categorias[i].category %>><%=
+                                                            categorias[i].category %>
+                                                    </option>
+                                                    <% } %>
+                                                        </select>
+                                        </div>
 
-                <div class="control-formulario">
-                    <label for="price">Precio</label>
-                    <input type="texto" name="price" id="price" required placeholder="$ 00.000" class="control">
-                </div>
-<!--
-                <div class="control-formulario">
-                    <label>Imagenes Principales</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
-                </div>
 
-                <div class="control-formulario">
-                    <label>Imagenes Adicionales</label>
-                    <input type="file" name="principal" accept=".jpg, .pdf .jepg" multiple class="control">
-                </div>-->
+                                        <div class="control-formulario">
+                                            <label for="description">Descripción</label>
+                                            <textarea name="description" id="description" required
+                                                class="input">Detalle de Producto</textarea>
+                                        </div>
+                                        <div class="front">
+                                            <small class="text-danger description"></small>
+                                        </div>
+                                        <% if(typeof errores !='undefined' ){ %>
 
-                <div class="multer">
-                    <label for="productImage" class="form-label">Imagen del producto:</label>
-                    <input type ="file" name="image" id="productImage" class="form-input">
-                </div> <!--Sabrina-->
+                                            <% for(let i=0; i < errores.length; i++){ %>
 
-                <div class="responsivebuttons">
-                    <div class="button1">
-                        <button type="submit">Crear</button>
-                    </div>
+                                                <% if(errores[i].param=="description" ){ %>
 
-                    <div class="button1">
-                        <button type="reset">Reset</button>
-                    </div>
-                </div>
+                                                    <small class="text-danger">
+                                                        <%= errores[i].msg%>
+                                                    </small>
+
+                                                    <% } %>
+
+                                                        <% } %>
+
+                                                            <% } %>
+
+
+                                                                <div class="control-formulario">
+                                                                    <label for="price">Precio</label>
+                                                                    <input type="texto" name="price" id="price" required
+                                                                        placeholder="$ 00.000" class="input">
+                                                                </div>
+
+                                                                <div class="multer">
+                                                                    <label for="image" class="form-label">Imagen del
+                                                                        producto:</label>
+                                                                    <input type="file" name="image" id="image"
+                                                                        class="form-input">
+                                                                </div>
+                                                                <div class="front">
+                                                                    <small class="text-danger image"></small>
+                                                                </div>
+                                                                <% if(typeof errores !='undefined' ){ %>
+                                                                    <% for(let i=0; i < errores.length; i++){ %>
+                                                                        <% if(errores[i].param=="image" ){ %>
+                                                                            <small class="text-danger">
+                                                                                <%= errores[i].msg%>
+                                                                            </small>
+                                                                            <% } %>
+                                                                                <% } %>
+                                                                                    <% } %>
+
+                                                                                        <div class="responsivebuttons">
+                                                                                            <div class="button1">
+                                                                                                <button
+                                                                                                    type="submit">Crear</button>
+                                                                                            </div>
+
+                                                                                            <div class="button1">
+                                                                                                <button
+                                                                                                    type="reset">Reset</button>
+                                                                                            </div>
+                                                                                        </div>
 
             </form>
 

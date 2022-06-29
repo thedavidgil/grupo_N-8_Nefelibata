@@ -60,33 +60,47 @@ main a:hover{
   padding: 15px 0;
   color: var(--beige);
 }
+
 .form1 {
   width: 60%;
   margin: auto;
   padding: 20px 0 5px 0;
 }
 
-.control-formulario {
-  margin-bottom: 15px;
+div.input-group {
+  position: relative;
+  margin-top: 20px;
 }
 
-.control {
+input.input {
   width: 100%;
-  padding: 10px 0;
-  border: 1px solid var(--negro);
+  padding: 10px;
+  border: none;
   border-radius: 5px;
+  font: inherit;
+  color: var(--negro);
+  background-color: transparent;
+  outline: 1.5px solid var(--negro);
 }
 
-.control-formulario label {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  display: block;
+label.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: transform .2s;  
 }
 
-.control-formulario input {
-  padding-left: 10px;
-  margin-bottom: 5px;
+input.input:focus+label.input-label,
+input.input:valid+label.input-label {
+  transform: translate(10px, -8px) scale(.8);
+  color: var(--negro-hover);
+  padding-inline: 5px;
+  background-color: var(--blanco);
+}
+
+input.input:is(:focus, :valid) {
+  outline-color: var(--negro-hover);
 }
 
 .error{
@@ -128,7 +142,6 @@ main a:hover{
 .button1 {
   text-align: center;
   margin: auto;
-
 }
 
 .button1 button {
@@ -147,11 +160,61 @@ main a:hover{
   background-color: var(--beige-hover);
 }
 
+.text-benefit {
+  text-align: center;
+  padding-top:10px;
+  padding-bottom: 40px;
+}
+
 .tenescuenta {
   text-align: center;
   padding-bottom: 15px;
+  /*text-align: center;
+  padding-bottom: 30px;
+  padding-top: 5px;*/
 }
 
 .tenescuenta a {
   font-weight: bold;
 }
+
+.avatar {
+  width: 100%;
+  border-radius: 10%;
+}
+
+.confirmation {
+  background-color: var(--gris);
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  max-width: 1200px;
+}
+
+.confirmation p {
+  padding: 10px 0px;
+}
+
+.confirmation p i {
+  font-size: 40px;
+}
+
+.confirmationp1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.resending {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.resending a {
+  font-weight: bold;
+}
+/*
+@media (min-width: 1280px) {
+  .responsivebuttons {
+    display: flex;
+  }
+}*/

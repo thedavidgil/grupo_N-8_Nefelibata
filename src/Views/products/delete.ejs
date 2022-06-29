@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/create_edit.css">
+        <title>Editar producto - Nefelibata</title>
+</head>
+
+<body>
+
+    <%- include("../partials/header") %>
+
+        <main>
+
+            <p class="creating-account">ELIMINAR PRODUCTO</p>
+
+            <p class="text-benefit">¿Estas seguro que queres eliminar <i><%= product.product_name %>?</i></p>
+
+                <form action="/products/delete/<%= product.product_id %>?_method=DELETE" method="POST">
+
+                    <div class="responsivebuttons">
+
+                    <div class="button1">
+                        <button class="button1" type="submit">Si Eliminar</button>
+                    </div>
+
+                    </div>
+        
+                </form>    
+         
+
+        </main>
+
+        <%- include("../partials/footer") %>
+
+</body>
+
+</html>
