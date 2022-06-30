@@ -17,8 +17,7 @@
             <p>Crear Cuenta</p>
         </div>
         
-        <p class="creating-account">CREA TU CUENTA</p>
-    
+        <p class="creating-account">CREA TU CUENTA</p>    
         
         
         <form action=" /users/register" method="POST" enctype="multipart/form-data" class="form1">
@@ -26,6 +25,9 @@
             <div class="input-group">
                 <input type="text" name="firstName" id="firstName" class="input" required value="<%= locals.oldData ? oldData.firstName : null %>">
                 <label for="firstName" class="input-label">Nombre</label>
+                <div class="errorFront">
+                    <small class="error erFirstName"></small>
+                </div>
                  <% if(locals.errors && errors.firstName){ %> 
                     <div class="error">
                         <%= errors.firstName.msg %> 
@@ -36,6 +38,9 @@
             <div class="input-group">
                 <input type="text" name="lastName" id="lastName" class="input" required value="<%= locals.oldData ? oldData.lastName : null %>">
                 <label for="lastName" class="input-label">Apellido</label>
+                <div class="errorFront">
+                    <small class="error erLastName"></small>
+                </div>
                 <% if(locals.errors && errors.lastName){ %> 
                     <div class="error">
                         <%= errors.lastName.msg %> 
@@ -46,6 +51,9 @@
             <div class="input-group"> 
                 <input type="email" name="email" id="email" class="input" required value="<%= locals.oldData ? oldData.email : null %>">
                 <label for="email" class="input-label">Email</label>
+                <div class="errorFront">
+                    <small class="error erEmail"></small>
+                </div>
                 <% if(locals.errors && errors.email){ %> 
                     <div class="error">
                         <%= errors.email.msg %> 
@@ -56,37 +64,42 @@
             <div class="input-group">    
                 <input type="password" name="password" id="password" required class="input">
                 <label for="password" class="input-label">Contraseña</label>
-            </div>
-            <% if(locals.errors && errors.password){ %> 
-                <div class="error">
-                    <%= errors.password.msg %> 
+                <div class="errorFront">
+                    <small class="error erPassword"></small>
                 </div>
-            <% } %> 
+                <% if(locals.errors && errors.password){ %> 
+                    <div class="error">
+                        <%= errors.password.msg %> 
+                    </div>
+                <% } %> 
+            </div>
 
             <div class="input-group">    
                 <input type="repassword" name="repassword" id="repassword" required class="input">
                 <label for="repassword" class="input-label">Confirmar Contraseña</label>
-            </div>
-            <% if(locals.errors && errors.password){ %> 
-                <div class="error">
-                    <%= errors.password.msg %> 
+                <div class="errorFront">
+                    <small class="error erRepassword"></small>
                 </div>
-            <% } %> 
-
-          
+                <% if(locals.errors && errors.password){ %> 
+                    <div class="error">
+                        <%= errors.password.msg %> 
+                    </div>
+                <% } %> 
+            </div>         
 
             
             <div class="input-group">
                 <label>Imagen de perfil</label>
-                <input type="file" name="avatar" class="input" >
-
+                <input type="file" name="avatar" class="input">
+                <div class="errorFront">
+                    <small class="error erAvatar"></small>
+                </div>
                 <% if(locals.errors && errors.userImage){ %> 
                     <div class="error">
                         <%= errors.userImage.msg %>                       
                     </div>
                 <% } %> 
-            </div>
-            
+            </div>            
 
             <div class="button1">
               <button type="submit">Crear Cuenta</button>
@@ -102,6 +115,7 @@
 
     </main>
     
+    <script src="/public/js/validatorUser.js"></script>
 
     <%- include("../partials/footer") %>
     

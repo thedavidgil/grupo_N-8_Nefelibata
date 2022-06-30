@@ -28,8 +28,8 @@
 
 
             <form action="/users/login" method="POST" class="form1">
-                <div class="control-formulario">
-                    <input type="email" name="email" id="email" placeholder="minombre@mail.com" required value="<%= locals.oldData ? oldData.email : null %>" class="input">
+                <div class="input-group">
+                    <input type="email" name="email" id="email" required value="<%= locals.oldData ? oldData.email : null %>" class="input">
                     <label for="email" class="input-label">Email</label>
                     <% if (locals.errors && errors.email) { %>
                         <div class="error">
@@ -65,8 +65,9 @@
 
         </main>
 
+        <script src="/public/js/loginvalidator.js"></script>
+        
         <%- include("../partials/footer") %>
-        <script src="js/loginvalidator"></script>
        
 </body>
 
