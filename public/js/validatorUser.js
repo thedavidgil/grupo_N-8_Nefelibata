@@ -1,6 +1,5 @@
 // User register
 const db = require('../../database/models')
-const path = require('path');
 
 window.addEventListener('load', function(){
     let btnSubmit = document.querySelector('.button1');
