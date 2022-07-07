@@ -120,10 +120,24 @@ const controller = {
 
 
 //******************************FALTA CONSTRUIR***********************//
-  list:(req,res)=>{
-  return res.render("./users/usersList")
+  //list:(req,res)=>{
+  //return res.render("./users/usersList")
+  //},
+
+    "list": (req, res) => {
+        db.User.findAll()
+            .then(user => {
+                res.render('usersList.ejs', {user})
+            })
+    },
+
+    "detail": (req, res) => {//agregada
+      db.User.findByPk(req.params.id)
+          .then(user => {
+              res.render('userDetail.ejs', {user});
+          });
   },
-//******************************FALTA CONSTRUIR***********************//
+//******************************FALTA CONSTRUIR(construida)***********************//
 
 
 
