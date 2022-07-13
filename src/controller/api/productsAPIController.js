@@ -1,4 +1,4 @@
-const db = require('../../database/models');
+const db = require('../../../database/models');
 
 const Product = db.Product;
 const Product_category = db.Product_category;
@@ -16,7 +16,7 @@ const controller = {
                     status : 200,
                     count: products.length,
                     countByCategory: {
-
+                        
                     },
                     products: [{
                         id: products.product_id,

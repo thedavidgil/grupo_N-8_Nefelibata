@@ -81,13 +81,13 @@
                                     </a>
                                         <article class="product-box_data">
                                             <h2><%= product.product_name %></h2>
-                                            <span><%= product.price %></span>
+                                            <span>$ <%= product.price %></span>
                                         </article>
                                         <div class="product-button">
                                             <form>
                                                 <button type="submit" class="buy-buttom">Comprar</button>
                                             </form>
-                                            <form>
+                                            <form action="/products/<%= product.product_id %>">
                                                 <button type="submit" class="view-buttom">Ver</button>
                                             </form>
                                         </div>

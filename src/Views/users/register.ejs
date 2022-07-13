@@ -20,7 +20,7 @@
         <p class="creating-account">CREA TU CUENTA</p>    
         
         
-        <form action=" /users/register" method="POST" enctype="multipart/form-data" class="form1">
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="form1">
 
             <div class="input-group">
                 <input type="text" name="firstName" id="firstName" class="input" required value="<%= locals.oldData ? oldData.firstName : null %>">
@@ -75,7 +75,7 @@
             </div>
 
             <div class="input-group">    
-                <input type="repassword" name="repassword" id="repassword" required class="input">
+                <input type="password" name="repassword" id="repassword" required class="input">
                 <label for="repassword" class="input-label">Confirmar Contraseña</label>
                 <div class="errorFront">
                     <small class="error erRepassword"></small>
@@ -89,8 +89,8 @@
 
             
             <div class="input-group">
-                <label>Imagen de perfil</label>
-                <input type="file" name="avatar" class="input">
+                <input type="file" id="avatar" name="avatar" accept=".jpg, .jpeg, .png, .gif" class="input input_avatar">
+                <label for="avatar" class="label_avatar">Imagen de perfil</label>
                 <div class="errorFront">
                     <small class="error erAvatar"></small>
                 </div>
@@ -100,7 +100,7 @@
                     </div>
                 <% } %> 
             </div>            
-
+            <br>
             <div class="button1">
               <button type="submit">Crear Cuenta</button>
             </div>
@@ -109,8 +109,7 @@
         <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login"> Inicia sesión</a></p>
 
         <div class="socialnetwork">
-        <button type="submit">Crea Cuenta con <i class="fa-brands fa-facebook-square"></i>
-           FACEBOOK</button>
+            <button type="submit">Crea Cuenta con <i class="fa-brands fa-facebook-square"></i>FACEBOOK</button>
         </div>
 
     </main>

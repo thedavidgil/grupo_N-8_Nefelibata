@@ -31,8 +31,8 @@ const controller = {
       product_name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      product_category_id:req.body.category,
-      show_product:true,
+      product_category_id: req.body.category,
+      show_product: true,
       product_images:[{
         image: req.file?.filename ?? "default-image.png",
       }]

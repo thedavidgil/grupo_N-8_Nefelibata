@@ -104,9 +104,9 @@ input.input:is(:focus, :valid) {
 }
 
 .error{
-  color: red;
+  color: var(--warning);
   text-align: center;
-  font-size: 25px;
+  font-size: 12px;
   font-weight: bold;
   padding-top: 2%;
   }
@@ -181,6 +181,19 @@ input.input:is(:focus, :valid) {
 .avatar {
   width: 100%;
   border-radius: 10%;
+}
+
+input.input_avatar{
+  display: none;
+}
+
+label.label_avatar{
+  background-color: var(--shadow);
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: left;
 }
 
 .confirmation {

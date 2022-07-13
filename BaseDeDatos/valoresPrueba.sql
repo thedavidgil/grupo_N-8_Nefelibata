@@ -6,11 +6,11 @@ INSERT INTO `avatars` (`avatar_id`, `avatar`) VALUES
 (5, 'default-image.png');
 
 INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `product_category_id`, `show_product`) VALUES
-(1, 'Producto 1', 'Descripcion producto 1', '1000.00', NULL, 1),
-(2, 'Producto 2', 'DescripciÃ³n Producto 2', '2000.00', NULL, 1),
-(3, 'Producto 3', 'DescripciÃ³n Producto 3', '3000.00', NULL, 1),
-(4, 'Producto 4', 'DescripciÃ³n Producto 4', '4000.00', NULL, 1),
-(5, 'Producto 5', 'DescripciÃ³n Producto 5', '5000.00', NULL, 1);
+(1, 'Producto 1', 'Descripcion Producto 1', '1000.00', NULL, 1),
+(2, 'Producto 2', 'Descripcion Producto 2', '2000.00', NULL, 1),
+(3, 'Producto 3', 'Descripcion Producto 3', '3000.00', NULL, 1),
+(4, 'Producto 4', 'Descripcion Producto 4', '4000.00', NULL, 1),
+(5, 'Producto 5', 'Descripcion Producto 5', '5000.00', NULL, 1);
 
 INSERT INTO `product_images` (`product_image_id`, `image`, `product_id`) VALUES
 (1, 'producto_1.png', 1),

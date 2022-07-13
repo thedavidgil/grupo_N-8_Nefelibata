@@ -26,27 +26,27 @@
         <div class="detalle">
           <h2><%= product.product_name %></h2>
           <div class="price-per-unit">
-            <p><%= product.price %></p>
+            <p>$ <%= product.price %></p>
           </div>
           <p><%= product.description %></p>
 
           <form action="#" method="post">
 
-            <div class="delete">
-              <label for="delete"></label>
-              <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-
-            <div class="amount">
+            
+            <!-- <div class="amount">
               <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
               <p>0</p>
               <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
-            </div>
+            </div> -->
             <button class="comprar">AGREGAR AL CARRITO</button>
           </form>
-
-
-
+          
+          <!-- Boton de eliminar y editar si el perfil del usuario es admin -->
+          
+          <!-- <div class="delete">
+            <label for="delete"></label>
+            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+          </div> -->
         </div>
 
       </section>

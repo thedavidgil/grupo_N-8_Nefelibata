@@ -3,7 +3,7 @@
 
 <head>
     <%- include("../partials/head") %>
-        <link rel="stylesheet" href="/css/create_edit.css">
+        <link rel="stylesheet" href="/css/styles_users.css">
         <title>Editar producto - Nefelibata</title>
 </head>
 
@@ -85,7 +85,7 @@
                                                                 <div class="control-formulario">
                                                                     <label>Imagenes Principales</label>
                                                                     <input type="file" name="image" id="image"
-                                                                        class="input">
+                                                                        value="<%= product.image %>" class="input>
                                                                 </div>
                                                                 <div class="frontEdit">
                                                                     <small class="text-danger image"></small>
