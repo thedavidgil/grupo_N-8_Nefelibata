@@ -7,39 +7,43 @@ const moment = require('moment');
 
 const usersApiController = {
     "list": (req, res) => {
-        db.User.findAll()//el modelo a consultar, todos los usuarios
-        .then(user => {//recibe a los usuarios
-            let respuesta = {//la respuesta en metodo json. Este formato json permite enviar la info de este modo para poder ser consumida como si fuese una Api
+        Users.findAll ( {//la respuesta en metodo json. Este formato json permite enviar la info de este modo para poder ser consumida como si fuese una Api
+            include: ["users_products", "user_category"]
+        })
+        .then(user =>{
+            let respuesta = {
                 meta: {
                     count: user.length,//se obtiene el total de usuario
                     status : 200,//si el valor es satisfactorio
+                    countUser:{
                 },
-                user: {
+                user: [{
                     id: user.id,
                     name: user.first_name,
                     email: user.email,
-                    detail: "api/user",
-                },
+                    detail: "http://localhost:5000/api/users"
+                }]
+            },
                 data: user//se obtiene la data
-            }
+                }
                 return res.json(respuesta);
             })
     },
     "detail": (req, res) => {
-        db.Users.findByPk(req.params.id)
-            .then(user => {
+        Users.findByPk (req.params.id,{
+            include:["avatar_id"]
+        })
+        .then(user =>{
                 let respuesta = {
                     meta: {
-                    count: user.length,//se obtiene el total de usuario
+                    id: user.id,
+                    name: user.first_name,
+                    email: user.email,
+                    avatar_id: "'http://localhost:5000/api/user/:id/avatar_id'",
                     status: 200,
-                    },
-                    user: {
-                        id: user.id,
-                        name: user.first_name,
-                        email: user.email,
-                        detail: "/api/avatar_id",
-                    },
                     data: user
+                    },
+                    
                 }
                 return res.json(respuesta);
             });

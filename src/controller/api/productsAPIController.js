@@ -46,7 +46,7 @@ const controller = {
         .then(product => {
             let response = {
                 meta: {
-                    status: 200,                    
+                    status: 200,
                     product_image: 'http://localhost:5000/api/product/:id/product_images'
                 },
                 data: product
