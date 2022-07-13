@@ -127,16 +127,9 @@ const controller = {
     "list": (req, res) => {
         db.User.findAll()
             .then(user => {
-                res.render('usersList.ejs', {user})
+                res.render("/users/usersList", {user})
             })
     },
-
-    "detail": (req, res) => {//agregada
-      db.User.findByPk(req.params.id)
-          .then(user => {
-              res.render('userDetail.ejs', {user});
-          });
-  },
 //******************************FALTA CONSTRUIR(construida)***********************//
 
 
