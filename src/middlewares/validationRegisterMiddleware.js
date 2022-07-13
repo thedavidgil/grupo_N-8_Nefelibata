@@ -15,9 +15,9 @@ module.exports = [
 	body('password')
 		.notEmpty().withMessage('Tenes que escribir una contraseña').bail()
 		.isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1}).withMessage('La contraseña debe contener 8 dígitos con al menos una letra mayúscula, una minúsculas, un número y un carácter especial'),
-	body('repassword')
-		.notEmpty().withMessage('Tenes que reescribir la contraseña').bail()
-		.equals('password'),
+	// body('repassword')
+	// 	.notEmpty().withMessage('Tenes que reescribir la contraseña').bail()
+	// 	.equals('password'),
 	body('userImage').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];

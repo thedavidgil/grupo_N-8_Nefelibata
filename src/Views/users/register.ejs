@@ -74,7 +74,7 @@
                 <% } %> 
             </div>
 
-            <div class="input-group">    
+            <!-- <div class="input-group">    
                 <input type="password" name="repassword" id="repassword" required class="input">
                 <label for="repassword" class="input-label">Confirmar Contraseña</label>
                 <div class="errorFront">
@@ -85,11 +85,18 @@
                         <%= errors.password.msg %> 
                     </div>
                 <% } %> 
-            </div>         
-
+            </div>          -->
+            <div class="input-group">
+                <label for="category" class="input-label">Categoria</label>
+                <select name="category" id="category">
+                    <% for(let i=0; i < categorias.length; i++) {%>
+                        <option value= <%= categorias[i].user_category_id %> > <%= categorias[i].category %> </option>
+                    <% } %>
+                </select>
+            </div>
             
             <div class="input-group">
-                <input type="file" id="avatar" name="avatar" accept=".jpg, .jpeg, .png, .gif" class="input input_avatar">
+                <input type="file" id="avatar" name="avatar" class="input input_avatar">
                 <label for="avatar" class="label_avatar">Imagen de perfil</label>
                 <div class="errorFront">
                     <small class="error erAvatar"></small>

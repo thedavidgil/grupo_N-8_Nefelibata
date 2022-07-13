@@ -111,6 +111,13 @@ input.input:is(:focus, :valid) {
   padding-top: 2%;
   }
 
+.textarea {
+  outline: none;
+  width: 100%;
+  border: 1.5px solid var(--negro);
+  border-radius: 5px;
+  padding: 1px 10px;
+}
 
 .socialnetwork {
   text-align: center;
@@ -158,6 +165,11 @@ input.input:is(:focus, :valid) {
 
 .button1 button:hover{
   background-color: var(--beige-hover);
+}
+
+.button2 button {
+  background-color: var(--blanco);
+  border: 1px solid var(--beige);
 }
 
 .text-benefit {

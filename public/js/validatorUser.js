@@ -50,11 +50,11 @@ window.addEventListener('load', function(){
             errores.password = 'Tenes que escribir una contraseña';
         }; //else if (password.value.match(/[0-9]/[A-Z]/[a-z]/[])){
 
-        let repassword = document.getElementById('repassword');
-        let erRepassword = document.querySelector('.erRepassword');
-        if (repassword.value = '') {
-            errores.repassword = 'Tenes que reescribir la contraseña';
-        };
+        // let repassword = document.getElementById('repassword');
+        // let erRepassword = document.querySelector('.erRepassword');
+        // if (repassword.value = '') {
+        //     errores.repassword = 'Tenes que reescribir la contraseña';
+        // };
             
         let avatar = document.getElementById('avatar');
         let erAvatar = document.querySelector('.erAvatar');
@@ -68,7 +68,7 @@ window.addEventListener('load', function(){
             erLastName.innerText = (errores.lastName) ? errores.lastName : '';
             erEmail.innerText = (errores.email) ? errores.email : '';
             erPassword.innerText = (errores.password) ? errores.password : '';
-            erRepassword.innerText = (errores.repassword) ? errores.repassword : '';
+            // erRepassword.innerText = (errores.repassword) ? errores.repassword : '';
             erAvatar.innerText = (errores.avatar) ? errores.avatar : '';
         } else {
             registerForm.submit();

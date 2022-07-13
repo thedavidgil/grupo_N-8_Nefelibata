@@ -22,7 +22,7 @@ const controller = {
     .then(categorias => {//marian o Gaby
       return res.render("./products/create",{categorias})//Marian o Gaby
     })
-    },
+  },
 
 
 

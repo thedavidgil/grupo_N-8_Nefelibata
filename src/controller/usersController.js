@@ -8,7 +8,10 @@ const path = require("path");
 const controller = {
 
   register: (req, res) => {
-    res.render("./users/register")
+    db.User_category.findAll()
+    .then(categorias  => {
+      res.render("./users/register",{categorias})
+    })
   },
 
   processRegister: (req, res) => {
@@ -61,6 +64,7 @@ const controller = {
                 last_name: req.body.lastName,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10),
+                user_category_id: req.body.category,
                 avatar_id: result.avatar_id
               })
                 .then(() => {
@@ -69,6 +73,7 @@ const controller = {
             })
         })
     })
+
   },
 
   edit: function (req, res) {

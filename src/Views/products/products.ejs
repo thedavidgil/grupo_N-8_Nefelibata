@@ -54,11 +54,11 @@
                 </form>
             </section> -->
 
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="products-title">Todos los productos</h2>
-                    </div>
+            <div>
+                <h2 class="products-title">TODOS LOS PRODUCTOS</h2>
+            </div>
+
+            <div class="seccion">
 
                     <% for(let i = 0; i < products.length; i++) { %>
                         <% if (products[i].show_product) { %>
@@ -76,7 +76,7 @@
                                         <form>
                                             <button type="submit" class="buy-buttom">Comprar</button>
                                         </form>
-                                        <form>
+                                        <form action="/products/<%= products[i].product_id %>">
                                             <button type="submit" class="view-buttom">Ver</button>
                                         </form>
                                     </div>
@@ -86,7 +86,6 @@
                         <% } %>
                     <% } %>
                 
-                </div>
             </div>
 
             </section>
