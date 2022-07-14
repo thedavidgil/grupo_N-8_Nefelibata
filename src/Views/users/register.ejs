@@ -87,9 +87,9 @@
                 <% } %> 
             </div>          -->
             <div class="input-group-selected">
-                <select name="category" id="category">
+                <select name="category" id="user_category_id">
                     <label for="category" class="input-label">Categoria</label>
-                    <% for(let i=0; i < categorias.length; i++) {%>
+                    <% for(let i=0; i < category.length; i++) {%>
                         <option value= <%= categorias[i].user_category_id %> > <%= categorias[i].category %> </option>
                     <% } %>
                 </select>
