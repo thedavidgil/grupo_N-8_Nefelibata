@@ -13,12 +13,12 @@
 
         <main>
 
-            <p class="creating-account">EDITAR PRODUCTO</p>
+            <!-- <p class="creating-account">EDITAR PRODUCTO</p>
 
             <p class="text-benefit">Estas editando: <i><%= product.product_name %></i></p>
 
-            <form action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data">
-                <div class="input-group">
+            <form action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data"> -->
+                <!-- <div class="input-group">
                     <input type="text" name="product_name" id="product_name" required class="input" value="<%= product.product_name %> ">
                     <label for="product_name" class="input-label">Nombre de Producto</label>
                 </div>
@@ -26,38 +26,34 @@
                     <small class="text-danger product-name"></small>
                 </div>
                 <% if(typeof errores !='undefined' ){ %>
-                    <!--Sabrina-->
+                    Sabrina
                     <% for(let i=0; i < errores.length; i++){ %>
-                        <!--Sabrina-->
+                        Sabrina
                         <% if(errores[i].param=="product_name" ){ %>
-                            <!--Sabrina-->
+                            Sabrina
                             <small class="text-danger">
                                 <%= errores[i].msg%>
                             </small>
-                            <!--Sabrina-->
+                            Sabrina
                         <% } %>
-                                <!--Sabrina-->
+                                Sabrina
                     <% } %>
-                                    <!--Sabrina-->
+                                    Sabrina
                 <% } %>
-                                        <!--Sabrina-->
+                                        Sabrina -->
 
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <label for="category" class="input-label">Categoria</label>
                     <select name="category" id="category">
                         <% for(let i=0; i < categorias.length; i++) {%>
-                            <option value=<%=categorias[i].category %>><%=
-                                    categorias[i].category %>
-                            </option>
+                            <option value="<%=categorias[i].category %>"><%= categorias[i].category %></option>
                         <% } %>
                     </select>
+                </div> -->
 
-                </div>
-
-                <div class="input-group">
-                    <textarea name="description" id="description" required
+                <!-- <div class="input-group">
                     <label for="description" class="input-label">Descripción</label>
-                        class="input"><%= product.description %> </textarea>
+                    <textarea name="description" id="description" required class="input"><%= product.description %> </textarea>
                 </div>
                 <div class="frontEdit">
                     <small class="text-danger description"></small>
@@ -70,13 +66,13 @@
                             </small>
                         <% } %>
                     <% } %>
-                <% } %>
+                <% } %> -->
 
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <input type="text" name="price" id="price" required value="<%= product.price %> " class="input">
                     <label for="price" class="input-label">Precio</label>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="input-group">
                     <label>Imagenes Principales</label>
                     <input type="file" name="image" id="image" value="<%= product.image %>  class="input">
@@ -106,10 +102,118 @@
                     
                 </div>
 
-            </form>
+            </form> -->
 
-            <form class="button1" action="/products/delete/<%=product.product_id%>">
+            <!-- <form class="button1" action="/products/delete/<%=product.product_id%>">
                 <button type="submit">ELIMINAR</button>
+            </form> -->
+
+            <p class="creating-account">EDITAR PRODUCTO</p>
+
+            <p class="text-benefit">Estas editando: <i><%= product.product_name %></i></p>
+
+            <form  action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="text" name="name" id="name" required class="input" value="<%= product.product_name %> ">
+                    <label for="name" class="input-label">Nombre de Producto</label>
+                </div>
+                <div class="front">
+                    <small class="text-danger name"></small>
+                </div>
+                <% if(typeof errores !='undefined' ){ %>
+                    <!--Sabrina-->
+                    <% for(let i=0; i < errores.length; i++){ %>
+                        <!--Sabrina-->
+                        <% if(errores[i].param=="name" ){ %>
+                            <!--Sabrina-->
+                            <small class="text-danger">
+                                <%= errores[i].msg%>
+                            </small>
+                            <!--Sabrina-->
+                        <% } %>
+                                <!--Sabrina-->
+                    <% } %>
+                                    <!--Sabrina-->
+                <% } %>
+                                        <!--Sabrina-->
+
+
+                <div class="input-group">
+                    <input type="text" name="description" id="description" required class="input" value="<%= product.description %>"></input>
+                    <label for="description" class="input-label">Descripción</label>
+                </div>
+                <div class="front">
+                    <small class="text-danger description"></small>
+                </div>
+                <% if(typeof errores !='undefined' ){ %>
+
+                    <% for(let i=0; i < errores.length; i++){ %>
+
+                        <% if(errores[i].param=="description" ){ %>
+
+                            <small class="text-danger">
+                                <%= errores[i].msg%>
+                            </small>
+
+                        <% } %>
+
+                    <% } %>
+
+                <% } %>
+
+
+                <div class="input-group">
+                    <input type="text" name="price" id="price" required class="input" value="<%= product.price %> ">
+                    <label for="price" class="input-label">Precio</label>
+                </div>
+
+                <div class="input-group-selected">
+                    <select name="category" id="category">
+                        <label for="category" class="input-label">Categoria</label>
+                        <% for(let i=0; i < categorias.length; i++) {%>
+                            <option value= <%= categorias[i].product_category_id %> > <%= categorias[i].category %> </option>
+                            <% } %>
+                        </select>
+                </div>
+
+                <div class="input-group input-container">
+                    <figure class="img-miniature-container">
+                        <img id="chosen-image">
+                        <figcaption id="image-name"></figcaption>
+                    </figure>
+                    <input type="file" name="image" id="image" class="input input_avatar" value="<%= product.image %>">
+                    <label for="image" class="label_avatar">Imagen del producto</label>
+                </div>
+                <div class="front">
+                    <small class="text-danger image"></small>
+                </div>
+                <% if(typeof errores !='undefined' ){ %>
+                    <% for(let i=0; i < errores.length; i++){ %>
+                        <% if(errores[i].param=="image" ){ %>
+                            <small class="text-danger">
+                                <%= errores[i].msg%>
+                            </small>
+                        <% } %>
+                    <% } %>
+                <% } %>
+                <br>
+
+                <div class="responsivebuttons">
+                    <div class="button1 button2">
+                        <button type="reset">Reset</button>
+                    </div>
+                    <br>
+                    <div class="button1 button2" >
+                        <a href="/products/delete/<%=product.product_id%>">
+                            <button type="submit" >Eliminar</button>
+                        </a>
+                    </div>
+                    <br>
+                    <div class="button1">
+                        <button type="submit">Editar Producto</button>
+                    </div>
+                </div>
+
             </form>
 
         </main>
