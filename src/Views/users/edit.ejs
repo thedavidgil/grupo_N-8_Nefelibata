@@ -13,34 +13,34 @@
 
         <main>
 
-            <div class="path">
+            <!-- <div class="path">
                 <p>Inicio ></p>
                 <p>Mi usuario ></p>
                 <p>Editar</p>
-            </div>
+            </div> -->
 
-            <p class="creating-account">EDITAR USUARIO</p>
+            <!-- <p class="creating-account">EDITAR USUARIO</p> -->
 
 
-            <form action=" /users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="form1">
-                <div class="control-formulario">
+            <!-- <form action="/users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="form1"> -->
+                <!-- <div class="control-formulario">
                     <input type="text" name="first_name" id="first_name" value="<%= userToEdit.first_name %>" required class="input">
                     <label for="first_name" class="input-label">Nombre</label>
-                </div>
-                <div class="control-formulario">
+                </div> -->
+                <!-- <div class="control-formulario">
                     <input type="text" name="last_name" id="last_name" value="<%= userToEdit.last_name %>" required class="input">
                     <label for="last_name" class="input-label">Apellido</label>
                
-                </div>
-                <div class="input-group">
+                </div> -->
+                <!-- <div class="input-group">
                     <input type="email" name="email" id="email" value="<%= userToEdit.email %>" required class="input">
                     <label for="email" class="input-label">Email</label>
-                </div>
-                <div class="input-group">
+                </div> -->
+                <!-- <div class="input-group">
                     <input type="password" name="password" id="contraseña" value="<%= userToEdit.password %>" required class="input">
                     <label for="password" class="input-label">Contraseña</label>
-                </div>
-                <div class="input-group"">
+                </div> -->
+                <!-- <div class="input-group">
                     <label for="user_category" class="input-label">Categoria</label>
                     <select name="user_category" required id="category">
                         <option value="admin" <%=userToEdit.user_category=="admin" ? "selected" :null %>>Admin</option>
@@ -54,16 +54,103 @@
                     <label>Avatar</label>
                     <input type="file" name="avatar" accept=".jpg, .pdf .jepg" multiple class="control"
                         value="<%= userToEdit.image %>">
-                </div>
+                </div> -->
 
-                <div class="button1">
-                    <button type="submit">Editar</button>
-                </div>
+                <p class="creating-account">EDITAR USUARIO</p>    
+        
+        
+                <form action="/users/edit/<%= userToEdit.user_id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="form1">
+        
+                    <div class="input-group">
+                        <input type="text" name="firstName" id="firstName" class="input" required value="<%= userToEdit.first_name %>">
+                        <label for="firstName" class="input-label">Nombre</label>
+                        <div class="errorFront">
+                            <small class="error erFirstName"></small>
+                        </div>
+                         <% if(locals.errors && errors.firstName){ %> 
+                            <div class="error">
+                                <%= errors.firstName.msg %> 
+                            </div>
+                        <% } %> 
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" name="lastName" id="lastName" class="input" required value="<%= userToEdit.last_name %>">
+                        <label for="lastName" class="input-label">Apellido</label>
+                        <div class="errorFront">
+                            <small class="error erLastName"></small>
+                        </div>
+                        <% if(locals.errors && errors.lastName){ %> 
+                            <div class="error">
+                                <%= errors.lastName.msg %> 
+                            </div>
+                        <% } %> 
+                    </div>
+        
+                    <div class="input-group"> 
+                        <input type="email" name="email" id="email" class="input" required value="<%= userToEdit.email %>">
+                        <label for="email" class="input-label">Email</label>
+                        <div class="errorFront">
+                            <small class="error erEmail"></small>
+                        </div>
+                        <% if(locals.errors && errors.email){ %> 
+                            <div class="error">
+                                <%= errors.email.msg %> 
+                            </div>
+                        <% } %> 
+                    </div>
+            
+                    <div class="input-group">    
+                        <input type="password" name="password" id="password" class="input" required value="<%= userToEdit.password %>"">
+                        <label for="password" class="input-label">Contraseña</label>
+                        <div class="errorFront">
+                            <small class="error erPassword"></small>
+                        </div>
+                        <% if(locals.errors && errors.password){ %> 
+                            <div class="error">
+                                <%= errors.password.msg %> 
+                            </div>
+                        <% } %> 
+                    </div>
+        
+                    <div class="input-group-selected">
+                        <select name="category" id="category">
+                            <label for="category" class="input-label">Categoria</label>
+                            <% for(let i=0; i < categorias.length; i++) {%>
+                                <option value= <%= categorias[i].user_category_id %> > <%= categorias[i].category %> </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group input-container">
+                        <figure class="img-miniature-container">
+                            <img id="chosen-image" src="<%= userToEdit.image %>">
+                            <figcaption id="image-name"></figcaption>
+                        </figure>
+                        <input type="file" name="avatar" id="avatar" class="input input_avatar" value="<%= userToEdit.image %>">
+                        <label for="avatar" class="label_avatar">Imagen de perfil</label>
+                    </div>
+                    <div class="errorFront">
+                        <small class="error erAvatar"></small>
+                    </div>
+                    <% if(locals.errors && errors.userImage){ %> 
+                        <div class="error">
+                            <%= errors.userImage.msg %>                       
+                        </div>
+                    <% } %>             
+
+                    <div class="responsivebuttons">
+                        <div class="button1">
+                            <button type="reset">Editar</button>
+                        </div>
+                    </div>
             </form>
 
-            <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p>
+            <!-- <p class="tenescuenta">¿Ya tenés cuenta?<a href="/users/login">Inicia sesión</a></p> -->
 
         </main>
+
+        <script src='/js/validatorUser.js' type="text/javascript"></script>
 
         <%- include("../partials/footer") %>
 

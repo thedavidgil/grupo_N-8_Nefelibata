@@ -11,11 +11,11 @@
 
     <main>
 
-        <div class="path">
+        <!-- <div class="path">
             <p>Inicio ></p>
             <p>Mi cuenta ></p>
             <p>Crear Cuenta</p>
-        </div>
+        </div> -->
         
         <p class="creating-account">CREA TU CUENTA</p>    
         
@@ -86,30 +86,40 @@
                     </div>
                 <% } %> 
             </div>          -->
-            <div class="input-group">
-                <label for="category" class="input-label">Categoria</label>
+            <div class="input-group-selected">
                 <select name="category" id="category">
+                    <label for="category" class="input-label">Categoria</label>
                     <% for(let i=0; i < categorias.length; i++) {%>
                         <option value= <%= categorias[i].user_category_id %> > <%= categorias[i].category %> </option>
                     <% } %>
                 </select>
             </div>
             
-            <div class="input-group">
-                <input type="file" id="avatar" name="avatar" class="input input_avatar">
+            <div class="input-group input-container">
+                <figure class="img-miniature-container">
+                    <img id="chosen-image">
+                    <figcaption id="image-name"></figcaption>
+                </figure>
+                <input type="file" name="avatar" id="avatar" class="input input_avatar">
                 <label for="avatar" class="label_avatar">Imagen de perfil</label>
-                <div class="errorFront">
-                    <small class="error erAvatar"></small>
+            </div>
+            <div class="errorFront">
+                <small class="error erAvatar"></small>
+            </div>
+            <% if(locals.errors && errors.userImage){ %> 
+                <div class="error">
+                    <%= errors.userImage.msg %>                       
                 </div>
-                <% if(locals.errors && errors.userImage){ %> 
-                    <div class="error">
-                        <%= errors.userImage.msg %>                       
-                    </div>
-                <% } %> 
-            </div>            
-            <br>
-            <div class="button1">
-              <button type="submit">Crear Cuenta</button>
+            <% } %>             
+          
+            <div class="responsivebuttons">
+                <div class="button1 button2">
+                    <button type="reset">Reset</button>
+                </div>
+                <br>
+                <div class="button1">
+                    <button type="submit">Crear Cuenta</button>
+                </div>
             </div>
         </form>
         
@@ -121,7 +131,7 @@
 
     </main>
     
-    <script src="/public/js/validatorUser.js"></script>
+    <script src='/js/validatorUser.js' type="text/javascript"></script>
 
     <%- include("../partials/footer") %>
     

@@ -193,7 +193,7 @@ header {
 .logo {
   width: 80%;
   max-width: 250px;
-  padding: 15px;
+  padding: 5px;
 }
 
 .navbar {
@@ -336,6 +336,6 @@ footer h2 {
     width: 70px;
   }
   .header-background {
-    height: 220px;
+    height: 210px;
   }
 }
