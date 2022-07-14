@@ -3,14 +3,14 @@
 
 <head>
     <%- include("../partials/head") %>
-        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/styles_users.css">
         <title>Contacto - Nefelibata</title>
 </head>
 
 <body>
     <%- include("../partials/header") %>
         <main>
-            <div class="box">
+            <!-- <div class="box">
                 <div class="ci">
                     <div class="contact">
                         <h2>Contacto</h2>
@@ -50,7 +50,49 @@
 
                     </div>
                 </form>
-            </div>
+            </div> -->
+
+            <p class="creating-account">CONTACTANOS</p>    
+        
+        
+            <form action="contact-form.php" method="POST" class="form1">
+    
+                <div class="input-group">
+                    <input type="text" name="firstName" id="firstName" class="input" required >
+                    <label for="firstName" class="input-label">Nombre completo</label>
+                </div>
+    
+                <div class="input-group"> 
+                    <input type="email" name="email" id="email" class="input" required >
+                    <label for="email" class="input-label">Email</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="tel-number" id="tel-number" class="input" required >
+                    <label for="tel-number" class="input-label">Teléfono</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="affair" id="affair" class="input" required >
+                    <label for="affair" class="input-label">Asunto</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" id="message" class="input-textarea" required ></textarea>
+                    <label for="message" class="input-label">Mensaje</label>
+                </div>
+              
+                <div class="responsivebuttons">
+                    <div class="button1 button2">
+                        <button type="reset">Reset</button>
+                    </div>
+                    <br>
+                    <div class="button1">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+
         </main>
         <%- include("../partials/footer") %>
 

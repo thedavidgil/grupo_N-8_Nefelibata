@@ -76,10 +76,20 @@ const controller = {
 
   },
 
+  // edit: function (req, res) {
+  //   db.User.findByPk(req.params.id)
+  //     .then(function (Users) {
+  //       res.render("./users/edit", { userToEdit:Users });
+  //     })
+  // },
+
   edit: function (req, res) {
     db.User.findByPk(req.params.id)
-      .then(function (Users) {
-        res.render("./users/edit", { userToEdit:Users });
+      .then(Users => {
+        db.User_category.findAll()
+        .then(categorias => {
+          res.render("./users/edit", { userToEdit:Users , categorias});
+        })
       })
   },
 
@@ -100,7 +110,7 @@ const controller = {
           user_category_id: result.user_category_id,
         },{
           where:{
-            user_id:id
+            user_id: id
           }
         })
         .then(() => {
@@ -108,7 +118,7 @@ const controller = {
               avatar: req.file.filename
             },{
               where:{
-                avatar_id:id
+                avatar_id: id
               }
             })
             .then(() =>{
