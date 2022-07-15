@@ -13,101 +13,6 @@
 
         <main>
 
-            <!-- <p class="creating-account">EDITAR PRODUCTO</p>
-
-            <p class="text-benefit">Estas editando: <i><%= product.product_name %></i></p>
-
-            <form action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST" class="form1" enctype="multipart/form-data"> -->
-                <!-- <div class="input-group">
-                    <input type="text" name="product_name" id="product_name" required class="input" value="<%= product.product_name %> ">
-                    <label for="product_name" class="input-label">Nombre de Producto</label>
-                </div>
-                <div class="frontEdit">
-                    <small class="text-danger product-name"></small>
-                </div>
-                <% if(typeof errores !='undefined' ){ %>
-                    Sabrina
-                    <% for(let i=0; i < errores.length; i++){ %>
-                        Sabrina
-                        <% if(errores[i].param=="product_name" ){ %>
-                            Sabrina
-                            <small class="text-danger">
-                                <%= errores[i].msg%>
-                            </small>
-                            Sabrina
-                        <% } %>
-                                Sabrina
-                    <% } %>
-                                    Sabrina
-                <% } %>
-                                        Sabrina -->
-
-                <!-- <div class="input-group">
-                    <label for="category" class="input-label">Categoria</label>
-                    <select name="category" id="category">
-                        <% for(let i=0; i < categorias.length; i++) {%>
-                            <option value="<%=categorias[i].category %>"><%= categorias[i].category %></option>
-                        <% } %>
-                    </select>
-                </div> -->
-
-                <!-- <div class="input-group">
-                    <label for="description" class="input-label">Descripción</label>
-                    <textarea name="description" id="description" required class="input"><%= product.description %> </textarea>
-                </div>
-                <div class="frontEdit">
-                    <small class="text-danger description"></small>
-                </div>
-                <% if(typeof errores !='undefined' ){ %>
-                    <% for(let i=0; i < errores.length; i++){ %>
-                        <% if(errores[i].param=="description" ){ %>
-                            <small class="text-danger">
-                                <%= errores[i].msg%>
-                            </small>
-                        <% } %>
-                    <% } %>
-                <% } %> -->
-
-                <!-- <div class="input-group">
-                    <input type="text" name="price" id="price" required value="<%= product.price %> " class="input">
-                    <label for="price" class="input-label">Precio</label>
-                </div> -->
-<!-- 
-                <div class="input-group">
-                    <label>Imagenes Principales</label>
-                    <input type="file" name="image" id="image" value="<%= product.image %>  class="input">
-                </div>
-                <div class="frontEdit">
-                    <small class="text-danger image"></small>
-                </div>
-                <% if(typeof errores !='undefined' ){ %>
-                    <% for(let i=0; i < errores.length; i++){ %>
-                        <% if(errores[i].param=="image" ){ %>
-                            <small class="text-danger">
-                                <%= errores[i].msg%>
-                            </small>
-                        <% } %>
-                    <% } %>
-                <% } %>
-
-
-                <div class="responsivebuttons">
-                    <div class="button1">
-                        <button type="reset">Reset</button>
-                    </div>
-                    <br>
-                    <div class="button1">
-                        <button type="submit">Editar</button>
-                    </div>
-                    
-                </div>
-
-            </form> -->
-
-            <!-- <form class="button1" action="/products/delete/<%=product.product_id%>">
-                <button type="submit">ELIMINAR</button>
-            </form> -->
-
             <p class="creating-account">EDITAR PRODUCTO</p>
 
             <p class="text-benefit">Estas editando: <i><%= product.product_name %></i></p>
@@ -199,22 +104,19 @@
                 <br>
 
                 <div class="responsivebuttons">
-                    <div class="button1 button2">
-                        <button type="reset">Reset</button>
-                    </div>
-                    <br>
-                    <div class="button1 button2" >
-                        <a href="/products/delete/<%=product.product_id%>">
-                            <button type="submit" >Eliminar</button>
-                        </a>
-                    </div>
                     <br>
                     <div class="button1">
                         <button type="submit">Editar Producto</button>
                     </div>
                 </div>
-
+                
             </form>
+            <form action="/products/delete/<%= product.product_id %>" class="form1">
+                <div class="button1 button2">
+                    <button type="submit">Eliminar</button>
+                </div>
+            </form>    
+
 
         </main>
 
