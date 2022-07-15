@@ -177,7 +177,7 @@ input.input:is(:focus, :valid) {
 .text-benefit {
   text-align: center;
   padding-top:10px;
-  padding-bottom: 40px;
+  padding-bottom: 25px;
 }
 
 .tenescuenta {
