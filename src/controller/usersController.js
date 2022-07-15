@@ -16,18 +16,24 @@ const controller = {
 
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
-
+    
     if (resultValidation.errors.length > 0) {
       if(req.file){
         fs.unlink(path.join(__dirname, "../../public/images/avatars/", req.file.filename), function (err) {//fs tiene la funcion readFile que el primr parámetro es el nombre del archivo a leery el segundo una función anónima que se ejecuta cuando termina de leer el archivo pasando como parametro un objeto con la referencia de error si lo hubiera y un objeto tipo buffer con los datos del archivo de texto
           if (err) throw err;
           console.log('Avatar deleted due to error on validation');
         }); 
-      }
-      return res.render("./users/register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-      })
+      } 
+      db.User_category.findAll()
+        .then(categorias => {
+          return res.render("./users/register", {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            categorias: categorias
+          })
+       
+        })
+      
     }
     db.User.findOne({
       where: {
