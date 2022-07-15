@@ -289,7 +289,8 @@ body {
 }
 
 .col-lg-3{
-  max-width:400px
+  max-width:400px;
+  margin: auto
 }
 
 .color {
@@ -308,8 +309,6 @@ h4 {
   margin: 10px;
   color: var(--negro) bolder;
 }
-
-contacto
 
 .contact {
   display: flex;
@@ -564,7 +563,7 @@ contacto
     padding: 5px;
   }
 
-  Contacto .burguer-menu {
+  .burguer-menu {
     display: none;
     margin-top: 1.5rem;
   }

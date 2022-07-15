@@ -15,9 +15,6 @@ const controller = {
                 meta: {
                     status : 200,
                     count: products.length,
-                    countByCategory: {
-                        
-                    },
                     products: [{
                         id: products.product_id,
                         name: products.product_name,
@@ -28,10 +25,10 @@ const controller = {
                                 price: products.price
                             }
                         ],
-                        detail: 'http://localhost:5000/api/products'
+                        detail: '/api/products'
                     }]                   
                 },
-                data: products
+                data: data.products
             }
                 return res.json(response);
         })
@@ -47,7 +44,7 @@ const controller = {
             let response = {
                 meta: {
                     status: 200,
-                    product_image: 'http://localhost:5000/api/product/:id/product_images'
+                    product_image: '/api/product/:id/product_images'
                 },
                 data: product
             }
@@ -55,6 +52,15 @@ const controller = {
         })
         .catch(error => console.log(error));
     },
+    countByCategory: (req, res) =>{ 
+        Categories
+        .findAll()
+        .then(result => {
+            return res.json(result);
+        })
+        .catch(error => res.json(error));
+
+},
 }
 
 module.exports = controller;

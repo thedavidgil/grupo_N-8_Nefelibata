@@ -158,18 +158,18 @@ const controller = {
     db.User.findOne({
       where:{
         email: req.body.email
-    }
+      }
     })
-    .then(result=>{
-
-      bcryptjs.compare(req.body.password,result.password).then(promesa=>{
+    .then(result => {
+      bcryptjs.compareSync(req.body.password, result.password)
+      .then(promesa => {
         if(promesa){
           req.session.userLogged = result;
           if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
           }
           return res.redirect("/");
-        }else{
+        } else {
           return res.render("./users/login", {
             errors: {
               email: {
