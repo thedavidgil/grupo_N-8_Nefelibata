@@ -74,25 +74,15 @@
                 <% } %> 
             </div>
 
-            <!-- <div class="input-group">    
-                <input type="password" name="repassword" id="repassword" required class="input">
-                <label for="repassword" class="input-label">Confirmar Contraseña</label>
-                <div class="errorFront">
-                    <small class="error erRepassword"></small>
-                </div>
-                <% if(locals.errors && errors.password){ %> 
-                    <div class="error">
-                        <%= errors.password.msg %> 
-                    </div>
-                <% } %> 
-            </div>          -->
+            
+
             <div class="input-group-selected">
                 <select name="category" id="category">
                     <label for="category" class="input-label">Categoria</label>
                     <% for(let i=0; i < categorias.length; i++) {%>
                         <option value= "<%= categorias[i].user_category_id %>" > <%= categorias[i].category %> </option>
-                    <% } %>
-                </select>
+                        <% } %>
+                    </select>
             </div>
             
             <div class="input-group input-container">

@@ -19,7 +19,7 @@ router.get("/", productsController.home);//OK
 
 /** CREATE ONE PRODUCT */
 router.get("/create", productMiddleware, productsController.create);
-router.post("/create", upload.single("image"), productsController.store);//OK? FALTAN LAS VALIDACIONES
+router.post("/store", upload.single("image"), productsController.store);//OK? FALTAN LAS VALIDACIONES
 
 /*** GET ONE PRODUCT ***/
 router.get('/:id', productsController.detail);//OK
