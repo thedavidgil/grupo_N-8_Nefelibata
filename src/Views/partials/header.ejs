@@ -7,7 +7,7 @@
             <div class="burguer-menu">
                 <input type="radio" name="modal" id="modal-open">
                 <label for="modal-open" class="burger-menu"><i class="fas fa-bars"></i></label>
-                <div id="modal">
+                    <div id="modal">
                     <div class="modal-container">
                         <div class="modal-header">
                             <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
@@ -47,67 +47,76 @@
                     </div>
                 </div>
             </div>
-            <div class="redes">
-                <div class="instagram">
-                    <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
-                    <br>
+
+
+
+            <div class = newNavbar >
+                <div class="redes">
+                    <div class="instagram">
+                        <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <br>
+                    </div>
+                    <div class="facebook">
+                        <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
+                        <br>
+                    </div>
                 </div>
-                <div class="facebook">
-                    <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
-                    <br>
+                <div class="principal-logo">
+                    <a href="/"><img src="/images/logos/logo_sin_fondo.png" class="logo"></a>
                 </div>
-            </div>
-            <div class="principal-logo">
-                <a href="/"><img src="/images/logos/logo_sin_fondo.png" class="logo"></a>
-            </div>
-            <% if (locals.isLogged) { %>
-            <div class="login-cart">
-                <div class="login">
-                    <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%"></a>
-                        <p><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></p>
-                        <a href="/users/logout"><p>Cerrar Sesión</p></a>
+                <div class="login-cart">
+                <% if (locals.isLogged) { %>
+                
+                    <div class="login">
+                        <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%"></a>
+                            <p><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></p>
+                            <a href="/users/logout"><p>Cerrar Sesión</p></a>
+                            <span class="cart-widget"></span>
+                    </div>
+                <% } else { %> 
+                         
+                                <div class="login">
+                                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                        <p>Iniciar Sesión</p>
+                                        <span class="cart-widget"></span>
+                            </div>
+                <% } %>
+                        
+                    <div class="cart">
+                        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <p>Mi Carrito</p>
                         <span class="cart-widget"></span>
-
-            <% } else { %> 
-                            <div class="login-cart">
-                            <div class="login">
-                                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                                    <p>Iniciar Sesión</p>
-                                    <span class="cart-widget"></span>
-                        </div>
-            <% } %>
+                    </div>
                     
-
-
-                <div class="cart">
-                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <p>Mi Carrito</p>
-                    <span class="cart-widget"></span>
                 </div>
-                </div>
-            </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/products">Productos <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li><a href="/contact">Contacto</a></li>
-            </ul>
-        </nav>
-        <nav id="navbar-dropdown">
-            <ul>
-                <li><a href="/products">Agendas</a></li>
-                <li><a href="/products">Cuadernillos</a></li>
-                <li><a href="/products">Cuadernos</a></li>
-                <li><a href="/products">Anotadores</a></li>
-                <li><a href="/products">Álbumes</a></li>
-                <li><a href="/products">Planner</a></li>
-                <li><a href="/products">Imantados</a></li>
-                <li><a href="/products">Libretas</a></li>
-                <li><a href="/products">Otros</a></li>
-                <li><a href="/products">Todos</a></li>
-            </ul>
-        </nav>
+            </div> 
+            <div class="newNewNavbar">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/products">Productos <i class="fa-solid fa-chevron-down"></i></a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                    </ul>
+                    </nav>
+                    <nav id="navbar-dropdown">
+                    <ul>
+                        <li><a href="/products">Agendas</a></li>
+                        <li><a href="/products">Cuadernillos</a></li>
+                        <li><a href="/products">Cuadernos</a></li>
+                        <li><a href="/products">Anotadores</a></li>
+                        <li><a href="/products">Álbumes</a></li>
+                        <li><a href="/products">Planner</a></li>
+                        <li><a href="/products">Imantados</a></li>
+                        <li><a href="/products">Libretas</a></li>
+                        <li><a href="/products">Otros</a></li>
+                        <li><a href="/products">Todos</a></li>
+                    </ul>
+                    </nav>  
+            </div>  
+               
+            
     </section>
+
 </header>
 <div class="header-background"></div>
 <div class="whatsapp">
