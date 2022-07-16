@@ -7,30 +7,19 @@ const Product_image = db.Product_image;
 const controller = {
     list: (req, res) => {
         Product
+        // .findAll()
         .findAll({
-            include: ['product_categories', 'product_images']
+            include: ['product_categories', 'product_images'],
+            // attributes: ["product_id", "product_name", "description"],
         })
         .then(products => {
-            let response = {
+            return res.status(200).json({
                 meta: {
-                    status : 200,
+                    status : res.statusCode,
                     count: products.length,
-                    products: [{
-                        id: products.product_id,
-                        name: products.product_name,
-                        description: products.description,
-                        relations: [
-                            {
-                                category: products.product_category,
-                                price: products.price
-                            }
-                        ],
-                        detail: '/api/products'
-                    }]                   
                 },
-                data: data.products
-            }
-                return res.json(response);
+                data: products
+            });
         })
         .catch(error => console.log(error));
     },
