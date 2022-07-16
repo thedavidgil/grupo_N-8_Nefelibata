@@ -31,8 +31,6 @@
           <p><%= product.description %></p>
 
           <form action="#" method="post">
-
-            
             <!-- <div class="amount">
               <button type="submit"><i class="fa-solid fa-circle-minus"></i></button>
               <p>0</p>
@@ -40,19 +38,22 @@
             </div> -->
             <button class="comprar">AGREGAR AL CARRITO</button>
           </form>
-          <% if (locals.isLogged) { %>
-            <a href="/products/edit/<%= product.product_id %>"><button class="button1">Editar</button></a>
-            <form action="/products/delete/<%= product.product_id %>">
-                <button type="submit" class="button1">Eliminar</button>
-            </form>
-          <% } %> 
+
+          <% if (locals.isLogged && locals.userLogged.user_category_id === 1) { %>
+            
+            <button type="submit" class="button1">
+            <a href="/products/edit/<%= product.product_id %>">Editar</a>
+            </button>
+            <button type="submit" class="button1">
+             <a href="/products/delete/<%= product.product_id %>">Eliminar</a>
+            </button>
+            <button type="submit" class="button1">
+            <a href="/products/create" > Crear Nuevo Producto</a>
+            </button>
         
-          <!-- Boton de eliminar y editar si el perfil del usuario es admin -->
-          
-          <!-- <div class="delete">
-            <label for="delete"></label>
-            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
-          </div> -->
+           
+          <% } %> 
+    
         </div>
 
       </section>

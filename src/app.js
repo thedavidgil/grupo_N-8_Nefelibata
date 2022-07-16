@@ -16,13 +16,13 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(cookies());
 app.use(session({ secret: "It's a secret",
                   resave:false,
                   saveUninitialized: false,
 
 }));
-//app.use(userLoggedMiddleware);//FALTA VALIDAR
+app.use(cookies());
+app.use(userLoggedMiddleware);//FALTA VALIDAR
 
 // ************ Template Engine ************
 app.set("view engine", "ejs");

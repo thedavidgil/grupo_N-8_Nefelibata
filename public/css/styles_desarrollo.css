@@ -143,8 +143,10 @@ header {
 }
 .header-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-items: stretch;
 }
 .header-row i {
   color: var(--azul);
@@ -173,6 +175,7 @@ header {
 .login,
 .instagram,
 .facebook {
+  align-self: center;
   text-align: center;
   font-size: 24px;
 }
@@ -254,6 +257,13 @@ header {
   font-size: 30px;
   vertical-align: middle;
   color: var(--blanco);
+}
+
+.newNavbar{
+display: flex;
+justify-content: center;
+
+  
 }
 
 /*---------->> FIN HEADER <<----------*/

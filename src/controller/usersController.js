@@ -82,19 +82,12 @@ const controller = {
 
   },
 
-  // edit: function (req, res) {
-  //   db.User.findByPk(req.params.id)
-  //     .then(function (Users) {
-  //       res.render("./users/edit", { userToEdit:Users });
-  //     })
-  // },
-
   edit: function (req, res) {
     db.User.findByPk(req.params.id)
       .then(Users => {
         db.User_category.findAll()
         .then(categorias => {
-          res.render("./users/edit", { userToEdit:Users , categorias});
+          res.render("./users/edit", { userToEdit:Users , categorias});//ver si sigue existiendo el userToEdit, creo que lo cambiaron
         })
       })
   },
@@ -141,9 +134,6 @@ const controller = {
 
 
 //******************************FALTA CONSTRUIR***********************//
-  //list:(req,res)=>{
-  //return res.render("./users/usersList")
-  //},
 
     "list": (req, res) => {
         db.User.findAll()
@@ -160,9 +150,41 @@ const controller = {
   },
 
   loginProcess: (req, res) => {
+    
     db.User.findOne({
-        where : {
-            email : req.body.email
+      where:{
+        email: req.body.email
+      }
+    })
+      .then(result => {
+  
+      let comparacion = bcryptjs.compareSync(req.body.password, result.password)
+        
+        if (comparacion) {
+          result.password = null;
+          req.session.userLogged = result;
+          
+          db.Avatar.findOne({
+            where: {
+              avatar_id:result.avatar_id
+            }
+          })
+            .then(avatar => {  
+              req.session.userLogged.avatar_id = avatar.avatar 
+              if (req.body.remember_user) {
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
+              }
+              return res.redirect("/");
+          })
+         
+        } else {
+          return res.render("./users/login", {
+            errors: {
+              email: {
+                msg: 'Las credenciales son inválidas'
+              }
+            }
+          })
         }
     })
     .then(usuario => {
@@ -245,7 +267,7 @@ const controller = {
 
 //****************************************FALTA REVISAR***************************//
   profile: (req, res) => {
-    /*db.User.findAll({
+    db.User.findAll({
       where: {
         user: req.session.userLogged
       }
@@ -253,14 +275,14 @@ const controller = {
       .then(function (userLogged) {
         if (userLogged)
           return res.render("./users/profile")
-        //user: req.session.userLogged
-      })*/
+        user: req.session.userLogged
+      })
   },
 
   logout: (req, res) => {
-   /* res.clearCookie('userEmail');
+   res.clearCookie('userEmail');
     req.session.destroy();
-    return res.redirect('/');*/
+    return res.redirect('/');
   },
 
   recovery: (req, res) => {
