@@ -34,7 +34,7 @@
                         </div>
                         <% if (locals.isLogged) { %>
                         <div class="modal-footer">
-                            <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%;"</a>
+                            <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%;"></a>
                             <a href="/users/profile">Mi perfil</a>
                             <a href="/users/logout">Cerrar Sesión</a>
                         <% } else { %> 
@@ -63,7 +63,7 @@
             <% if (locals.isLogged) { %>
             <div class="login-cart">
                 <div class="login">
-                    <a href="/users/profile"><img src="/images/profileImages/<%= locals.userLogged.avatar %>" width="30" style="border-radius: 100%"</a>
+                    <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%"></a>
                         <p><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></p>
                         <a href="/users/logout"><p>Cerrar Sesión</p></a>
                         <span class="cart-widget"></span>

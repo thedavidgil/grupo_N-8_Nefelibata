@@ -82,13 +82,6 @@ const controller = {
 
   },
 
-  // edit: function (req, res) {
-  //   db.User.findByPk(req.params.id)
-  //     .then(function (Users) {
-  //       res.render("./users/edit", { userToEdit:Users });
-  //     })
-  // },
-
   edit: function (req, res) {
     db.User.findByPk(req.params.id)
       .then(Users => {
@@ -141,9 +134,6 @@ const controller = {
 
 
 //******************************FALTA CONSTRUIR***********************//
-  //list:(req,res)=>{
-  //return res.render("./users/usersList")
-  //},
 
     "list": (req, res) => {
         db.User.findAll()
@@ -160,21 +150,33 @@ const controller = {
   },
 
   loginProcess: (req, res) => {
-
+    
     db.User.findOne({
       where:{
         email: req.body.email
       }
     })
-    .then(result => {
-      bcryptjs.compareSync(req.body.password, result.password)
-      .then(promesa => {
-        if(promesa){
+      .then(result => {
+  
+      let comparacion = bcryptjs.compareSync(req.body.password, result.password)
+        
+        if (comparacion) {
+          result.password = null;
           req.session.userLogged = result;
-          if (req.body.remember_user) {
-            res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
-          }
-          return res.redirect("/");
+          
+          db.Avatar.findOne({
+            where: {
+              avatar_id:result.avatar_id
+            }
+          })
+            .then(avatar => {  
+              req.session.userLogged.avatar_id = avatar.avatar 
+              if (req.body.remember_user) {
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
+              }
+              return res.redirect("/");
+          })
+         
         } else {
           return res.render("./users/login", {
             errors: {
@@ -184,7 +186,6 @@ const controller = {
             }
           })
         }
-      })  
     })
     .catch( () =>{
       return res.render("./users/login", 
@@ -228,9 +229,9 @@ const controller = {
   },
 
   logout: (req, res) => {
-   /* res.clearCookie('userEmail');
+   res.clearCookie('userEmail');
     req.session.destroy();
-    return res.redirect('/');*/
+    return res.redirect('/');
   },
 
   recovery: (req, res) => {
