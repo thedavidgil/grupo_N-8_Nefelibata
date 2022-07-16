@@ -216,7 +216,7 @@ const controller = {
 
 //****************************************FALTA REVISAR***************************//
   profile: (req, res) => {
-    /*db.User.findAll({
+    db.User.findAll({
       where: {
         user: req.session.userLogged
       }
@@ -224,8 +224,8 @@ const controller = {
       .then(function (userLogged) {
         if (userLogged)
           return res.render("./users/profile")
-        //user: req.session.userLogged
-      })*/
+        user: req.session.userLogged
+      })
   },
 
   logout: (req, res) => {
