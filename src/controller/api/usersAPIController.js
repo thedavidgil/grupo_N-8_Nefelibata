@@ -8,7 +8,7 @@ const usersApiController = {
 list: async (req, res) => {
     try{
         const userList =await User.findAll({
-            include:{all:true},
+            //include:{all:true},
             atributes:["id", "first_name", "last_name", "email", "url"]
         })
         return res.status(200).json({
@@ -29,6 +29,10 @@ list: async (req, res) => {
                     include:{all:true},
                     atributes:["id", "first_name", "last_name", "email", "avatar"]
                 })
+                return res.json({
+                    detail: user
+                })
+
         }catch(error){
             console.error(error)
         }
