@@ -7,7 +7,7 @@ const moment = require('moment');
 const usersApiController = {
 list: async (req, res) => {
     try{
-        const userList =await User.findAll({
+        const list = await User.findAll({
             //include:{all:true},
             atributes:["id", "first_name", "last_name", "email", "url"]
         })
@@ -19,14 +19,15 @@ list: async (req, res) => {
     }catch(error){
         console.error(error)
     }
+    console.log(list)
 },
 
-    detail: async (req, res) => {
-        try{
+   detail: async (req, res) => {
+       try{
             const id = req.params.id;
             const userDetail = await User.findByPk(
                 id,{
-                    include:{all:true},
+                    //include:{all:true},
                     atributes:["id", "first_name", "last_name", "email", "avatar"]
                 })
                 return res.json({
@@ -38,6 +39,28 @@ list: async (req, res) => {
         }
     }
 }
+
+//const userApiController = {
+//userList: (req, res) => {
+ //   db.User.findAll()
+ //   .then(user => {
+  //      return res.status(200).json({
+  //          total: user.length,
+  //          data: user,
+  //          status: 200
+   //         })
+   // })
+//},
+//userDetail: (req, res) => {
+//db.User.findByPk(req.params.id)
+//.then(user => {
+  //  return res.status(200).json({
+  //      data: user,
+   //     status: 200
+   //     })
+//})
+//}
+//}
 
 
     module.exports = usersApiController;

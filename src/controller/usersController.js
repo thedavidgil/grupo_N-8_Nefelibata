@@ -94,7 +94,7 @@ const controller = {
       .then(Users => {
         db.User_category.findAll()
         .then(categorias => {
-          res.render("./users/edit", { userToEdit:Users , categorias});
+          res.render("./users/edit", { userToEdit:Users , categorias});//ver si sigue existiendo el userToEdit, creo que lo cambiaron
         })
       })
   },
