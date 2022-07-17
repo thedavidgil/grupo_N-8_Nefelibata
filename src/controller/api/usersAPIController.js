@@ -1,13 +1,13 @@
 //const path = require("path");
-const db = require('../../../database/models');
+//const db = require('../../../database/models');
 //const Op = db.Sequelize.Op;
 //const sequelize = db.sequelize;
 //const { Op } = require("sequelize");
 //const moment = require('moment');
 
-/*const User = db.user;
-const User_products = db.User_products;
-const User_avatar= db.Avatar;*/
+/*const User = db.User;
+const Avatar= db.Avatar;
+const User_category= db.User_category;*/
 
 /*const controller = {
 userList: async function (req, res) {
@@ -101,7 +101,7 @@ db.User.findByPk(req.params.id)
     }*/
 
 
-    const usersAPIController = {
+    /*const usersAPIController = {
         list : async (req,res) => {
             let users = await db.Users.findAll();
             let count = users.length;
@@ -130,6 +130,6 @@ db.User.findByPk(req.params.id)
             }
             res.json({estructura})
         }
-    }
+    }*/
     
-    module.exports = usersAPIController;
+    //module.exports = usersAPIController;

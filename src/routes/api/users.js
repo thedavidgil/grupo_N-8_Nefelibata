@@ -9,7 +9,7 @@ const usersAPIController = require('../../controller/api/usersAPIController');
 // ************ Routes ************
 
 /*** GET ALL PRODUCTS ***/
-router.get('/user', usersAPIController.list);
+router.get('/', usersAPIController.list);
 /*** GET ONE PRODUCT ***/
 router.get('/:id', usersAPIController.detail);
 
