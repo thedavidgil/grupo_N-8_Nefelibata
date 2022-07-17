@@ -102,7 +102,7 @@ db.User.findByPk(req.params.id)
 
 
     const usersAPIController = {
-        users : async (req,res) => {
+        list : async (req,res) => {
             let users = await db.Users.findAll();
             let count = users.length;
             console.log(users);
