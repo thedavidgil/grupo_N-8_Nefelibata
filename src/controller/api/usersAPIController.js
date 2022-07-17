@@ -1,69 +1,81 @@
-const path = require("path");
+//const path = require("path");
 const db = require('../../../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+//const Op = db.Sequelize.Op;
+//const sequelize = db.sequelize;
+//const { Op } = require("sequelize");
 //const moment = require('moment');
 
-/*const usersApiController = {
-list: async (req, res) => {
-    try{
-        const list = await User.findAll({
+/*const User = db.user;
+const User_products = db.User_products;
+const User_avatar= db.Avatar;*/
+
+/*const controller = {
+userList: async function (req, res) {
+try{
+        const users = await User.findAll({
             include:{all:true},
             atributes:["id", "first_name", "last_name", "email", "url"]
         })
         return res.status(200).json({
             total: users.length,
-                    data: "http://localhost:5000/api/user",//users,
+                    data: users, //"http://localhost:5000/api/user",
                     status: 200,
         })
-    }catch(error){
-        console.error(error)
+
+}catch(e){
+        console.error(e)
     }
-    console.log(list)
 },
 
-detail: async (req, res) => {
+
+userDetail: async function (req, res) {
     try{
             const id = req.params.id;
-            const userDetail = await User.findByPk(
+            const user = await User.findByPk(
                 id,{
                     //include:{all:true},
                     atributes:["id", "first_name", "last_name", "email", "avatar"]
                 })
                 return res.json({
-                    detail: "http://localhost:5000/api/user/:id",//user
+                    detail: user //"http://localhost:5000/api/user/:id",
                 })
 
-        }catch(error){
-            console.error(error)
+        }
+        catch(e){
+            console.error(e)
         }
     }
 }*/
 
-//const userApiController = {
-//userList: (req, res) => {
- //   db.User.findAll()
- //   .then(user => {
-  //      return res.status(200).json({
-  //          total: user.length,
-  //          data: user,
-  //          status: 200
-   //         })
-   // })
-//},
-//userDetail: (req, res) => {
-//db.User.findByPk(req.params.id)
-//.then(user => {
-  //  return res.status(200).json({
-  //      data: user,
-   //     status: 200
-   //     })
-//})
-//}
-//}
+    
 
 
-    module.exports = {
+
+
+/*module.exports = {
+userList: (req, res) => {
+    db.User.findAll()
+    .then(user => {
+        return res.status(200).json({
+            total: user.length,
+            data: user,
+          status: 200
+            })
+   })
+},
+userDetail: (req, res) => {
+db.User.findByPk(req.params.id)
+.then(user => {
+    return res.status(200).json({
+        data: user,
+        status: 200
+        })
+})
+}
+}*/
+
+
+    /*module.exports = {
         list: (req, res) => {
             db.User.findAll()
             .then(users =>{
@@ -86,4 +98,38 @@ detail: async (req, res) => {
                 })
             })
         }
+    }*/
+
+
+    const usersAPIController = {
+        users : async (req,res) => {
+            let users = await db.Users.findAll();
+            let count = users.length;
+            console.log(users);
+            users.forEach(users => {
+                let user = {
+                    user_id : user.dataValues.user_id,
+                    first_name: user.dataValues.first_name,
+                    last_name: user.dataValues.last_name,
+                    email : user.dataValues.email,
+                    detail: "/api/users/${user.dataValues.id}"
+                }
+                user.dataValues = user
+            })
+            console.log(users);
+            res.json({count,users});
+        },
+    
+        detail : async (req,res) => {
+            let users = await db.Users.findByPk(req.params.id);
+            let estructura = {
+                ...user.dataValues,
+                "contraseña" : null,
+                "category": null,
+                imgUrl:"/api/users/datail/avatar${users.avatar}",
+            }
+            res.json({estructura})
+        }
     }
+    
+    module.exports = usersAPIController;
