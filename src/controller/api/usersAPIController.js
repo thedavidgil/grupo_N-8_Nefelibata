@@ -106,7 +106,7 @@ db.User.findByPk(req.params.id)
             let users = await db.Users.findAll();
             let count = users.length;
             console.log(users);
-            users.forEach(users => {
+            users.forEach(user => {
                 let user = {
                     user_id : user.dataValues.user_id,
                     first_name: user.dataValues.first_name,
@@ -121,7 +121,7 @@ db.User.findByPk(req.params.id)
         },
     
         detail : async (req,res) => {
-            let users = await db.Users.findByPk(req.params.id);
+            let user = await db.Users.findByPk(req.params.id);
             let estructura = {
                 ...user.dataValues,
                 "contraseña" : null,
