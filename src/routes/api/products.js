@@ -12,7 +12,6 @@ const productsAPIController = require('../../controller/api/productsAPIControlle
 router.get('/', productsAPIController.list);
 /*** GET ONE PRODUCT ***/
 router.get('/:id', productsAPIController.detail);
-/*** GET ALL PRODUCTS ***/
-router.get('/categorias', productsAPIController.countByCategory);
+
 
 module.exports = router;

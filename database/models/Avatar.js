@@ -9,7 +9,8 @@ let cols = {
   },
   avatar:{
     type: dataTypes.STRING(100),
-    allowNull: false
+    allowNull: false,
+    defaultValue: "default-image.png"
   }
 };
 

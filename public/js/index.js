@@ -19,3 +19,10 @@ image.onchange = () => {
     }
     imageName.textContent = image.files[0].name;
 }
+
+// let displayNavbarDropdown = document.getElementById('display-navbar-dropdown');
+// let navbarDropdown = document.getElementById('navbar-dropdown');
+
+// function show(condition) {
+//     navbarDropdown.style.display = condition;
+// };

@@ -187,69 +187,18 @@ const controller = {
           })
         }
     })
-    .then(usuario => {
-    if(usuario){
-        let comparePassword = bcryptjs.compareSync(req.body.password, usuario.password);
-        if (comparePassword) {
-            delete usuario.password;
-            req.session.userLogged = usuario;
-
-            if(req.body.remember_user) {
-                res.cookie('userEmail', req.body.email, {maxAge: (1000*60)*2})
-            }
-            return res.redirect('/users/profile')
-        }
-    }
-
-    return res.render('./users/login', {
+    .catch( () =>{
+      return res.render("./users/login", 
+      {
         errors: {
-            email: {
-                msg: 'Las credenciales son inválidas'
-            }
-        }
+          email: {
+            msg: 'No se encuentra este email en nuestra base de datos'
+          }
+        },
+        oldData: req.body
+      })
     })
-})
-},
-
-  // loginProcess: (req, res) => {
-
-  //   db.User.findOne({
-  //     where:{
-  //       email: req.body.email
-  //     }
-  //   })
-  //   .then(result => {
-  //     bcryptjs.compareSync(req.body.password, result.password)
-  //     .then(promesa => {
-  //       if(promesa){
-  //         req.session.userLogged = result;
-  //         if (req.body.remember_user) {
-  //           res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
-  //         }
-  //         return res.redirect("/");
-  //       } else {
-  //         return res.render("./users/login", {
-  //           errors: {
-  //             email: {
-  //               msg: 'Las credenciales son inválidas'
-  //             }
-  //           }
-  //         })
-  //       }
-  //     })  
-  //   })
-  //   .catch( () =>{
-  //     return res.render("./users/login", 
-  //     {
-  //       errors: {
-  //         email: {
-  //           msg: 'No se encuentra este email en nuestra base de datos'
-  //         }
-  //       },
-  //       oldData: req.body
-  //     })
-  //   })
-  // },
+  },
 
 //Hasta aqui todo funciona bien
 

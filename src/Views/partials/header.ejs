@@ -4,53 +4,54 @@
     </div>
     <section class="main-header">
         <div class="header-row">
-            <div class="burguer-menu">
-                <input type="radio" name="modal" id="modal-open">
-                <label for="modal-open" class="burger-menu"><i class="fas fa-bars"></i></label>
-                    <div id="modal">
-                    <div class="modal-container">
-                        <div class="modal-header">
-                            <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
-                            <input type="radio" name="modal" id="modal-close">
-                            <label for="modal-close"><i class="fa-solid fa-circle-xmark"></i></label>
-                        </div>
-                        <div class="acordeon">
-                            <a href="/">Inicio</a>
-                            <a href="/products">Productos</a>
-                                <ul id="product">
-                                    <li><a href="/products"><strong>Todos los productos</strong></a></li>
-                                    <li><a href="/products">Agendas</a></li>
-                                    <li><a href="/products">Cuadernillos</a></li>
-                                    <li><a href="/products">Cuadernos</a></li>
-                                    <li><a href="/products">Anotadores</a></li>
-                                    <li><a href="/products">Álbumes</a></li>
-                                    <li><a href="/products">Planner</a></li>
-                                    <li><a href="/products">Imantados</a></li>
-                                    <li><a href="/products">Libretas</a></li>
-                                    <li><a href="/products">Otros</a></li>
-                                </ul>
-                            <a href="/contact">Contacto</a>
-                        </div>
-                        <% if (locals.isLogged) { %>
-                        <div class="modal-footer">
-                            <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%;"></a>
-                            <a href="/users/profile">Mi perfil</a>
-                            <a href="/users/logout">Cerrar Sesión</a>
-                        <% } else { %> 
+            <div class = "newNavbar" >
+                <div class="burguer-menu">
+                    <input type="radio" name="modal" id="modal-open">
+                    <label for="modal-open" class="burger-menu"><i class="fas fa-bars"></i></label>
+                        <div id="modal">
+                        <div class="modal-container">
+                            <div class="modal-header">
+                                <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/Nefelibata-Encuadernacion-102428405736987" target="_blanck" rel="noreferrer noopener"><i class="fa-brands fa-facebook-square"></i></a>
+                                <input type="radio" name="modal" id="modal-close">
+                                <label for="modal-close"><i class="fa-solid fa-circle-xmark"></i></label>
+                            </div>
+                            <div class="acordeon">
+                                <a href="/">Inicio</a>
+                                <a href="/products">Productos</a>
+                                    <ul id="product">
+                                        <li><a href="/products"><strong>Todos los productos</strong></a></li>
+                                        <li><a href="/products">Agendas</a></li>
+                                        <li><a href="/products">Cuadernillos</a></li>
+                                        <li><a href="/products">Cuadernos</a></li>
+                                        <li><a href="/products">Anotadores</a></li>
+                                        <li><a href="/products">Álbumes</a></li>
+                                        <li><a href="/products">Planner</a></li>
+                                        <li><a href="/products">Imantados</a></li>
+                                        <li><a href="/products">Libretas</a></li>
+                                        <li><a href="/products">Otros</a></li>
+                                    </ul>
+                                <a href="/contact">Contacto</a>
+                            </div>
+                            <% if (locals.isLogged) { %>
                             <div class="modal-footer">
-                                <i class="fa-solid fa-user"></i>
-                                <a href="/users/register">Crear cuenta</a>
-                                <a href="/users/login">Iniciar sesión</a>
-                        <% } %>
+                                <a href="/users/profile"><img src="/images/avatars/<%= locals.userLogged.avatar_id %>" width="30" height="30" style="border-radius: 100%;"></a>
+                                <a href="/users/profile">Mi perfil</a>
+                                <a href="/users/logout">Cerrar Sesión</a>
+                            <% } else { %> 
+                                <div class="modal-footer">
+                                    <i class="fa-solid fa-user"></i>
+                                    <a href="/users/register">Crear cuenta</a>
+                                    <a href="/users/login">Iniciar sesión</a>
+                            <% } %>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                        </div>
 
 
 
-            <div class = newNavbar >
+            
                 <div class="redes">
                     <div class="instagram">
                         <a href="https://www.instagram.com/nefelibata.encuadernacion/?hl=es-la" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
@@ -89,33 +90,35 @@
                     </div>
                     
                 </div>
-            </div> 
-            <div class="newNewNavbar">
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/products">Productos <i class="fa-solid fa-chevron-down"></i></a></li>
-                        <li><a href="/contact">Contacto</a></li>
-                    </ul>
-                    </nav>
-                    <nav id="navbar-dropdown">
-                    <ul>
-                        <li><a href="/products">Agendas</a></li>
-                        <li><a href="/products">Cuadernillos</a></li>
-                        <li><a href="/products">Cuadernos</a></li>
-                        <li><a href="/products">Anotadores</a></li>
-                        <li><a href="/products">Álbumes</a></li>
-                        <li><a href="/products">Planner</a></li>
-                        <li><a href="/products">Imantados</a></li>
-                        <li><a href="/products">Libretas</a></li>
-                        <li><a href="/products">Otros</a></li>
-                        <li><a href="/products">Todos</a></li>
-                    </ul>
-                    </nav>  
-            </div>  
-               
+                </div> 
+                <div class="newNewNavbar">
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/products">Productos <i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li><a href="/contact">Contacto</a></li>
+                        </ul>
+                        </nav>
+                        <nav id="navbar-dropdown">
+                        <ul>
+                            <li><a href="/products">Agendas</a></li>
+                            <li><a href="/products">Cuadernillos</a></li>
+                            <li><a href="/products">Cuadernos</a></li>
+                            <li><a href="/products">Anotadores</a></li>
+                            <li><a href="/products">Álbumes</a></li>
+                            <li><a href="/products">Planner</a></li>
+                            <li><a href="/products">Imantados</a></li>
+                            <li><a href="/products">Libretas</a></li>
+                            <li><a href="/products">Otros</a></li>
+                            <li><a href="/products">Todos</a></li>
+                        </ul>
+                    </nav> 
+                </div> 
+            </div>              
             
     </section>
+
+    <script src='/js/index.js' type="text/javascript"></script>
 
 </header>
 <div class="header-background"></div>
