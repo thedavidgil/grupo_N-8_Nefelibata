@@ -1,66 +1,51 @@
 const db = require('../../../database/models');
 
-const Product = db.Product;
-const Product_category = db.Product_category;
-const Product_image = db.Product_image;
-
 const controller = {
-    list: (req, res) => {
-        Product
-        .findAll({
-            include: ['product_categories', 'product_images']
-        })
-        .then(products => {
-            let response = {
-                meta: {
-                    status : 200,
-                    count: products.length,
-                    products: [{
-                        id: products.product_id,
-                        name: products.product_name,
-                        description: products.description,
-                        relations: [
-                            {
-                                category: products.product_category,
-                                price: products.price
-                            }
-                        ],
-                        detail: '/api/products'
-                    }]
-                },
-                data: data.products
-            }
-                return res.json(response);
-        })
-        .catch(error => console.log(error));
-    },
-    detail: (req, res) => {
-        Product
-        .findByPk(req.params.id,
-        {
-            include : ['product_categories', 'product_images']
-        })
-        .then(product => {
-            let response = {
-                meta: {
-                    status: 200,
-                    product_image: '/api/product/:id/product_images'
-                },
-                data: product
-            }
-            return res.json(response);
-        })
-        .catch(error => console.log(error));
-    },
-    countByCategory: (req, res) =>{ 
-        Categories
-        .findAll()
-        .then(result => {
-            return res.json(result);
-        })
-        .catch(error => res.json(error));
+    list: async (req, res) => {
+        let count = await db.sequelize.query('SELECT COUNT(product_id) FROM Products;');
+        let countByCategory = await db.sequelize.query('SELECT Product_category.category as "product_category", COUNT(*) as "count" FROM `Products` INNER JOIN Product_category ON Products.product_category_id = Product_category.product_category_id GROUP BY category;');
+        let allProducts = await db.Product.findAll({
+                        include: ['product_categories'],
+                        attributes: ["product_id", "product_name", "description", "product_categories.category"],});
+        // let products = await db.sequelize.query('SELECT product_id, product_name, description, product_category.category FROM `Products` INNER JOIN Product_category ON Products.product_category_id = Product_category.product_category_id;')
+        
+        count = count[0];
+        countByCategory = countByCategory[0];
+        // products = products[0];
+        allProducts.map( oneProduct => oneProduct.dataValues.detail = `http://localhost:5000/api/product/${oneProduct.dataValues.product_id}`)
+        products = {
+            ...allProducts,
+        }
 
-},
+        return res.status(200).json({ 
+            meta: {
+                status: 200
+            },
+            data: {
+                count, 
+                countByCategory, 
+                products
+            }
+        });
+    },
+
+    detail: async (req, res) => {
+        let product = await db.Product.findByPk(req.params.id, {
+            include: ['product_categories', 'product_images']});
+
+        product = {
+            ...product.dataValues,
+        }
+
+        return res.status(200).json({ 
+            meta: {
+                status: 200
+            },
+            data: {
+                product
+            }
+        });
+    }
 }
 
 module.exports = controller;

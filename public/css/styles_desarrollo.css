@@ -170,7 +170,7 @@ header {
   display: flex;
   justify-content: center;
 }
-.burguer-menu i,
+.burguer-menu,
 .cart,
 .login,
 .instagram,
@@ -212,10 +212,11 @@ header {
   display: none;
   font-size: 14px;
   transition: all 0.5s;
+  z-index: 9999;
 }
-#navbar-dropdown:target {
+/* #navbar-dropdown:target {
   display: block;
-}
+} */
 
 .navbar ul,
 #navbar-dropdown ul {
@@ -232,7 +233,8 @@ header {
   text-align: center;
   justify-content: center;
 }
-.navbar li a {
+.navbar li a,
+#navbar-dropdown li a {
   font-size: 18px;
   color: var(--negro);
 }
@@ -261,7 +263,7 @@ header {
 
 .newNavbar{
 display: flex;
-justify-content: center;
+justify-content: space-between;
 
   
 }

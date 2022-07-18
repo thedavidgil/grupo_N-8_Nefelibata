@@ -20,9 +20,8 @@ INSERT INTO `product_images` (`product_image_id`, `image`, `product_id`) VALUES
 (5, 'producto_5.png', 5);
 
 INSERT INTO `user_category` (`user_category_id`, `category`) VALUES
-(1, 'admin'),
-(2, 'cliente'),
-(3, 'visita');
+(1, 'Client'),
+(2, 'Admin'),
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `user_category_id`, `avatar_id`) VALUES
 (1, 'Lorena', 'Grammatico', 'loregrammatico@gmail.co', '123456', 1, 1),
@@ -32,6 +31,12 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 (5, 'Mariano', 'Uceda', 'marianouceda@gmail.com', 'asldkfghklsdfagh', 1, 5);
 
 INSERT INTO `product_category` (`product_category_id`, `category`) VALUES
-(1, 'Libro'),
-(2, 'Libreta'),
+(1, 'Agenda'),
+(2, 'Cuadernillo'),
 (3, 'Cuaderno');
+(4, 'Anotador');
+(5, 'Álbum');
+(6, 'Planner');
+(7, 'Imantado');
+(8, 'Libreta');
+(9, 'Otro');
