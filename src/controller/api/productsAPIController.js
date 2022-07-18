@@ -7,6 +7,7 @@ const controller = {
         let products = await db.Product.findAll({
                         include: ['product_categories'],
                         attributes: ["product_id", "product_name", "description", "product_categories.category"],});
+        let productsTable = await db.sequelize.query('SELECT product_id, product_name, description, product_category.category FROM `products` INNER JOIN Product_category ON products.product_category_id = Product_category.product_category_id;')
         let countCategories = await db.sequelize.query('SELECT COUNT(product_category_id) FROM Product_category;');
         
         count = count[0];
@@ -17,6 +18,8 @@ const controller = {
 
         let lastest = products[products.length-1];
 
+        let arrProducts = Object.entries(products);
+
         return res.status(200).json({ 
             meta: {
                 status: 200
@@ -25,6 +28,7 @@ const controller = {
                 count, 
                 countByCategory, 
                 products,
+                productsTable,
                 lastest,
                 countCategories
             }
