@@ -15,71 +15,83 @@ const controller = {
   },
 
   processRegister: (req, res) => {
+
     const resultValidation = validationResult(req);
     
-    if (resultValidation.errors.length > 0) {
-      if(req.file){
-        fs.unlink(path.join(__dirname, "../../public/images/avatars/", req.file.filename), function (err) {//fs tiene la funcion readFile que el primr parámetro es el nombre del archivo a leery el segundo una función anónima que se ejecuta cuando termina de leer el archivo pasando como parametro un objeto con la referencia de error si lo hubiera y un objeto tipo buffer con los datos del archivo de texto
-          if (err) throw err;
-          console.log('Avatar deleted due to error on validation');
-        }); 
-      } 
-      db.User_category.findAll()
-        .then(categorias => {
-          return res.render("./users/register", {
-            errors: resultValidation.mapped(),
-            oldData: req.body,
-            categorias: categorias
-          })
-       
-        })
-      
-    }
     db.User.findOne({
       where: {
         email: req.body.email
       }
     }).then(result => {
-      if (result !== null) {
-        throw res.render("./users/register"
-          , {
-            errors: {
-              email: {
-                msg: "Este email ya está registrado"
-              }
-            },
-            oldData: req.body
 
-          })
-      } else {
-        return result
-      }
-    }).then(() => {
-      db.Avatar.create({
-        avatar: req.file.filename
-      })
-        .then(() => {
-          db.Avatar.findOne({
-            where: {
-              avatar: req.file.filename
-            }
-          })
-            .then(result => {
-              db.User.create({
-                first_name: req.body.firstName,
-                last_name: req.body.lastName,
-                email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
-                user_category_id: req.body.category,
-                avatar_id: result.avatar_id
-              })
-                .then(() => {
-                  res.redirect("login")
-                })
+      if (result !== null) {
+
+        if(req.file){
+          fs.unlink(path.join(__dirname, "../../public/images/avatars/", req.file.filename), function (err) {
+            if (err) throw err;
+            console.log('Avatar deleted due to error on validation');
+          }); 
+        } 
+        
+        db.User_category.findAll()
+          .then(categorias => {
+            res.render("./users/register"
+            , {
+              errors: {
+                email: {
+                  msg: "Este email ya está registrado"
+                }
+              },
+              oldData: req.body,
+              categorias: categorias
             })
         })
-    })
 
+      } else {
+        if (resultValidation.errors.length > 0) {
+          if(req.file){
+            fs.unlink(path.join(__dirname, "../../public/images/avatars/", req.file.filename), function (err) {
+              if (err) throw err;
+              console.log('Avatar deleted due to error on validation');
+            }); 
+          } 
+          db.User_category.findAll()
+            .then(categorias => {
+              return res.render("./users/register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                categorias: categorias
+              })
+           
+            })
+          
+        } else {
+          db.Avatar.create({
+            avatar: req.file.filename
+          })
+            .then(() => {
+              db.Avatar.findOne({
+                where: {
+                  avatar: req.file.filename
+                }
+              })
+                .then(result => {
+                  db.User.create({
+                    first_name: req.body.firstName,
+                    last_name: req.body.lastName,
+                    email: req.body.email,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    user_category_id: req.body.category,
+                    avatar_id: result.avatar_id
+                  })
+                    .then(() => {
+                      res.redirect("login")
+                    })
+                })
+            })
+        }
+      }
+    })
   },
 
   edit: function (req, res) {
