@@ -14,7 +14,10 @@ const controller = {
             include: ['product_categories', 'product_images'],
             attributes: ["product_id", "product_name", "description", "product_categories.category", "product_images.image"],});
         let countCategories = await db.sequelize.query('SELECT COUNT(product_category_id) FROM Product_category;');
-        
+        let product_categories = await db.Product_category.findAll({
+            attributes: ["product_category_id", "category"]});
+
+
         count = count[0];
         countByCategory = countByCategory[0];
         countCategories = countCategories[0];
@@ -36,7 +39,9 @@ const controller = {
 
                 productsTable,
                 lastest,
-                countCategories
+                countCategories,
+                product_categories
+               
             }
         });
     },

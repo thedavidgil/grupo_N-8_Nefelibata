@@ -8,9 +8,9 @@ const usersAPIController = require('../../controller/api/usersAPIController');
 
 // ************ Routes ************
 
-/*** GET ALL PRODUCTS ***/
+/*** GET ALL USERS ***/
 router.get('/', usersAPIController.list);
-/*** GET ONE PRODUCT ***/
+/*** GET ONE USER ***/
 router.get('/:id', usersAPIController.detail);
 
 module.exports = router;
