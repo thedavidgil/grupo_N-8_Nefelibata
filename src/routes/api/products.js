@@ -13,5 +13,4 @@ router.get('/', productsAPIController.list);
 /*** GET ONE PRODUCT ***/
 router.get('/:id', productsAPIController.detail);
 
-
 module.exports = router;
