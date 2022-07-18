@@ -53,10 +53,10 @@ app.use("/cart", cartRouter);
 
 // ************ Route System require and use() ************
 const productsAPIRouter = require("./routes/api/products")
-//const usersAPIRouter = require("./routes/api/users")
+const usersAPIRouter = require("./routes/api/users")
 
 app.use('/api/products', productsAPIRouter);
-//app.use('/api/users', usersAPIRouter);
+app.use('/api/users', usersAPIRouter);
 
 //**********Error page**********
 app.get("*", (req,res)=>{

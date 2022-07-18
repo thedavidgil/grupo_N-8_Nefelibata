@@ -1,5 +1,41 @@
-//const path = require("path");
 const db = require('../../../database/models');
+const sequelize = db.sequelize;
+
+const usersApiController = {
+    list: async (req, res) =>{
+        let users = await db.sequelize.query("SELECT user_id, CONCAT(first_name, ' ', last_name), email FROM `Users`");
+        let alluser = await db.User.findAll({
+            attributes: ["user_id", "first_name", "last_name", "email"] });
+            alluser.map(user => user.dataValues.detail = `http://localhost:5000/api/users/${ user.dataValues.user_id }`)
+        users = { ...alluser }
+        return res.status(200).json({
+            meta: {
+                status: 200
+            },
+            data: {
+                count: alluser.length,
+                users: users
+            }
+        })
+    },
+
+    detail: async (req, res) =>{
+            let alluser = await db.User.findAll({ include:["avatars"], attributes: ["user_id", "first_name", "last_name", "email"] });
+            users = { ...alluser }
+            return res.status(200).json({
+                meta: {
+                    status: 200
+                },
+                data: {
+                    users
+                }
+            })
+    }
+}
+module.exports=usersApiController;
+
+//const path = require("path");
+
 //const Op = db.Sequelize.Op;
 //const sequelize = db.sequelize;
 //const { Op } = require("sequelize");
@@ -131,21 +167,3 @@ db.Users.findByPk(req.params.id)
     }
 }
 module.exports = usersAPIController;*/
-
-
-const usersApiController = {
-    list: async function (req, res) {
-        let users = await db.sequelize.query('SELECT user_id, CONCAT(first_name, ' ', last_name), email FROM `Users`');
-        users.map(user => user.dataValues.detail = `http://localhost:5000/api/users/${user.dataValues.user_id}`)
-        users = { ...users }
-        return res.status(200).json({
-            meta: {
-                status: 200
-            },
-            data: {
-                users
-            }
-        })
-    }
-}
-module.exports=usersApiController;
