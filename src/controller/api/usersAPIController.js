@@ -1,51 +1,50 @@
 //const path = require("path");
-//const db = require('../../../database/models');
+const db = require('../../../database/models');
 //const Op = db.Sequelize.Op;
 //const sequelize = db.sequelize;
 //const { Op } = require("sequelize");
 //const moment = require('moment');
 
-/*const User = db.User;
-const Avatar= db.Avatar;
-const User_category= db.User_category;*/
 
-/*const controller = {
-userList: async function (req, res) {
+
+/*module.exports = {
+userList: async function (req, res){
 try{
-        const users = await User.findAll({
+        const users = await Users.findAll({
             include:{all:true},
             atributes:["id", "first_name", "last_name", "email", "url"]
         })
         return res.status(200).json({
             total: users.length,
-                    data: users, //"http://localhost:5000/api/user",
+                    data: "http://localhost:5000/api/user",//users
                     status: 200,
         })
 
-}catch(e){
-        console.error(e)
+}catch(err){
+        console.error(err)
     }
 },
 
 
-userDetail: async function (req, res) {
-    try{
+
+userDetail: async function (req, res){
+    //try{
             const id = req.params.id;
-            const user = await User.findByPk(
+            const users = await Users.findByPk(
                 id,{
-                    //include:{all:true},
+                    include:{all:true},
                     atributes:["id", "first_name", "last_name", "email", "avatar"]
                 })
                 return res.json({
-                    detail: user //"http://localhost:5000/api/user/:id",
+                    detail: "http://localhost:5000/api/user/id",//users
                 })
 
+        },
+        catch(err){
+           console.error(err)
         }
-        catch(e){
-            console.error(e)
-        }
-    }
-}*/
+    }*/
+
 
     
 
@@ -64,7 +63,7 @@ userList: (req, res) => {
    })
 },
 userDetail: (req, res) => {
-db.User.findByPk(req.params.id)
+db.Users.findByPk(req.params.id)
 .then(user => {
     return res.status(200).json({
         data: user,
@@ -88,13 +87,13 @@ db.User.findByPk(req.params.id)
             
         },
 
-        detail:(req, res) => {
+        detail: (req, res) =>{
             db.User.findByPk(req.params.id)
             .then(user=>{//cualquier info adicional que yo quiera mostrar debe ser aca
                 return res.status(200).json({//json envia la info en este formato
                    data:user,
-                   // atributes:["id", "first_name", "last_name", "email", "avatar"]
-                   status:200
+                   atributes:["id", "first_name", "last_name", "email", "avatar", "http://localhost:5000/api/users"],
+                   status:200,
                 })
             })
         }
@@ -102,34 +101,38 @@ db.User.findByPk(req.params.id)
 
 
     /*const usersAPIController = {
-        list : async (req,res) => {
-            let users = await db.Users.findAll();
+        list : async (req,res) =>{
+            let users = await db.Users.findAll({ include: ['avatars', 'User_category']});
             let count = users.length;
-            console.log(users);
-            users.forEach(user => {
-                let user = {
-                    user_id : user.dataValues.user_id,
-                    first_name: user.dataValues.first_name,
-                    last_name: user.dataValues.last_name,
-                    email : user.dataValues.email,
+            //console.log(users);
+            users.forEach(usuario => {
+                let users = {
+                    user_id : usuario.dataValues.user_id,
+                    first_name: usuario.dataValues.first_name,
+                    last_name: usuario.dataValues.last_name,
+                    email : usuario.dataValues.email,
                     detail: "/api/users/${user.dataValues.id}"
                 }
-                user.dataValues = user
+                usuario.dataValues = users
             })
             console.log(users);
             res.json({count,users});
         },
     
-        detail : async (req,res) => {
+        detail : async (req,res) =>{
             let user = await db.Users.findByPk(req.params.id);
             let estructura = {
                 ...user.dataValues,
-                "contraseña" : null,
-                "category": null,
-                imgUrl:"/api/users/datail/avatar${users.avatar}",
+                "password" : null,
+                "Users.user_category_": null,
+                url:"/api/users/detail/avatar${users.avatar}",
             }
             res.json({estructura})
         }
-    }*/
+    }
+
+
+    module.exports = usersAPIController;*/
+
+    let users = db.sequelize.query('SELECT user_id, CONCAT(first_name, ' ', last_name), email FROM `Users`;');
     
-    //module.exports = usersAPIController;

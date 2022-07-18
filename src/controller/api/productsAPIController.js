@@ -26,7 +26,7 @@ const controller = {
                             }
                         ],
                         detail: '/api/products'
-                    }]                   
+                    }]
                 },
                 data: data.products
             }
