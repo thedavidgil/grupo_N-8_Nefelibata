@@ -13,9 +13,9 @@ const controller = {
         countByCategory = countByCategory[0];
         // products = products[0];
         allProducts.map( oneProduct => oneProduct.dataValues.detail = `http://localhost:5000/api/product/${oneProduct.dataValues.product_id}`)
-        products = {
+        products =[
             ...allProducts,
-        }
+        ]
 
         return res.status(200).json({ 
             meta: {
