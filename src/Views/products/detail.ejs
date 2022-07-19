@@ -41,15 +41,30 @@
 
           <% if (locals.isLogged && locals.userLogged.user_category_id === 1) { %>
             
-            <button type="submit" class="button1">
-            <a href="/products/edit/<%= product.product_id %>">Editar</a>
-            </button>
-            <button type="submit" class="button1">
-             <a href="/products/delete/<%= product.product_id %>">Eliminar</a>
-            </button>
-            <button type="submit" class="button1">
-            <a href="/products/create" > Crear Nuevo Producto</a>
-            </button>
+            <div class="responsivebuttons">
+              <div class="button2">
+                  <a href="/products/edit/<%= product.product_id %"><button type="submit">Editar</button></a>
+              </div>
+              <br>
+              <div class="button2">
+                  <a href="/products/delete/<%= product.product_id %>"><button type="submit">Eliminar</button></a>
+              </div>
+              <br>
+              <div class="button1">
+                  <a href="/products/create"><button type="submit">Crear Nuevo Producto</button></a>
+              </div>
+              <!-- <button type="submit" class="button2">
+                <a href="/products/edit/<%= product.product_id %>">Editar</a>
+              </button> -->
+              <!-- <br>
+              <button type="submit" class="button2">
+                <a href="/products/delete/<%= product.product_id %>">Eliminar</a>
+              </button> -->
+              <!-- <br>
+              <button type="submit" class="button2">
+                <a href="/products/create" > Crear Producto</a>
+              </button> -->
+            </div>
         
            
           <% } %> 

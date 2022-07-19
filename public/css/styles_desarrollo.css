@@ -160,6 +160,11 @@ header {
   display: none;
 }
 
+.login a {
+  text-decoration: none;
+  color: var(--negro);
+}
+
 .redes {
   display: none;
 }
