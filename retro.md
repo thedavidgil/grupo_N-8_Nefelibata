@@ -132,13 +132,13 @@
 </ul>
 
 <ul>
- <li><p style="text-align: justify">1- Comenzar a dejar atrás toda duda, miedo que nos pueda surgir y no perder la confianza al ver que entramos en la recta final de este gran proceso.</p></li>
+ <li><p style="text-align: justify">1- Comenzar a reconoccer, procesar y afianzar todos los conocimientos y prácticas adquiridas a lo largo de estos meses. Debemos empezar a proyectar un nuevo camino.</p></li>
 
- <li><p style="text-align: justify">2- Buscar e investigar aún más sobre los concocimientos que fuimos adquiriendo para llevarlos a la práctica que es el mayor desafío.</p></li>
+ <li><p style="text-align: justify">2- Animarnos a realizar un pequeño proyecto nosotros y saber que contamos con un equipo que nos puede apoyar. </p></li>
 
- <li><p style="text-align: justify">3- Continuar confiando en el grupo, en cada uno de nosotros, seguir esforzandonos y acompañarnos en los momentos que se nos hacen difíciles.</p></li>
+ <li><p style="text-align: justify">3- Seguir capacitandonos y ganar experiencia paso a paso, poco a poco. Continuar este nuevo camino juntos.</p></li>
 
- <li><p style="text-align: justify">4- El ejercicio del weekly intentamos sostenerlo, pero sin mayores compromisos.</p></li>
+ <li><p style="text-align: justify">4- En esta etapa final el weekly estuvo presente con mucho esfuerzo. Todos con escaso tiempo, pero estuvimos!</p></li>
 
- <li><p style="text-align: justify">5- Nos alejamos notoriamente de las dailys porque nuestros tiempos están muy reducidos y necesitamos implementarlo para los sprint.</p></li>
+ <li><p style="text-align: justify">5- Los daily no  fueron posibles a lo que se espera que debe ser, pero siempre estuvimos atentos y en contacto.</p></li>
  </ul>
